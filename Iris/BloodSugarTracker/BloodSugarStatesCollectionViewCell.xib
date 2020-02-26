@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BloodSugarStatesCollectionIdentifier" id="gTV-IL-0wX" customClass="BloodSugarStatesCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byK-JX-Ya5">
+                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6m-rI-Uij">
+                        <rect key="frame" x="0.0" y="10" width="94" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="vgh-Ur-OQH"/>
+                        </constraints>
+                        <state key="normal" image="ic_delete.png"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIc-uY-Yh5">
+                        <rect key="frame" x="5" y="40" width="84" height="1"/>
+                        <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="udu-BL-PJd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="vIc-uY-Yh5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="0r2-9E-xzj"/>
+                <constraint firstAttribute="bottom" secondItem="byK-JX-Ya5" secondAttribute="bottom" id="Aky-4s-5lJ"/>
+                <constraint firstItem="vIc-uY-Yh5" firstAttribute="top" secondItem="byK-JX-Ya5" secondAttribute="bottom" id="Jhk-nc-Ph3"/>
+                <constraint firstAttribute="trailing" secondItem="byK-JX-Ya5" secondAttribute="trailing" id="WeY-XN-Sh0"/>
+                <constraint firstItem="y6m-rI-Uij" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XEK-fc-5zg"/>
+                <constraint firstAttribute="trailing" secondItem="vIc-uY-Yh5" secondAttribute="trailing" constant="5" id="cg2-Cx-da2"/>
+                <constraint firstItem="byK-JX-Ya5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dmU-ot-lWj"/>
+                <constraint firstItem="y6m-rI-Uij" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="kOc-b7-RVm"/>
+                <constraint firstAttribute="trailing" secondItem="y6m-rI-Uij" secondAttribute="trailing" id="pzJ-vl-21o"/>
+                <constraint firstItem="byK-JX-Ya5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wEa-Qj-0pb"/>
+            </constraints>
+            <size key="customSize" width="94" height="30"/>
+            <connections>
+                <outlet property="bottomItemLineView" destination="vIc-uY-Yh5" id="WNg-JR-Ywx"/>
+                <outlet property="deleteButton" destination="y6m-rI-Uij" id="gX9-wA-UmB"/>
+                <outlet property="titleLabel" destination="byK-JX-Ya5" id="4bB-Kr-4uN"/>
+            </connections>
+            <point key="canvasLocation" x="56" y="44"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_delete.png" width="24" height="24"/>
+    </resources>
+</document>

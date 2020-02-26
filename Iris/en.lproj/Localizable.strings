@@ -1,0 +1,855 @@
+/* 
+  Localizable.strings
+  Iris
+
+  Created by Nishant Gupta on 22/05/19.
+  Copyright © 2019 apptology. All rights reserved.
+*/
+
+"with name" = "with name";
+
+"is not found" = "is not found";
+
+"No doctor with name" = "No doctor with name";
+
+"is found" = "is found";
+
+"is found in" = "is found in";
+
+"facility" = "facility";
+
+"is not" = "is not";
+
+"No Doctor/Hospital/Clinic/Lab/Pharmacy is found" = "No Doctor/Hospital/Clinic/Lab/Pharmacy is found";
+
+"within the" = "within the";
+
+"Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset." = "Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset.";
+
+
+"Call" = "Call";
+
+"1" = "1";
+
+"2" = "2";
+
+"3" = "3";
+
+"4" = "4";
+
+"5" = "5";
+
+"6" = "6";
+
+"7" = "7";
+
+"8" = "8";
+
+"9" = "9";
+
+"10" = "10";
+
+"11" = "11";
+
+"12" = "12";
+
+"13" = "13";
+
+"14" = "14";
+
+"15" = "15";
+
+"16" = "16";
+
+"17" = "17";
+
+"18" = "18";
+
+"19" = "19";
+
+"20" = "20";
+
+"21" = "21";
+
+"22" = "22";
+
+"23" = "23";
+
+"24" = "24";
+
+"25" = "25";
+
+"26" = "26";
+
+"27" = "27";
+
+"28" = "28";
+
+"29" = "29";
+
+"30" = "30";
+
+"31" = "31";
+
+"No" = "No";
+
+"Dashboard" = "Dashboard";
+"Appointment" = "Appointment";
+"Disclaimer: IRIS Health Services LLC will not be in any way responsible for any prescribed dosage missed by the member during the usage of med alert." = "Disclaimer: IRIS Health Services LLC will not be in any way responsible for any prescribed dosage missed by the member during the usage of med alert.";
+//
+"Notify" = "Notify";
+
+"Policy Benefits:" = "Policy Benefits:";
+
+
+"Direction" = "Direction";
+
+"Valid Upto" = "Valid Upto";
+
+
+"View Route" = "View Route";
+
+"Emirates ID" = "Emirates ID";
+
+"agree with app's" = "agree with app's";
+
+"Policy No." = "Policy No.";
+"crop & save" = "crop & save";
+"Status" = "Status";
+
+"Dependants:" = "Dependants:";
+
+"Policy Period" = "Policy Period";
+
+"Set Reminder" = "Set Reminder";
+
+"Map View" = "Map View";
+
+"Plan Name:" = "Plan Name:";
+
+"Status:" = "Status:";
+
+"Provider Name:" = "Provider Name:";
+
+"Claim Type:" = "Claim Type:";
+
+"Diagnosis Details:" = "Diagnosis Details:";
+
+"Treatment Details:" = "Treatment Details:";
+
+"Approved Amount:" = "Approved Amount:";
+
+"VIEW REPORT" = "VIEW REPORT";
+
+"Claim Amount:" = "Claim Amount:";
+
+"Currency:" = "Currency:";
+
+"Treatment Date:" = "Treatment Date:";
+
+"Country:" = "Country:";
+
+"UPLOAD PHOTO" = "UPLOAD PHOTO";
+
+"Claimed Currency:" = "Claimed Currency";
+
+"Claimed Payment Date:" = "Claimed Payment Date:";
+
+"Lipid Unit" = "Lipid Unit";
+
+"Policy Number:" = "Policy Number:";
+
+"Insurance Company:" = "Insurance Company:";
+
+"Master Contract:" = "Master Contract:";
+
+"Company Name:" = "Company Name:";
+
+"Start Date:" = "Start Date:";
+
+"End Date:" = "End Date:";
+
+"Filter" = "Filter";
+
+"Verify Your Phone Number" = "Verify Your Phone Number";
+
+"Resend Code" = "Resend Code";
+
+"Verification Code" = "Verification Code";
+
+"Verify" = "Verify";
+
+"Complete Profile" = "Complete Profile";
+
+"Clinic" = "Clinic";
+
+"Blood Sugar Stats" = "Blood Sugar Stats";
+"Diagnostic Center" = "Diagnostic Center";
+
+"Hospital" = "Hospital";
+
+"Pharmacy" = "Pharmacy";
+
+"Apply" = "Apply";
+
+"Appointment Reminder" = "Appointment Reminder";
+
+"Save" = "Save";
+
+"SAVE" = "SAVE";
+
+"Delete" = "Delete";
+
+"CALCULATE" = "CALCULATE";
+
+"Blood Sugar Graph" = "Blood Sugar Graph";
+
+"Blood Pressure Graph" = "Blood Pressure Graph";
+
+"Diastolic" = "Diastolic";
+
+"Systolic" = "Systolic";
+
+"Pulse" = "Pulse";
+
+"VIEW STATS"= "VIEW STATS";
+
+"Months" = "Months";
+
+"Cholestrol" = "Cholestrol";
+
+"Avg. BMI per month" = "Avg. BMI per month";
+
+"BMI Categories" = "BMI Categories";
+
+"Underweight = BMI<=18.5"= "Underweight = BMI<=18.5";
+
+"Normal  =  BMI>18.5  and  BMI<=24.9" = "Normal  =  BMI>18.5  and  BMI<=24.9";
+
+"Overweight = BMI>24.9 and  BMI<=29.9" = "Overweight = BMI>24.9 and  BMI<=29.9";
+
+"Obesity =  BMI>=30" = "Obesity =  BMI>=30";
+
+"The Iris Health app is exclusively designed for our members to allow them easy access to their policy details, insurance plan benefits, medical claim history and status of reimbursements. It is designed to simplify the process of following one's own medical insurance policy. Iris Health members will no longer need to spend time on gathering information related to claims and policies.The app is loaded with resourceful features to help you track your medical history, set reminders for future appointments, medication alerts and access previous treatment details. To further enhance user experience, the app will also help find clinics under eligible policy networks, doctors as per their specialties and give members access to promotions on medical procedures. These services have been provided by IRIS Health Services, a leading third party administrator. The unparalleled technical efficiency has further benefited our clients allowing them to entrust us with the administration of their medical insurance policy. IRIS prides itself on the enthusiastic team who is focused on letting our clients know that You Matter" = "The Iris Health app is exclusively designed for our members to allow them easy access to their policy details, insurance plan benefits, medical claim history and status of reimbursements. It is designed to simplify the process of following one's own medical insurance policy. Iris Health members will no longer need to spend time on gathering information related to claims and policies.The app is loaded with resourceful features to help you track your medical history, set reminders for future appointments, medication alerts and access previous treatment details. To further enhance user experience, the app will also help find clinics under eligible policy networks, doctors as per their specialties and give members access to promotions on medical procedures. These services have been provided by IRIS Health Services, a leading third party administrator. The unparalleled technical efficiency has further benefited our clients allowing them to entrust us with the administration of their medical insurance policy. IRIS prides itself on the enthusiastic team who is focused on letting our clients know that You Matter";
+
+"Dependant" = "Dependant";
+
+"Gender:" = "Gender:";
+
+"Emirates ID:" = "Emirates ID:";
+
+"Member ID:" = "Member ID:";
+
+"Password Number:" = "Password Number:";
+
+"Email:" = "Email:";
+
+"Relation:" = "Relation:";
+
+"Nationality:" = "Nationality:";
+
+"Switch to Dependant Account" = "Switch to Dependant Account";
+
+"Residence:" = "Residence:";
+
+"Dependants" = "Dependants";
+
+"EDIT" = "EDIT";
+
+"All" = "All";
+
+"Last Six Month" = "Last Six Month";
+
+"Last One Month" = "Last One Month";
+
+"Last Three Month" = "Last Three Month";
+
+"Profile" = "Profile";
+
+"Promotions" = "Promotions";
+
+"My Appointment" = "My Appointment";
+
+"Add Appointment" = "Add Appointment";
+
+"Download Report" = "Download Report";
+
+"Previous" = "Previous";
+
+"APPROVED" = "APPROVED";
+
+"PENDING" = "PENDING";
+
+"Default Policy" = "Default Policy";
+
+"Promotion Details" = "Promotion Details";
+
+"Notification" = "Notification";
+
+"Days" = "Days";
+
+"HBA1C Graph" = "HBA1C Graph";
+
+"Map" = "Map";
+
+"List" = "List";
+
+"I am looking for" = "I am looking for";
+
+"location" = "location";
+
+"Search" = "Search";
+
+"To verify the member kindly log on to www.iris.healthcare" = "To verify the member kindly log on to www.iris.healthcare";
+
+"E-Card" = "E-Card";
+
+"Term & Conditions" = "Term & Conditions";
+
+"Reset Password" = "Reset Password";
+
+"Forgot Password" = "Forgot Password";
+
+"Username/Mobileno" = "Username/Mobileno";
+
+"Don't have an account?" = "Don't have an account?";
+
+"Helpline" = "Helpline";
+
+"UAE" = "UAE";
+
+"OMAN" = "OMAN";
+
+"Forgot Password?" = "Forgot Password?";
+
+"LOGIN" = "LOGIN";
+
+"Signup" = "Signup";
+
+"N/A" = "N/A";
+
+"Male" = "Male";
+
+"Female" = "Female";
+
+"New Password" = "New Password";
+
+"English" = "عَرَبِيّ";
+
+"OTP" = "OTP";
+
+"Please enter" = "Please enter";
+
+"Password should be alphanumeric and between 8 to 15 characters." = "Password should be alphanumeric and between 8 to 15 characters.";
+
+"Password Reset Successfully." = "Password Reset Successfully.";
+
+"UserName" = "UserName";
+
+"Mobile No" = "Mobile No";
+
+"Please enter valid mobile number." = "Please enter valid mobile number.";
+
+"Session expired ,Please login" = "Session expired ,Please login";
+
+"Provider Network" = "Provider Network";
+
+"Full Name" = "Full Name";
+
+"Email" = "Email";
+
+"Gender" = "Gender";
+
+"Nationality" = "Nationality";
+
+"Residence Location" = "Residence Location";
+
+"User Name" = "User Name";
+
+"Password" = "Password";
+
+"Confirm Password" = "Confirm Password";
+
+"Edit Profile" = "Edit Profile";
+
+"Please enter password" = "Please enter password";
+
+"Password should be alphanumeric and between 8 to 15 characters" = "Password should be alphanumeric and between 8 to 15 characters";
+
+"Please enter confirm password" = "Please enter confirm password";
+
+"Confirm password does not match" = "Confirm password does not match";
+
+"Please select" = "Please select";
+
+"Library" = "Library";
+
+"Camera" = "Camera";
+
+"Cancel" = "Cancel";
+
+"Size of Image(bytes)" = "Size of Image(bytes)";
+
+"Invalid image orientation" = "Invalid image orientation";
+
+"Profile updated successfully." = "Profile updated successfully.";
+
+"Benefit" = "Benefit";
+
+"all" = "all";
+
+"1 month" = "1 month";
+
+"3 month" = "3 month";
+
+"6 month" = "6 month";
+
+"Promotions Details" = "Promotions Details";
+
+"Promoted by" = "Promoted by";
+
+"Coupon Code" = "Coupon Code";
+
+"Category" = "Category";
+;
+"Medicines" = "Medicines";
+
+"Date" = "Date";
+
+"Time" = "Time";
+
+"Repeat" = "Repeat";
+
+"Before Breakfast" = "Before Breakfast";
+
+"After Breakfast" = "After Breakfast";
+
+"Before Lunch" = "Before Lunch";
+
+"After Lunch" = "After Lunch";
+
+"Before Dinner" = "Before Dinner";
+
+"After Dinner" = "After Dinner";
+
+"Medicine Alert" = "Medicine Alert";
+
+"Please choose date & time first." = "Please choose date & time first.";
+
+"Medicine alert has already been set for same medicine with same data." = "Medicine alert has already been set for same medicine with same data.";
+
+"it’s time for your MEDICINE." = "it’s time for your MEDICINE.";
+
+"Hope you feel better!" = "Hope you feel better!";
+
+"Hi" = "Hi";
+
+"Saved successfully" = "Saved successfully";
+
+"Please fill" = "Please fill";
+
+"field" = "field";
+
+"From" = "From";
+
+"to" = "to";
+
+"FSCalendar delegate forbid" = "FSCalendar delegate forbid";
+
+"to be selected" = "to be selected";
+
+"Every Sunday" = "Every Sunday";
+
+"Every Monday" = "Every Monday";
+
+"Every Tuesday" = "Every Tuesday";
+
+"Every Wednesday" = "Every Wednesday";
+
+"Every Thursday" = "Every Thursday";
+
+"Every Friday" = "Every Friday";
+
+"Every Saturday" = "Every Saturday";
+
+"Sun" = "Sun";
+
+"Mon" = "Mon";
+
+"Tue" = "Tue";
+
+"Wed" = "Wed";
+
+"Thur" = "Thur";
+
+"Fri" = "Fri";
+
+"Sat" = "Sat";
+
+"SUBMIT" = "SUBMIT";
+
+"Deleted Successfully!" = "Deleted Successfully!";
+
+"delete" = "delete";
+
+"Lipid" = "Lipid";
+
+"Lipid Stats" = "Lipid Stats";
+
+"Choles-terol" = "Choles-terol";
+
+"LDL" = "LDL";
+
+"HDL" = "HDL";
+
+"Trigly-cerides" = "Trigly-cerides";
+
+"X" = "X";
+
+"Cholesterol" = "Cholesterol";
+
+"Triglycerides" = "Triglycerides";
+
+"Lipid Tracker" = "Lipid Tracker";
+
+"greater than 0" = "greater than 0";
+
+"mg/dL" = "mg/dL";
+
+"Jan" = "Jan";
+
+"Feb" = "Feb";
+
+"Mar" = "Mar";
+
+"Apr" = "Apr";
+
+"May" = "May";
+
+"Jun" = "Jun";
+
+"Jul" = "Jul";
+
+"Aug" = "Aug";
+
+"Sep" = "Sep";
+
+"Oct" = "Oct";
+
+"Nov" = "Nov";
+
+"Dec" = "Dec";
+
+"Blood Sugar(mg/dl)" = "Blood Sugar(mg/dl)";
+
+"Measured" = "Measured";
+
+"Notes" = "Notes";
+
+"HBA1C" = "HBA1C";
+
+"6am-10am" = "6am-10am";
+
+"10am-2pm" = "10am-2pm";
+
+"2pm-6pm" = "2pm-6pm";
+
+"6pm-10pm" = "6pm-10pm";
+
+"10pm-2am" = "10pm-2am";
+
+"2am-6am" = "2am-6am";
+
+"Time should be in between the selected slot" = "Time should be in between the selected slot";
+
+"Please enter blood sugar greater than 0." = "Please enter blood sugar greater than 0.";
+
+"Please enter blood sugar." = "Please enter blood sugar.";
+
+"Please enter HBA1C greater than 0." = "Please enter HBA1C greater than 0.";
+
+"Please enter HBA1C." = "Please enter HBA1C.";
+
+"Blood Sugar" = "Blood Sugar";
+
+"SYS(mmHG)" = "SYS(mmHG)";
+
+"DIA(mmHG)" = "DIA(mmHG)";
+
+"Pulse(min)" = "Pulse(min)";
+
+"DIA should be less than SYS." = "DIA should be less than SYS.";
+
+"BMI Result" = "BMI Result";
+
+"Weight(KG)" = "Weight(KG)";
+
+"Height(CM)" = "Height(CM)";
+
+"BMI Calculator" = "BMI Calculator";
+
+"Underweight" = "Underweight";
+
+"Normal" = "Normal";
+
+"Overweight" = "Overweight";
+
+"Obesity" = "Obesity";
+
+"Category" = "Category";
+
+"Weight" = "Weight";
+
+"Height" = "Height";
+
+"BMI" = "BMI";
+
+"BMI Stats" = "BMI Stats";
+
+"BMI Graph" = "BMI Graph";
+
+"Obesity" = "Obesity";
+
+"Policy" = "Policy";
+
+"Policy Detail" = "Policy Detail";
+
+"SN" = "SN";
+
+"Description" = "Description";
+
+"Value" = "Value";
+
+"SHOW" = "SHOW";
+
+"No Dependents" = "No Dependents";
+
+"Not Available" = "Not Available";
+
+"True" = "True";
+
+"False" = "False";
+
+"default policy updated." = "default policy updated.";
+
+"Reimbursement" = "Reimbursement";
+
+"Claim ID" = "Claim ID";
+
+"Reimbursement ID" = "Reimbursement ID";
+
+"Select Member" = "Select Member";
+
+"Treatment Date" = "Treatment Date";
+
+"Treatment Country" = "Treatment Country";
+
+"Claim Amount" = "Claim Amount";
+
+"Currency" = "Currency";
+
+"Towards" = "Towards";
+
+"Account Name" = "Account Name";
+"Account Name:" = "Account Name:";
+
+"Bank Name" = "Bank Name";
+"Bank Name:" = "Bank Name:";
+
+"Branch Name" = "Branch Name";
+"Branch Name:" = "Branch Name:";
+
+"IBAN" = "IBAN";
+
+"Swift Code" = "Swift Code";
+
+"individual" = "individual";
+
+"company" = "company";
+
+"Add Reimbursement" = "Add Reimbursement";
+
+"user" = "user";
+
+"country" = "country";
+
+"toward" = "toward";
+
+"Treatment Details" = "Treatment Details";
+
+"Bank Details" = "Bank Details";
+
+"File Details" = "File Details";
+
+"This feature is not supported by your device." = "This feature is not supported by your device.";
+
+"Dismiss" = "Dismiss";
+
+"Next" ="Next";
+
+"Please upload file." = "Please upload file.";
+
+"Size of Image(bytes)" = "Size of Image(bytes)";
+
+"Splash" = "Splash";
+
+"Lab Name" = "Lab Name";
+
+"Service Name" = "Service Name";
+
+"Test Value" = "Test Value";
+
+"Test Observation" = "Test Observation";
+
+"Test Report" = "Test Report";
+
+"Delete file error:" = "Delete file error:";
+
+"Claim History" = "Claim History";
+
+"About Us" = "About Us";
+
+"Appointments" = "Appointments";
+
+"Medicine Alerts" = "Medicine Alerts";
+
+"No Appointment found." = "No Appointment found.";
+
+"Need to take medicine" = "Need to take medicine";
+
+"No Medicine alert found." = "No Medicine alert found.";
+
+"Please enter username." = "Please enter username.";
+
+"No Dependant" = "No Dependant";
+"Please enter password." = "Please enter password.";
+
+"Password should be alphanumeric and between 8 to 15 characters." = "Password should be alphanumeric and between 8 to 15 characters.";
+
+"Not Reachable" = "Not Reachable";
+
+"Reachable via WWAN" = "Reachable via WWAN";
+
+"Reachable via WiFi" = "Reachable via WiFi";
+
+"invalid token" = "invalid token";
+
+"Oops" = "Oops";
+
+"It seems like we have encountered a temporary glitch. Please try again later." = "It seems like we have encountered a temporary glitch. Please try again later.";
+
+"It appears you are on slow connection or your internet is unavailable. Please check and try again !!" = "It appears you are on slow connection or your internet is unavailable. Please check and try again !!";
+
+"Uploading" = "Uploading";
+
+"Uploading files" = "Uploading files";
+
+"Terms & Conditions" = "Terms & Conditions";
+
+"Verification code sent successfully." = "Verification code sent successfully.";
+
+"Emirates ID/Certificate Number" = "Emirates ID/Certificate Number";
+
+"Passport Number" = "Passport Number";
+
+"Phone Number" = "Phone Number";
+
+"uncheck" = "uncheck";
+
+"Done" = "Done";
+
+"Sign Up" = "Sign Up";
+
+"Please check agree button" = "Please check agree button";
+
+"Email not verified" = "Email not verified";
+
+"Email is not varified." = "Email is not varified.";
+
+"Email not found" = "Email not found";
+
+"User is inactive" = "User is inactive";
+
+"We were not able to find any details for the entered email address" = "We were not able to find any details for the entered email address";
+
+"Email or Recovery key is incorrect" = "Email or Recovery key is incorrect";
+
+"Please enter the correct login details" = "Please enter the correct login details";
+
+"Email already exist" = "Email already exist";
+
+"The email already exist on our server, Try Active New Device" = "The email already exist on our server, Try Active New Device";
+
+"We have sent a 6-digit verification\n code via SMS to ****%@,\n enter the code below." = "We have sent a 6-digit verification\n code via SMS to ****%@,\n enter the code below.";
+
+"Please enter Emirates ID/Certificate Number." = "Please enter Emirates ID/Certificate Number.";
+
+"Please enter valid Emirates ID/Certificate Number." = "Please enter valid Emirates ID/Certificate Number.";
+
+"Please enter passport number." = "Please enter passport number.";
+
+"Please enter valid passport number." = "Please enter valid passport number.";
+
+"Please enter mobile number." = "Please enter mobile number.";
+
+"Please enter valid mobile number." = "Please enter valid mobile number.";
+
+"India" = "India";
+
+"US" = "US";
+
+"Dubai" = "Dubai";
+
+"Registration successful" = "Registration successful";
+
+"Upcoming Appointments" = "Upcoming Appointments";
+
+"Last Treatment" = "Last Treatment";
+
+"No Doctor/Hospital/Clinic/Lab/Pharmacy is found within the 10 Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset" = "No Doctor/Hospital/Clinic/Lab/Pharmacy is found within the 10 Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset";
+
+
+"Policy Details" = "Policy Details";
+
+"View Your E-Card" = "View Your E-Card";
+
+"Blood Sugar Tracker" = "Blood Sugar Tracker";
+
+"Blood Pressure Tracker" = "Blood Pressure Tracker";
+
+"Lipid Tracker" = "Lipid Tracker";
+
+
+"Club IRIS" = "Club IRIS";
+
+"Feedback" = "Feedback";
+
+"Sign Out" = "Sign Out";
+
+"Clinic Name/Doctor Name" = "Clinic Name/Doctor Name";
+
+"Specialization" = "Specialization";
+
+"Proximity" = "Proximity";
+
+"Choose Proximity(Km)" = "Choose Proximity(Km)";
+
+"Doctor Name" = "Doctor Name";
+
+"Name of Facility" = "Name of Facility";
+
+"Location" = "Location";
+
+"Appointment Date-Time" = "Appointment Date-Time";
+
+"Case Summary" = "Case Summary";
+
+"Notes (maximum 500 characters)" = "Notes (maximum 500 characters)";
+
+"Reminder Alert" = "Reminder Alert";
+"Appointment Saved" = "Appointment Saved";
+
+"You have an appointment with same doctor ,do you want to proceed." = "You have an appointment with same doctor ,do you want to proceed.";
+
+"OK" = "OK";
+"Blood Pressure Stats" = "Blood Pressure Stats";

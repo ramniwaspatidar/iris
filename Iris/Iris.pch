@@ -1,0 +1,17 @@
+//
+//  Iris.pch
+//  Iris
+//
+//  Created by apptology on 15/12/17.
+//  Copyright © 2017 apptology. All rights reserved.
+//
+
+#ifndef Iris_pch
+#define Iris_pch
+#import "Utility.h"
+//#import "DbManager.h"
+//#import "Constant.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Iris_pch */

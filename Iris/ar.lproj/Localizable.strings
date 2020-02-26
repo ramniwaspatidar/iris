@@ -1,0 +1,862 @@
+/* 
+  Localizable.strings
+  Iris
+
+  Created by Nishant Gupta on 22/05/19.
+  Copyright © 2019 apptology. All rights reserved.
+*/
+"with name" = "with name";
+
+"is not found" = "غير موجود";
+
+"No doctor with name" = "No doctor with name";
+
+"is found" = "موجود";
+
+"is found in" = "موجود في ";
+
+"facility" = "منشاء صحية";
+
+"is not" = "is not";
+
+"No Doctor/Hospital/Clinic/Lab/Pharmacy is found" = "No Doctor/Hospital/Clinic/Lab/Pharmacy is found";
+
+"within the" = "within the";
+
+"Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset." = "Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset.";
+
+
+"Blood Pressure Stats" = "احصائيات ضغط الدم";
+
+"1" = "١";
+
+"2" = "٢";
+
+"3" = "٣";
+
+"4" = "٤";
+
+"5" = "٥";
+
+"6" = "٦";
+
+"7" = "٧";
+
+"8" = "٨";
+
+"9" = "٩";
+
+"10" = "١٠";
+
+"11" = "١١";
+
+"12" = "١٢";
+
+"13" = "١٣";
+
+"14" = "١٤";
+
+"15" = "١٥";
+
+"16" = "١٦";
+
+"17" = "١٧";
+
+"18" = "١٨";
+
+"19" = "١٩";
+
+"20" = "٢٠";
+
+"21" = "٢١";
+
+"22" = "٢٢";
+
+"23" = "٢٣";
+
+"24" = "٢٤";
+
+"25" = "٢٥";
+
+"26" = "٢٦";
+
+"27" = "٢٧";
+
+"28" = "٢٨";
+
+"29" = "٢٩";
+
+"30" = "٣٠";
+
+"31" = "٣١";
+
+"Disclaimer: IRIS Health Services LLC will not be in any way responsible for any prescribed dosage missed by the member during the usage of med alert." = "إخلا مسؤولية:  إن شركة iris health services غير مسؤولة بأي شكل من الأشكال عن تفويت جرعات الدواء الموصوفة عند إستخدام إشعار التذكير بمواعيد الدواء الخاص بالتطبيق";
+
+
+"Dashboard" = "لوحة المعلومات";
+"No" = "لا";
+"Notify" = "اشعار";
+
+"Direction" = "الإتجاهات";
+
+"Valid Upto" = "صالح لغاية";
+
+"Emirates ID" = "رقم الهوية";
+
+"agree with app's" = "أوافق على شروط التطبيق";
+
+"Policy No." =  "رقم البوليصة";
+
+"Status" = "الحالة";
+
+"Dependants:" = "المعالين";
+
+"Policy Period" = "مدة البوليصة";
+
+"Set Reminder" = "ضبط منبة التذكير";
+
+"Map View" =  "عرض الخريطة";
+
+"View Route" = "عرض الطريق";
+
+
+"Plan Name:" =  "أسم الخطة";
+
+"Status:" = "الحالة:";
+
+"Provider Name:" = "أسم مقدم الرعاية الصحية:";
+
+"Claim Type:" = "نوع المطالبة:";
+
+"Diagnosis Details:" = "تفاصيل التشخيص:";
+
+"Treatment Details:" = "تفاصيل العلاج:";
+
+"Approved Amount:" = "المبلغ المعتمد:";
+
+"VIEW REPORT" =  "عرض التقرير:";
+
+"Claim Amount:" = "قيمة المطالبة:";
+
+"Currency:" = "العملة:";
+
+"Treatment Date:" = "تاريخ العلاج:";
+
+"Country:" = "الدولة:";
+
+"UPLOAD PHOTO" = "رفع الصورة";
+
+"Claimed Currency:" = "عملة المطالبة:";
+
+"Claimed Payment Date:" =  "تاريخ المطالبة:";
+
+"Lipid Unit" = "وحدة قياس الدهون";
+
+"Policy Number:" = "رقم البوليصة:";
+
+"Insurance Company:" = "شركة التأمين:";
+
+"Master Contract:" = "الشركة الأم:";
+
+"Company Name:" = "أسم الشركة:";
+
+"Start Date:" = "تاريخ البداية:";
+
+"End Date:" =  "تاريخ النهاية:";
+//
+"Filter" =  "تصفية";
+
+"Verify Your Phone Number" = "تأكيد رقم الموبايل";
+
+"Resend Code" = "إعادة ارسال الرمز";
+
+"Verification Code" =  "الرمز التعريفي";
+
+"Verify" = " تأكيد ";
+
+"Complete Profile" = "الملف الشخصي الكامل";
+
+"Clinic" = "مركز صحي";
+
+"Blood Sugar Stats" = "احصائيات نسبة السكر ";
+"Diagnostic Center" = "مركز تشخيصي";
+
+"Hospital" = "مستشفى";
+
+"Pharmacy" = " صيدلية";
+
+"Apply" = " تطبيق ";
+
+"Appointment Reminder" = "تذكير بمواعيد";
+
+"Save" =  "حفظ";
+
+"SAVE" =  "حفظ";
+
+"Delete" = "حذف";
+
+"CALCULATE" =  "أحسب";
+
+"Blood Sugar Graph" = "المخطط البياني لنسبة السكر";
+
+"Blood Pressure Graph" = "المخطط البياني لضغط الدم";
+
+"Diastolic" = "ضغط الدم الانبساطي";
+
+"Systolic" = "ضغط الدم الانقباضي";
+
+"Pulse" = "النبض";
+
+"VIEW STATS"= "عرض المخطط";
+
+"Months" = "أشهر";
+
+"Cholestrol" =  "الكوليسترول";
+
+"Avg. BMI per month" = "متوسط مؤشر كتلة الجسم في الشهر";
+
+"BMI Categories" = "*فئات معدل كتلة الجسم *";
+
+"Underweight = BMI<=18.5"= "أقل من الوزن الطبيعي = ≥ ١٨.٥";
+
+"Normal  =  BMI>18.5  and  BMI<=24.9" = "طبيعي =١٨.٥ - ٢٤.٩";
+
+"Overweight = BMI>24.9 and  BMI<=29.9" = "الوزن الزائد = ٢٥ - ٢٩.٩";
+
+"Obesity =  BMI>=30" = "البدانة = ≤ ٣٠";
+
+"The Iris Health app is exclusively designed for our members to allow them easy access to their policy details, insurance plan benefits, medical claim history and status of reimbursements. It is designed to simplify the process of following one's own medical insurance policy. Iris Health members will no longer need to spend time on gathering information related to claims and policies.The app is loaded with resourceful features to help you track your medical history, set reminders for future appointments, medication alerts and access previous treatment details. To further enhance user experience, the app will also help find clinics under eligible policy networks, doctors as per their specialties and give members access to promotions on medical procedures. These services have been provided by IRIS Health Services, a leading third party administrator. The unparalleled technical efficiency has further benefited our clients allowing them to entrust us with the administration of their medical insurance policy. IRIS prides itself on the enthusiastic team who is focused on letting our clients know that You Matter" = " تم تصميم هذا التطبيق حصريًا لأعضاء IRIS لتسهيل وتبسيط عملية الوصول إلى تفاصيل البوليصة الخاصة بهم، ومزايا خطة التأمين، وسجل المطالبات الطبية وحالة التعويضات، ولتسريع مهمة جمع المعلومات المتعلقة بالمطالبات والبوليصيات.تم تزويد التطبيق بميزات مختلفة لمساعدتك على تتبع التاريخ الطبي الخاص بك، وتعيين تذكير للمواعيد المستقبلية، وتنبيهات بمواعيد الدواء والوصول إلى تفاصيل العلاج السابقة، كما يسهل عملية الوصول إلى شبكة المراكز الصحية والأطباء المتخصصين حسب خطة التأمين الخاصة بك بالإضافة إلى العروض الترويجية للإجراءات الطبية التي تقوم بها المراكز الصحية.وقد تم توفير هذه الخدمة من قبل شركة IRIS للخدمات الصحية وهي شركة رائدة في مجال إدارة المطالبات الطبية الطرف الثالث وبفضل كفاءتها في الدعم الفني والتقني اللامحدود اكتسبنا ثقة عملائنا لإدارة بوليصيات التأمين الصحي.يعمل فريقنا بجهد حثيث لتقديم أفضل الخدمات لأن صحتك تهمنا";
+
+
+"Dependant" = "معال";
+
+"Gender:" = "الجنس:";
+
+"Emirates ID:" = "رقم الهوية";
+
+
+"Member ID:" = "رقم العضو:";
+
+"Password Number:" = "Password Number:";
+
+"Email:" = "البريد الإلكتروني";
+
+"Relation:" = "العلاقة:";
+
+"Nationality:" = "الجنسية:";
+
+"Switch to Dependant Account" = "اذهب لحساب المعالين ";
+
+"Residence:" =  "مكان الإقامة:";
+
+"Dependants" = "المعالين";
+
+"EDIT" = "تعديل";
+
+"All" = "الكل";
+
+"Last Six Month" = "أخر ستة أشهر";
+
+"Last One Month" = "الشهر الماضي ";
+
+"Last Three Month" = "اخر ثلاثة أشهر";
+
+"Profile" = "الملف الشخصي";
+
+"Promotions" = "عروض";
+
+"My Appointment" = "مواعيدي";
+
+"Add Appointment" = "أضف مواعيد";
+
+"Download Report" = "تحميل التقرير";
+
+"Previous" =  "السابق";
+
+"APPROVED" = "تمت الموافقة";
+
+"PENDING" = "معلق";
+
+"Default Policy" = "البوليصة الأساسية";
+
+"Promotion Details" = "تفاصيل العرض";
+
+"Notification" = "الإشعارات ";
+
+"Days" =  "الأيام";
+
+"HBA1C Graph" = "HBA1C المخطط البياني";
+
+//
+"Map" = "الخريطة";
+
+"List" = "القائمة";
+
+"I am looking for" = "أبحث عن";
+
+"location" =  "الموقع";
+
+"Search" = "بحث";
+
+"To verify the member kindly log on to www.iris.healthcare" = "لتعريف العضو يرجى الدخول إلى www.iris.healthcare  ";
+
+"E-Card" = "البطاقة الإلكترونية";
+
+"Term & Conditions" =  "الشروط والأحكام";
+
+"Reset Password" = "إعادة تعيين كلمة المرور";
+
+"Forgot Password" = "نسيت كلمة المرور؟";
+
+"Username/Mobileno" = "أسم الدخول/رقم الموبايل";
+
+"Don't have an account?" = "ليس لديك حساب؟?";
+
+"Helpline" = "اتصل بنا";
+
+"UAE" = "الإمارات";
+
+"OMAN" = "عمان";
+
+"Forgot Password?" = "نسيت كلمة المرور؟?";
+
+"LOGIN" = "تسجيل الدخول";
+
+"Signup" = "تسجيل جديد";
+
+"N/A" = "غير موجود";
+
+"Male" = "ذكر";
+
+"Female" = "انثى";
+
+"New Password" = "كلمة مرور جديدة";
+
+"OTP" = "كلمة المرور لمرة واحدة";
+
+"Please enter" = "يرجى إدخال";
+
+"Password should be alphanumeric and between 8 to 15 characters." = " يجب ان تتكون كلمة المرور من 8 إلى 15 رمز تتألف من ارقام وحروف ";
+
+"Password Reset Successfully." = "تم تعيين كلمة المرور بنجاح";
+
+"UserName" = "أسم المستخدم";
+
+"Mobile No" = "رقم الموبايل";
+
+"Please enter valid mobile number." = "يرجى إدخال رقم الموبايل الصحيح";
+
+"Session expired ,Please login" = "انتهى الوقت، يرجى تسجيل الدخول مرة أخرى";
+
+"Provider Network" ="شبكة التغطية";
+
+"Full Name" = "الأسم بالكامل";
+
+"Email" = "البريد الإلكتروني";
+
+"Gender" = "الجنس";
+
+"Nationality" = "الجنسية";
+
+"Residence Location" = "محل الإقامة";
+
+"User Name" = "أسم المستخدم";
+
+"Password" = "كلمة المرور";
+
+"Confirm Password" = "تأكيد كلمة المرور";
+
+"Edit Profile" = "تعديل الملف";
+
+"Please enter password" = "يرجى إدخال كلمة المرور";
+
+"Password should be alphanumeric and between 8 to 15 characters" = " يجب ان تتكون كلمة المرور من 8 إلى 15 رمز تتألف من ارقام وحروف ";
+
+"Please enter confirm password" = "يرجى تأكيد كلمة المرور";
+
+"Confirm password does not match" = "كلمة المرور غير مطابقة";
+
+"Please select" = "يرجى الاختيار";
+
+"Library" = "المكتبة";
+
+"Camera" = "الكاميرا";
+
+"Cancel" = "إلغاء";
+
+"Call" = "إلغاء";
+
+"crop & save" = "قص وحفظ";
+
+"Size of Image(bytes)" = "حجم الصورة (بايتس)";
+
+"Invalid image orientation" = " اتجاه صورة غير صحيح ";
+
+"Profile updated successfully." = "تم تعديل الملف الشخصي بنجاح";
+
+"Benefit" = "مزايا";
+
+"all" = "الكل";
+
+"1 month" = "واحد شهر";
+
+"3 month" = "ثلاثة أشهر";
+
+"6 month" = "ستة أشهر";
+
+"Promotions Details" = "تفاصيل العرض";
+
+"Promoted by" = "معروض من قبل";
+
+"Coupon Code" = "رمز الكوبون";
+
+"Category" = "الفئة";
+
+"Medicines" = "الأدوية";
+
+"Date" = "التاريخ";
+
+"Time" = "الوقت";
+
+"Repeat" = "إعادة";
+
+"Before Breakfast" = "قبل الإفطار";
+
+"After Breakfast" = " بعد الإفطار ";
+
+"Before Lunch" = "قبل الغداء";
+
+"After Lunch" = "بعد الغداء";
+
+"Before Dinner" = "قبل العشاء";
+
+"After Dinner" = "بعد العشاء";
+
+"Medicine Alert" = "تذكير الادوية";
+
+"Please choose date & time first." = "يرجى تحديد التاريخ والوقت أولاً";
+
+"Medicine alert has already been set for same medicine with same data." = "تم تعيين نفس الدواء بنفس الوقت مسبقاً";
+
+"it’s time for your MEDICINE %@. Hope you feel better!" = "حان وقت الدواء. نتمنى لك عاجل الشفاء!";
+
+"Hi" = "مرحباً";
+
+"Saved successfully" = "تم الحفظ بنجاح";
+
+"Please fill" = "يرجى الملء";
+
+"field" = "حقل";
+
+"From" = "من";
+
+"to" = "إلى";
+
+"FSCalendar delegate forbid" = "FSCalendar delegate forbid";
+
+"to be selected" = "اختيار";
+
+"Every Sunday" = "كل أحد";
+
+"Every Monday" = "كل أثنين";
+
+"Every Tuesday" = "كل ثلاثاء";
+
+"Every Wednesday" = "كل اربعاء";
+
+"Every Thursday" = "كل خميس";
+
+"Every Friday" = "كل جمعة";
+
+"Every Saturday" = "كل سبت";
+
+"Sun" = "الأحد";
+
+"Mon" = "الأثنين";
+
+"Tue" = "الثلاثاء";
+
+"Wed" = "الأربعاء";
+
+"Thur" = "الخميس";
+
+"Fri" = "الجمعة";
+
+"Sat" = "السبت";
+
+"SUBMIT" = "تقديم";
+
+"Deleted Successfully!" = "تم الحذف بنجاح";
+
+"delete" = "حذف";
+
+"Lipid" = "نسبة الدهون";
+
+"Lipid Stats" = "احصائيات نسبة الدهون في الدم";
+
+"Choles-terol" = "الكوليسترول";
+
+"LDL" = "الدهون منخفضة الكثافة";
+
+"HDL" = "الدهون مرتفعة الكثافة";
+
+"Trigly-cerides" = "الدهون الثلاثية";
+
+"X" = "X";
+
+"Cholesterol" = "الكوليسترول";
+
+"Triglycerides" = "الدهون الثلاثية";
+
+"Lipid Tracker" = "تعقب نسبة الدهون في الدم";
+
+"greater than 0" = "أكثر عن 0";
+
+"mg/dL" = "mg/dL";
+
+
+
+"Jan" = "يناير";
+
+"Feb" = "فبراير";
+
+"Mar" = "مارس";
+
+"Apr" = "أبريل";
+
+"May" = "مايو";
+
+"Jun" = "يونيو";
+
+"Jul" = "يوليو";
+
+"Aug" = "أغسطس";
+
+"Sep" = "سبتمبر";
+
+"Oct" = "أكتوبر";
+
+"Nov" = "نوفمبر";
+
+"Dec" = "ديسمبر";
+
+
+
+"Blood Sugar(mg/dl)" = "نسبة السكر في الدم(mg/dl)";
+
+"Measured" = "القياس";
+
+"Notes" = "ملاحظات";
+
+"HBA1C" = "HBA1C";
+
+"6am-10am" = "6am-10am";
+
+"10am-2pm" = "10am-2pm";
+
+"2pm-6pm" = "2pm-6pm";
+
+"6pm-10pm" = "6pm-10pm";
+
+"10pm-2am" = "10pm-2am";
+
+"2am-6am" = "2am-6am";
+
+"Time should be in between the selected slot" = "يجب أن يكون الوقت بين الأوقات المحددة";
+
+"Please enter blood sugar greater than 0." = "يجب ان تكون نسبة السكر أكثر عن 0 ";
+
+"Please enter blood sugar." = "يرجى إدخال نسبة السكر في الدم";
+
+"Please enter HBA1C greater than 0." = "يجب ان تكون نسبة HBA1C أكثر عن 0";
+
+"Please enter HBA1C." = " يرجى إدخال نسبة HBA1C ";
+
+"Blood Sugar" = "سكر الدم";
+
+"SYS(mmHG)" = " ضغط الدم الانقباضي(mmHG)";
+
+"DIA(mmHG)" = " ضغط الدم الانبساطي(mmHG)";
+
+"Pulse(min)" = "نبض (دقيقة)";
+
+"DIA should be less than SYS." = "يجب أن يكون ضغط الدم الانبساطي أقل عن ضغط الدم الانقباضي";
+
+"BMI Result" = "مؤشر قياس كتلة الجسم";
+
+"Weight(KG)" = "الوزن (كيلو)";
+
+"Height(CM)" = "الطول (سم)";
+
+"BMI Calculator" = "حاسبة مؤشر كتلة الجسم";
+
+"Underweight" = "الوزن أقل عن الطبيعي";
+
+"Normal" = "طبيعي";
+
+"Overweight" = "الوزن زائد عن الحد الطبيعي";
+
+"Obesity" = "سمنة مفرطة";
+
+"Category" = "الفئة";
+
+"Weight" = "الوزن";
+
+"Height" = "الطول";
+
+"BMI" = "مؤشر كتلة الجسم";
+
+"BMI Stats" = "احصائيات مؤشر كتلة الجسم";
+
+"BMI Graph" = "مخطط مؤشر كتلة الجسم";
+
+"Obesity" = "سمنة مفرطة";
+
+"Policy" = "البوليصة";
+
+"Policy Detail" = "تفاصيل البوليصة";
+
+"SN" = "SN";
+
+"Description" = "الوصف";
+
+"Value" = "القيمة";
+
+"SHOW" = "عرض";
+
+"No Dependents" = "لا يوجد معالين";
+
+"No Dependant" = "لا يوجد معالين";
+
+"Not Available" = "غير متوفر";
+
+"True" = "صحيح";
+
+"False" = "خطأ";
+
+"default policy updated." = "تم تعديل البوليصة الأساسية";
+
+"Reimbursement" = "مطالبة استرداد";
+
+"Claim ID" = "رقم المطالبة";
+
+"Reimbursement ID" = "رقم طلب التعويض";
+
+"Select Member" = "اختر العضو";
+
+"Treatment Date" = "تاريخ العلاج";
+
+"Treatment Country" = "بلد العلاج";
+
+"Claim Amount" = "قيمة المطالبة";
+
+"Currency" = "العملة";
+
+"Towards" = "نحو";
+
+"Account Name:" = "أسم الحساب:";
+
+"Account Name" = "أسم الحساب";
+"Bank Name:" = "أسم البنك:";
+"Bank Name" = "أسم البنك";
+
+"Branch Name" = "أسم الفرع";
+"Branch Name:" = "أسم الفرع:";
+"IBAN" = "IBAN";
+
+"Swift Code" = "Swift Code";
+
+"individual" = "الفرد";
+
+"company" = "أسم الشركة";
+
+"Add Reimbursement" = "أضف طلب تعويض";
+
+"user" = "المستخدم";
+
+"country" = "أسم الدولة";
+
+"toward" = "نحو";
+
+"Treatment Details" = "تفاصيل العلاج";
+
+"Bank Details" = "تفاصيل البنك";
+"Bank Details:" = "تفاصيل البنك:";
+
+"Policy Benefits:" = "مزايا البوليصة";
+
+"File Details" = "تفاصيل الملف";
+
+"This feature is not supported by your device." = "هذه الخاصية غير متوفرة في جهازك";
+
+"Dismiss" = "إلغاء";
+
+"Next" ="التالي";
+
+"Please upload file." = "يرجى تحميل الملف";
+
+"Size of Image(bytes)" = "حجم الصورة (بايتس)";
+
+"Splash" = "Splash";
+
+"Lab Name" = "أسم المختبر";
+
+"Service Name" = "أسم الخدمة";
+
+"Test Value" = "قيمة الفحص";
+
+"Test Observation" = "ملاحظات الفحص";
+
+"Test Report" = "نتيجة الفحص";
+
+"Delete file error:" = "Delete file error:";
+
+"Claim History" = "تاريخ المطالبات";
+
+"About Us" = "عن الشركة";
+
+"Appointments" = "المواعيد";
+
+"Appointment" = "المواعيد";
+
+
+"Medicine Alerts" = "تذكير الادوية";
+
+"No Appointment found." = "لا توجد مواعيد";
+
+"Need to take medicine" = "يجب أخذ الدواء";
+
+"No Medicine alert found." = "لا يوجد تذكير الادوية.";
+
+"Please enter username." = "يرجى إدخال أسم المستخدم";
+
+"Plese enter password." = "يرجى إدخال كلمة المرور";
+
+"Password should be alphanumeric and between 8 to 15 characters." = " يجب ان تتكون كلمة السر من 8 إلى 15 رمز تتألف من ارقام وحروف ";
+
+"Not Reachable" = "غير متاح";
+
+"Reachable via WWAN" = "متاح من خلال  WWAN";
+
+"Reachable via WiFi" = "متاح من خلال";
+
+"invalid token" = "الرقم غير صحيح";
+
+"Oops" = "Oops";
+
+"It seems like we have encountered a temporary glitch. Please try again later." = "هناك خلل مؤقت، يرجى المحاولة لاحقاً";
+
+"It appears you are on slow connection or your internet is unavailable. Please check and try again !!" = "يبدو أن شبكة الاتصال لديك ضعيفة أو غير متوفرة، يرجى المحاولة مرة أخرى";
+
+"Uploading" = "رفع";
+
+"Uploading files" = "رفع الملفات";
+
+"Terms & Conditions" = "الشروط والأحكام";
+
+"Verification code sent successfully." = "تم إرسال الرمز التعريفي بنجاح";
+
+"Emirates ID/Certificate Number" = "رقم الهوية/ رقم الشهادة";
+
+"Passport Number" = "رقم الجواز";
+
+"Phone Number" = "رقم الموبايل";
+
+"uncheck" = "ازالة";
+
+"Done" = "تم";
+
+"Sign Up" = "تسجيل جديد";
+
+"Please check agree button" = "يرجى الضغط على زر موافق ";
+
+"Email not verified" = "البريد الإلكتروني غير معرف";
+
+"Email is not varified." = " البريد الإلكتروني غير معرف ";
+
+"Email not found" = " البريد الإلكتروني غير موجود ";
+
+"User is inactive" = "المستخدم غير فعال";
+
+"We were not able to find any details for the entered email address" = "لم نتمكن من إيجاد اية تفاصيل لهذا البريد الإلكتروني";
+
+"Email or Recovery key is incorrect" = "البريد الإلكتروني أو رقم الاسترداد غير صحيح ";
+
+"Please enter the correct login details" = " يرجى إدخال تفاصيل تسجيل الدخول الصحيحة ";
+
+"Email already exist" = "عنوان البريد الإلكتروني مسجل مسبقاً";
+
+"The email already exist on our server, Try Active New Device" = "عنوان البريد الإلكتروني مسجل مسبقا ";
+
+"We have sent a 6-digit verification\n code via SMS to ****%@,\n enter the code below." = " لقد قمنا بإرسال الرقم التعريفي المكون من 6 ارقام إلى (....) يرجى ادخال الرمز ادناه ";
+
+"Please enter Emirates ID/Certificate Number." = "يرجى إدخال رقم الهوية/رقم الشهادة";
+
+"Please enter valid Emirates ID/Certificate Number." = "يرجى إدخال رقم الهوية/رقم الشهادة الصحيح";
+
+"Please enter passport number." = "يرجى إدخال رقم جواز السفر ";
+
+"Please enter valid passport number." = " يرجى إدخال رقم جواز السفر الصحيح.";
+
+"Please enter mobile number." = "يرجى إدخال رقم الموبايل";
+
+"Please enter valid mobile number." = " يرجى إدخال رقم الموبايل الصحيح ";
+
+"India" = "الهند";
+
+"US" = "الولايات المتحدة";
+
+"Dubai" = "دبي";
+
+"Registration successful" = "تم التسجيل بنجاح";
+
+"Upcoming Appointments" = "المواعيد القادمة";
+
+"Last Treatment" = "أخر علاج";
+
+"No Doctor/Hospital/Clinic/Lab/Pharmacy is found within the 10 Kms proximity of your current location. Consider changing your current location and try again. Or tap on Search Tab to reset" = " لا يوجد طبيب/مستشفى/عيادة/مختبر/صيدلية على بعد 10 كم بالقرب من موقعك الحالي، يرجى تغير موقعك ثم حاول من جديد أو اضغط على بحث لإعادة التعيين";
+
+"Policy Details" = "تفاصيل البوليصة";
+
+"View Your E-Card" = "عرض بطاقتك الإلكترونية";
+
+"Blood Sugar Tracker" = "متابعة سكر الدم";
+
+"Blood Pressure Tracker" = "متابعة ضغط الدم";
+
+"Lipid Tracker" = "متابعة نسبة الدهون في الدم";
+
+
+"Club IRIS" = "نادي IRIS";
+
+"Feedback" = "الملاحظات ";
+
+"Sign Out" = "تسجيل الخروج";
+
+"Clinic Name/Doctor Name" = "أسم الطبيب/ أسم العيادة";
+
+"Specialization" = "التخصص";
+
+"Proximity" = "بالقرب من";
+
+"Choose Proximity(Km)" = "أختر المسافة التقريبية(كم) ";
+
+"Doctor Name" = "أسم الطبيب";
+
+"Name of Facility" = "أسم المنشأة";
+
+"Location" = "الموقع";
+
+"Appointment Date-Time" = "تاريخ – وقت المواعيد";
+
+"Case Summary" = "ملخص الحالة";
+
+"Notes (maximum 500 characters)" = "الملاحظات (500 رمز على الأكثر)";
+
+"Reminder Alert" = "تنبية";
+
+"Appointment Saved" = "تم حفط المواعيد";
+
+"You have an appointment with same doctor do you want to proceed." = "لديك مواعيد مع نفس الطبيب، هل تود المتابعة";
+
+"OK" = "OK";
