@@ -49,8 +49,9 @@
     
     [uaeCall setGestureOnLabel];
     [omanCall setGestureOnLabelOMAN];
+    [self getLoginBanner];
 
-    _imageUrlArray = [[NSArray alloc] initWithObjects:@"http://ezyclaim.com/Mappimages/slide_b_1.jpg",@"http://ezyclaim.com/Mappimages/slide_b_2.jpg",@"http://ezyclaim.com/Mappimages/slide_b_3.jpg", nil];
+//    _imageUrlArray = [[NSArray alloc] initWithObjects:@"http://ezyclaim.com/Mappimages/slide_b_1.jpg",@"http://ezyclaim.com/Mappimages/slide_b_2.jpg",@"http://ezyclaim.com/Mappimages/slide_b_3.jpg", nil];
     
     
     /*
@@ -118,7 +119,6 @@
 
         //   [revealController setFrontViewController:frontNavigationController];
     }
-    [self setImagesOnScrollView];
     [self addGestureonView];
     
     if([Utility IsiPhoneX])
@@ -132,8 +132,8 @@
 //    _emailTextField.text = @"055678934";//055678934 //055221111
 //    _passwordTextField.text = @"123456";
     // multiple child
-    //_emailTextField.text = @"052323346";
-    //_passwordTextField.text = @"123456";
+    _emailTextField.text = @"inder";
+    _passwordTextField.text = @"123456";
 #endif
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -200,19 +200,36 @@
     for(int i = 0; i < 3; i++)
     {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width * i, 0, self.view.frame.size.width, _bottomScrollView.frame.size.height)];
+        imgView.tag = i;
+        imgView.userInteractionEnabled = true;
+        [self addGuesture:imgView];
         
-        NSString *adImagUrl = [NSString stringWithFormat:@"%@",[_imageUrlArray objectAtIndex:i]];
+        NSString *adImagUrl = [NSString stringWithFormat:@"%@",[[_imageUrlArray objectAtIndex:i]valueForKey:@"url"]];
         [imgView sd_setImageWithURL:[NSURL URLWithString:adImagUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             
             if(!error){
-                [_bottomScrollView addSubview:imgView];
-                _bottomScrollView.contentSize = CGSizeMake(self.view.frame.size.width*3, _bottomScrollView.frame.size.height-50);
-                [_bottomScrollView setNeedsDisplay];
+                [self->_bottomScrollView addSubview:imgView];
+                self->_bottomScrollView.contentSize = CGSizeMake(self.view.frame.size.width*3, self->_bottomScrollView.frame.size.height-50);
+                [self->_bottomScrollView setNeedsDisplay];
                 [_bottomScrollView setNeedsLayout];
             }
         }];
         
     }
+    
+}
+
+-(void)addGuesture:(UIImageView *)imgView {
+    UIGestureRecognizer *tapGuesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnImage:)];
+    [imgView addGestureRecognizer:tapGuesture];
+}
+
+-(void)tapOnImage:(UIGestureRecognizer *)guesture{
+    UIImageView *imageView = (UIImageView *)guesture.view;
+    
+    NSString *redirectUrl = [[_imageUrlArray objectAtIndex:imageView.tag] valueForKey:@"href"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:redirectUrl]];
+    NSLog(@"click on image");
     
 }
 
@@ -360,6 +377,7 @@
                              user.mobileno = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"mobileno"];
                          user.company = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"company"];
                          user.insurancecompany = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"insurancecompany"];
+                          user.insurancecompanylogo = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"insurancecompanylogo"];
                          if([[[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"defaultpolicyholder"] isKindOfClass:[NSString class]])
                          {
                              user.defaultpolicyholder = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"defaultpolicyholder"];
@@ -520,6 +538,41 @@
      }];
 }
 
+
+-(void)getLoginBanner
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetMobileAppBanner"];
+    
+    [[ConnectionManager sharedInstance] sendGETRequestForURL:url withHeader:nil  timeoutInterval:kTimeoutDuration showHUD:YES showSystemError:NO completion:^(NSDictionary *dictionary, NSError *error)
+     {
+         if (!error)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 NSString *serverMsg = [NSString stringWithFormat:@"%@",[dictionary valueForKey:kServerMessage]];
+                 if([[serverMsg lowercaseString] isEqualToString:@"success"])
+                 {
+                     self->_imageUrlArray = [NSMutableArray arrayWithArray:[dictionary valueForKey:@"ListOfBanners"]];
+                     [self setImagesOnScrollView];
+
+                     
+                 }
+                 
+                 else
+                 {
+                     [Utility showAlertViewControllerIn:self title:nil message:serverMsg block:^(int index) {
+                     }];
+                 }
+             });
+         }
+         else
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+             });
+         }
+     }];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:kSignupIdentifier])

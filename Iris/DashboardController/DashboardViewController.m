@@ -28,6 +28,8 @@
 #import "TabbarViewController.h"
 #import "MedicineAlert+CoreDataProperties.h"
 #import "MainSideMenuViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface DashboardViewController ()
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 
@@ -102,6 +104,9 @@
     /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProfile:) name:@"update_profile_notification" object:nil];
      */
     // Do any additional setup after loading the view.
+    
+    NSString *adImagUrl = [NSString stringWithFormat:@"%@", [self.personDetailDictionary valueForKey:@"insurancecompanylogo"]];
+[_dashboardBannerImage sd_setImageWithURL:[NSURL URLWithString:adImagUrl] placeholderImage:[UIImage imageNamed:@"no_image.png"] options:SDWebImageHighPriority];
 }
 
 #pragma mark - private methods

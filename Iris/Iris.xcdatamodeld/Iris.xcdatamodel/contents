@@ -1,151 +1,394 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18G2022" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="AppointmentReminder" representedClassName="AppointmentReminder" syncable="YES" codeGenerationType="class">
-        <attribute name="appointmentdate" optional="YES" attributeType="String"/>
-        <attribute name="casesummary" optional="YES" attributeType="String"/>
-        <attribute name="doctorgender" optional="YES" attributeType="String"/>
-        <attribute name="doctorlang" optional="YES" attributeType="String"/>
-        <attribute name="doctorname" optional="YES" attributeType="String"/>
-        <attribute name="emirate" optional="YES" attributeType="String"/>
-        <attribute name="emiratesid" optional="YES" attributeType="String"/>
-        <attribute name="facility" optional="YES" attributeType="String"/>
-        <attribute name="facilityid" optional="YES" attributeType="String"/>
-        <attribute name="lat" optional="YES" attributeType="String"/>
-        <attribute name="lng" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="region" optional="YES" attributeType="String"/>
-        <attribute name="speciality" optional="YES" attributeType="String"/>
-        <attribute name="timings" optional="YES" attributeType="String"/>
+        <attribute name="appointmentdate" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="casesummary" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="doctorgender" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="doctorlang" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="doctorname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="emirate" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="emiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="facility" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="facilityid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lat" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lng" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="region" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speciality" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="timings" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="Benefit" representedClassName="Benefit" syncable="YES" codeGenerationType="class">
-        <attribute name="benefitdescription" optional="YES" attributeType="String"/>
-        <attribute name="benefitid" optional="YES" attributeType="String"/>
-        <attribute name="parentid" optional="YES" attributeType="String"/>
-        <attribute name="sortid" optional="YES" attributeType="String"/>
-        <attribute name="value" optional="YES" attributeType="String"/>
+        <attribute name="benefitdescription" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="benefitid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="parentid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="sortid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="value" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="BenefitGroup" representedClassName="BenefitGroup" syncable="YES" codeGenerationType="class">
-        <attribute name="groupid" optional="YES" attributeType="String"/>
-        <attribute name="grouptitle" optional="YES" attributeType="String"/>
-        <relationship name="benefits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Benefit"/>
+        <attribute name="groupid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="grouptitle" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <relationship name="benefits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Benefit">
+            <userInfo/>
+        </relationship>
     </entity>
     <entity name="BloodPressure" representedClassName="BloodPressure" syncable="YES" codeGenerationType="class">
-        <attribute name="bloodressureid" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="diastolic" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="pulse" optional="YES" attributeType="String"/>
-        <attribute name="systolic" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="bloodressureid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="diastolic" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="pulse" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="systolic" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="BloodSugar" representedClassName="BloodSugar" syncable="YES" codeGenerationType="class">
-        <attribute name="bloodsugar" optional="YES" attributeType="String"/>
-        <attribute name="bloodsugarid" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="notes" optional="YES" attributeType="String"/>
-        <attribute name="slot" optional="YES" attributeType="String"/>
-        <attribute name="tag" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="bloodsugar" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="bloodsugarid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="notes" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="slot" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="tag" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="BMI" representedClassName="BMI" syncable="YES" codeGenerationType="class">
-        <attribute name="bmicategory" optional="YES" attributeType="String"/>
-        <attribute name="bmiid" optional="YES" attributeType="String"/>
-        <attribute name="bmivalue" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="height" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
-        <attribute name="weight" optional="YES" attributeType="String"/>
+        <attribute name="bmicategory" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="bmiid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="bmivalue" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="height" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="weight" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="Dependent" representedClassName="Dependent" syncable="YES" codeGenerationType="class">
-        <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="emiratesid" optional="YES" attributeType="String"/>
-        <attribute name="fullname" optional="YES" attributeType="String"/>
-        <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="nationality" optional="YES" attributeType="String"/>
-        <attribute name="parentemiratesid" optional="YES" attributeType="String"/>
-        <attribute name="passport" optional="YES" attributeType="String"/>
-        <attribute name="principalmemberid" optional="YES" attributeType="String"/>
-        <attribute name="profileimage" optional="YES" attributeType="String"/>
-        <attribute name="relation" optional="YES" attributeType="String"/>
-        <attribute name="residence" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="emiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="fullname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="gender" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nationality" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="parentemiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="passport" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="principalmemberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="profileimage" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="relation" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="residence" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="HB1AC" representedClassName="HB1AC" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="hb1id" optional="YES" attributeType="String"/>
-        <attribute name="hba1c" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hb1id" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hba1c" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="Lipid" representedClassName="Lipid" syncable="YES" codeGenerationType="class">
-        <attribute name="cholestrol" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="hdl" optional="YES" attributeType="String"/>
-        <attribute name="ldl" optional="YES" attributeType="String"/>
-        <attribute name="lipidid" optional="YES" attributeType="String"/>
-        <attribute name="lipidunit" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
-        <attribute name="triglycerides" optional="YES" attributeType="String"/>
+        <attribute name="cholestrol" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hdl" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="ldl" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lipidid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lipidunit" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="triglycerides" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="MedicineAlert" representedClassName="MedicineAlert" syncable="YES" codeGenerationType="class">
-        <attribute name="category" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="emiratesid" optional="YES" attributeType="String"/>
-        <attribute name="medicines" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="notify" optional="YES" attributeType="String"/>
-        <attribute name="repeat" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="emiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="medicines" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="notify" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="repeat" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="Menu" representedClassName="Menu" syncable="YES" codeGenerationType="class">
-        <attribute name="arabicText" optional="YES" attributeType="String"/>
-        <attribute name="iconURL" optional="YES" attributeType="String"/>
-        <attribute name="isMenuforDependent" optional="YES" attributeType="String"/>
-        <attribute name="menuID" optional="YES" attributeType="String"/>
-        <attribute name="menuname" optional="YES" attributeType="String"/>
-        <attribute name="sortid" optional="YES" attributeType="String"/>
-        <attribute name="status" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="arabicText" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="iconURL" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="isMenuforDependent" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="menuID" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="menuname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="sortid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="status" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="url" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <entity name="PolicyDetails" representedClassName="PolicyDetails" syncable="YES" codeGenerationType="class">
-        <attribute name="companyname" optional="YES" attributeType="String"/>
-        <attribute name="emiratesid" optional="YES" attributeType="String"/>
-        <attribute name="enddate" optional="YES" attributeType="String"/>
-        <attribute name="insurancecompanyname" optional="YES" attributeType="String"/>
-        <attribute name="mastercontractname" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="parentemiratesid" optional="YES" attributeType="String"/>
-        <attribute name="policyno" optional="YES" attributeType="String"/>
-        <attribute name="policyperiod" optional="YES" attributeType="String"/>
-        <attribute name="policystatus" optional="YES" attributeType="String"/>
-        <attribute name="premiumamount" optional="YES" attributeType="String"/>
-        <attribute name="productname" optional="YES" attributeType="String"/>
-        <attribute name="startdate" optional="YES" attributeType="String"/>
-        <relationship name="benefitgroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BenefitGroup"/>
+        <attribute name="companyname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="emiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="enddate" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="insurancecompanyname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="mastercontractname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="parentemiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="policyno" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="policyperiod" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="policystatus" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="premiumamount" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="productname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="startdate" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <relationship name="benefitgroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BenefitGroup">
+            <userInfo/>
+        </relationship>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
-        <attribute name="company" optional="YES" attributeType="String"/>
-        <attribute name="defaultpolicyholder" optional="YES" attributeType="String" defaultValueString="false"/>
-        <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="emiratesid" optional="YES" attributeType="String"/>
-        <attribute name="fullname" optional="YES" attributeType="String"/>
-        <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="insurancecompany" optional="YES" attributeType="String"/>
-        <attribute name="memberid" optional="YES" attributeType="String"/>
-        <attribute name="mobileno" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="nationality" optional="YES" attributeType="String"/>
-        <attribute name="passportno" optional="YES" attributeType="String"/>
-        <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="profileimage" optional="YES" attributeType="String"/>
-        <attribute name="residence" optional="YES" attributeType="String"/>
-        <attribute name="token" optional="YES" attributeType="String"/>
-        <relationship name="appointmentreminder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AppointmentReminder"/>
-        <relationship name="bloodpressuredetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BloodPressure"/>
-        <relationship name="bloodsugardetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BloodSugar"/>
-        <relationship name="bmidetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BMI"/>
-        <relationship name="depend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dependent"/>
-        <relationship name="policydetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PolicyDetails"/>
+        <attribute name="company" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="defaultpolicyholder" optional="YES" attributeType="String" defaultValueString="false">
+            <userInfo/>
+        </attribute>
+        <attribute name="email" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="emiratesid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="fullname" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="gender" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="insurancecompany" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="insurancecompanylogo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="mobileno" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nationality" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="passportno" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="password" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="profileimage" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="residence" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="token" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <relationship name="appointmentreminder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AppointmentReminder">
+            <userInfo/>
+        </relationship>
+        <relationship name="bloodpressuredetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BloodPressure">
+            <userInfo/>
+        </relationship>
+        <relationship name="bloodsugardetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BloodSugar">
+            <userInfo/>
+        </relationship>
+        <relationship name="bmidetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BMI">
+            <userInfo/>
+        </relationship>
+        <relationship name="depend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dependent">
+            <userInfo/>
+        </relationship>
+        <relationship name="policydetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PolicyDetails">
+            <userInfo/>
+        </relationship>
     </entity>
     <elements>
         <element name="AppointmentReminder" positionX="-54" positionY="126" width="128" height="270"/>
@@ -160,6 +403,6 @@
         <element name="MedicineAlert" positionX="-45" positionY="135" width="128" height="165"/>
         <element name="Menu" positionX="-36" positionY="153" width="128" height="163"/>
         <element name="PolicyDetails" positionX="-54" positionY="108" width="128" height="255"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="375"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="390"/>
     </elements>
 </model>

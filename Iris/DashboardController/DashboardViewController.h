@@ -19,8 +19,11 @@
     NSMutableArray * _appointmentListArray;
     NSMutableArray * _medicineAlertListArray;
     NSMutableDictionary *_lastTreatmentDictionary;
-
+    
+    __weak IBOutlet UIImageView *_dashboardBannerImage;
+    
     NSArray *_headerTitleArray;
+    NSMutableArray *_imageUrlArray;
     User *_currentUser;
     __weak IBOutlet UILabel *uaeCall;
     __weak IBOutlet UILabel *omanCall;
@@ -37,5 +40,6 @@
     
 }
 @property (nonatomic,strong)NSDictionary *personDetailDictionary;
+
 
 @end
