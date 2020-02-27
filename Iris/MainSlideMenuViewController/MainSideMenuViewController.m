@@ -157,7 +157,22 @@ struct menu {
     NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
     _isDepenndentMenu = false;
     
-    if(!self.isShowingDependentProfile){
+    
+    NSMutableDictionary * dictMenu = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"menuDictionary"]];
+    NSLog(@"%@", dictMenu);
+    
+    _menuOptions = [[NSMutableArray alloc]initWithArray:[dictMenu valueForKey:@"Menu"]];
+    
+    if (self.isShowingDependentProfile){
+        NSPredicate *predicate =
+        [NSPredicate predicateWithFormat:@"IsMenuforDependent == %d",1];
+        NSArray *userArray =(NSArray*) [_menuOptions filteredArrayUsingPredicate:predicate];
+        [_menuOptions removeAllObjects];
+        _menuOptions = [[NSMutableArray alloc]initWithArray:userArray];
+        [_mainTableView reloadData];
+    }
+    
+ /*   if(!self.isShowingDependentProfile){
 //        _menuOptions = [[NSMutableArray alloc] initWithObjects:@"My History",@"Reimbursment",@"Policy Details",@"Provider Network", @"BMI Calculator", @"Blood Sugar Tracker",@"Blood Pressure Tracker",@"Lipid Tracker",@"Medicine Alert",@"Promotions", @"About Us",@"SignOut", nil];
 //
 //        _menuImages = [[NSMutableArray alloc] initWithObjects:@"history",@"reimbursment",@"policy", @"network", @"calculator", @"bloodsugar", @"bloodpressure",@"lipidtraker",@"medicinealert",@"promotion",@"aboutus",@"signout",nil];
@@ -177,7 +192,7 @@ struct menu {
         
         [_mainTableView reloadData];
         
-    }
+    }*/
     
 }
 
@@ -307,8 +322,13 @@ struct menu {
     
     cell._titleLbl.textColor = (self.isShowingDependentProfile)?kBlueColor:[UIColor whiteColor];
     
-    cell._titleLbl.text = [NSString stringWithFormat:@"%@",[_menuOptions objectAtIndex:indexPath.row]];
-    [cell setImage:[_menuImages objectAtIndex:indexPath.row] forMode:!self.isShowingDependentProfile];
+    NSString *menuTitle = [[_menuOptions objectAtIndex:indexPath.row] valueForKey:@"Menuname"];
+    NSString *menuImageUrl = [[_menuOptions objectAtIndex:indexPath.row] valueForKey:@"IconURL"];
+    cell._titleLbl.text = [Localization languageSelectedStringForKey:menuTitle];
+    
+    [cell._iconImgView sd_setImageWithURL:[NSURL URLWithString:menuImageUrl] placeholderImage:[UIImage imageNamed:@"no_image.png"] options:SDWebImageHighPriority];
+    
+//    [cell setImage:[_menuImages objectAtIndex:indexPath.row] forMode:!self.isShowingDependentProfile];
     //cell._iconImgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[_menuImages objectAtIndex:indexPath.row]]];
     //cell.contentView.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];

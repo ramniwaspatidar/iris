@@ -386,6 +386,7 @@
         <relationship name="depend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dependent">
             <userInfo/>
         </relationship>
+        <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" syncable="YES"/>
         <relationship name="policydetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PolicyDetails">
             <userInfo/>
         </relationship>
@@ -403,6 +404,6 @@
         <element name="MedicineAlert" positionX="-45" positionY="135" width="128" height="165"/>
         <element name="Menu" positionX="-36" positionY="153" width="128" height="163"/>
         <element name="PolicyDetails" positionX="-54" positionY="108" width="128" height="255"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="390"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="405"/>
     </elements>
 </model>

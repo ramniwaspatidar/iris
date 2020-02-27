@@ -351,6 +351,12 @@
                      NSArray *eCardInfoArray = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:0] valueForKey:@"eCardInfo"];
                      [updatedECardInfoDictionary setValue:eCardInfoArray forKey:@"eCardInfo"];
                      [[NSUserDefaults standardUserDefaults] setValue:[Utility archiveData:updatedECardInfoDictionary] forKey:@"policyInfoDictionary"];
+                     
+                     // For Menu details
+                     NSMutableDictionary *menuDictionary = [[NSMutableDictionary alloc] init];
+                     NSArray *menuArray = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:0] valueForKey:@"Menu"];
+                     [menuDictionary setValue:menuArray forKey:@"Menu"];
+                     [[NSUserDefaults standardUserDefaults] setValue:[Utility archiveData:menuDictionary] forKey:@"menuDictionary"];
                      //=================================
                      if(defaultArray.count > 0)
                          [updatedDictionary addEntriesFromDictionary:[defaultArray firstObject]];
