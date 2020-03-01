@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Iris-Swift.h"
 
-@interface ViewYourECardViewController : UIViewController {
+
+@interface ViewYourECardViewController : UIViewController<delegateDownloadFinished,UIDocumentInteractionControllerDelegate> {
     
     __weak IBOutlet UIButton *sideMenuBtnOutlet;
     __weak IBOutlet UIImageView *notificationIconImageView;

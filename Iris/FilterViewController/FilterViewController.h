@@ -24,6 +24,10 @@
     NSMutableArray *_facilityArray;
     __weak IBOutlet UIButton *topBtn;
     NSMutableArray *_specialityArray;
+    NSMutableArray *_languageArray;
+    NSMutableArray *_genderArray;
+
+
     NSIndexPath *_activeCellIndexPath;
     BOOL keyboardShown;
     CGFloat keyboardOverlap;

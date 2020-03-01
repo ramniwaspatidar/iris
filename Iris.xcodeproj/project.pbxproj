@@ -662,6 +662,9 @@
 		90EA9DE9229959B7008F108C /* LanguageChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA9DE6229959B7008F108C /* LanguageChangeViewController.xib */; };
 		90EA9DEC22995A88008F108C /* Localization.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EA9DEA22995A88008F108C /* Localization.h */; };
 		90EA9DED22995A88008F108C /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA9DEB22995A88008F108C /* Localization.m */; };
+		A80881C0240BECAE00BE4E27 /* ClubIRISViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80881BF240BECAE00BE4E27 /* ClubIRISViewController.swift */; };
+		A80B4E792408B8CB00EC866F /* EcardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B4E782408B8CB00EC866F /* EcardModel.swift */; };
+		A819891F240ADBD10018A409 /* ECardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819891E240ADBD10018A409 /* ECardViewController.swift */; };
 		E9E5D8BBF04A981098EAE5EA /* libPods-Iris.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A488228A3656B719ACC900F7 /* libPods-Iris.a */; };
 		EC8B595B220C4CB100388E2A /* PdfWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8B5959220C4CB100388E2A /* PdfWebViewController.h */; };
 		EC8B595C220C4CB100388E2A /* PdfWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8B595A220C4CB100388E2A /* PdfWebViewController.m */; };
@@ -1360,6 +1363,11 @@
 		90EA9DEB22995A88008F108C /* Localization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Localization.m; sourceTree = "<group>"; };
 		90EA9DEE22995B0B008F108C /* LocalizationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
 		A488228A3656B719ACC900F7 /* libPods-Iris.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iris.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8042D06240B69760096D544 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A80881BF240BECAE00BE4E27 /* ClubIRISViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubIRISViewController.swift; sourceTree = "<group>"; };
+		A80B4E772408B8CB00EC866F /* Iris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iris-Bridging-Header.h"; sourceTree = "<group>"; };
+		A80B4E782408B8CB00EC866F /* EcardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcardModel.swift; sourceTree = "<group>"; };
+		A819891E240ADBD10018A409 /* ECardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECardViewController.swift; sourceTree = "<group>"; };
 		AAC3E1410FAA6D1D30E404FF /* Pods-Iris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Iris/Pods-Iris.debug.xcconfig"; sourceTree = "<group>"; };
 		AB359F1D0D04C7C45EC009E5 /* Pods-IrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IrisTests/Pods-IrisTests.release.xcconfig"; sourceTree = "<group>"; };
 		CAEA69CC128D234CE177909F /* Pods-Iris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iris.release.xcconfig"; path = "Pods/Target Support Files/Pods-Iris/Pods-Iris.release.xcconfig"; sourceTree = "<group>"; };
@@ -1501,6 +1509,7 @@
 		090EDB7A1FE6DDEA0024115C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8042D06240B69760096D544 /* UIKit.framework */,
 				090EDB7B1FE6DDEA0024115C /* MapKit.framework */,
 				A488228A3656B719ACC900F7 /* libPods-Iris.a */,
 				8CC25A0EA6F6A35E4D9CDBFA /* libPods-IrisTests.a */,
@@ -1883,6 +1892,9 @@
 				09F3F0C31FCC3BF1009A316B /* Images */,
 				00B2637C201613B50066BA5F /* NotificationView */,
 				09F3F08E1FCC368D009A316B /* AppDelegate.h */,
+				A80881BE240BEC8400BE4E27 /* ClubIRIS */,
+				A80B4E772408B8CB00EC866F /* Iris-Bridging-Header.h */,
+				A80B4E762408B88500EC866F /* Swift Classes */,
 				09F3F08F1FCC368D009A316B /* AppDelegate.m */,
 				090C71B520209CE9003405B9 /* terms-conditions.html */,
 				09F3F0941FCC368D009A316B /* Main.storyboard */,
@@ -2580,6 +2592,23 @@
 			path = LanguageChange;
 			sourceTree = "<group>";
 		};
+		A80881BE240BEC8400BE4E27 /* ClubIRIS */ = {
+			isa = PBXGroup;
+			children = (
+				A80881BF240BECAE00BE4E27 /* ClubIRISViewController.swift */,
+			);
+			path = ClubIRIS;
+			sourceTree = "<group>";
+		};
+		A80B4E762408B88500EC866F /* Swift Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A80B4E782408B8CB00EC866F /* EcardModel.swift */,
+				A819891E240ADBD10018A409 /* ECardViewController.swift */,
+			);
+			path = "Swift Classes";
+			sourceTree = "<group>";
+		};
 		A983C031EDABB52DE08E1C1B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2870,6 +2899,7 @@
 				TargetAttributes = {
 					09F3F08A1FCC368D009A316B = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -3425,6 +3455,7 @@
 				09FB5FB71FDE57CE00A1334F /* FSCalendarDelegationFactory.m in Sources */,
 				09F84B951FD1691E003D1CEC /* DashboardViewController.m in Sources */,
 				09F7674E1FE7F97C009CB1B5 /* SearchResultsControllerTableViewController.m in Sources */,
+				A80881C0240BECAE00BE4E27 /* ClubIRISViewController.swift in Sources */,
 				09FB5FAE1FDE57CE00A1334F /* FSCalendarWeekdayView.m in Sources */,
 				09FB5FC41FDE57CE00A1334F /* FSCalendarCell.m in Sources */,
 				09F59FFD200CF99C0023C755 /* BloodPressureChartViewController.m in Sources */,
@@ -3441,6 +3472,7 @@
 				0948B6D72021AB30002D6CE6 /* RepeatViewController.m in Sources */,
 				09F84BA41FD16AE9003D1CEC /* TabbarViewController.m in Sources */,
 				09F62AC51FFBC551000A8E95 /* MedicineTableViewCell.m in Sources */,
+				A819891F240ADBD10018A409 /* ECardViewController.swift in Sources */,
 				09F84BA91FD16F61003D1CEC /* RevealViewController.m in Sources */,
 				090EDB801FE6DF6B0024115C /* Location.m in Sources */,
 				09FEE4C92005EC1600794456 /* UIColor+FSPalette.m in Sources */,
@@ -3498,6 +3530,7 @@
 				09FAA4991FFFAB1E00EBF53C /* ProfileDetailSaveTableViewCell.m in Sources */,
 				097544101FCEF40700230B27 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				097544241FCEF40700230B27 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				A80B4E792408B8CB00EC866F /* EcardModel.swift in Sources */,
 				007D9D122012134D00A859DB /* HB1AC+CoreDataProperties.m in Sources */,
 				09F62AB71FFB5438000A8E95 /* BloodSugarDeleteViewController.m in Sources */,
 				097544281FCEF40700230B27 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
@@ -3889,10 +3922,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAC3E1410FAA6D1D30E404FF /* Pods-Iris.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 69RR73BBGB;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Iris/Info.plist;
@@ -3902,6 +3938,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "45524ed2-3f70-4f45-a8ba-45bfb3ac1631";
 				PROVISIONING_PROFILE_SPECIFIER = "Enterprise Development New";
+				SWIFT_OBJC_BRIDGING_HEADER = "Iris/Iris-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -3910,10 +3949,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAEA69CC128D234CE177909F /* Pods-Iris.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 69RR73BBGB;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Iris/Info.plist;
@@ -3923,6 +3965,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "45524ed2-3f70-4f45-a8ba-45bfb3ac1631";
 				PROVISIONING_PROFILE_SPECIFIER = "Enterprise Development New";
+				SWIFT_OBJC_BRIDGING_HEADER = "Iris/Iris-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -3931,6 +3975,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D51F2EE3AE06E7E88F7ACD0 /* Pods-IrisTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IrisTests/Info.plist;
@@ -3946,6 +3991,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB359F1D0D04C7C45EC009E5 /* Pods-IrisTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IrisTests/Info.plist;
@@ -3961,6 +4007,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8905F3FAA4D13B0C651C2BCC /* Pods-IrisUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IrisUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3975,6 +4022,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E151C5B2BF081E7C482F3C5 /* Pods-IrisUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IrisUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

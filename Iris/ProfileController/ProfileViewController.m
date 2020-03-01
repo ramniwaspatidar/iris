@@ -95,6 +95,13 @@
 
 -(void)setUserProfileData
 {
+    
+    for (UIView *v in _scrollView.subviews) {
+        if (![v isKindOfClass:[UIImageView class]]) {
+            [v removeFromSuperview];
+        }
+    }
+    
     NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
     
     NSString *emiratesId = [userInfoDic valueForKey:@"emiratesid"];
@@ -149,19 +156,28 @@
             dependentNameLabel.text =  dependent.fullname;
             NSLog(@"%@",dependent.profileimage);
             UIImageView *profileImageView = [[UIImageView alloc]initWithFrame:CGRectMake(xPoint, 0, imageWidth, imageWidth)];
-            profileImageView.image = [UIImage imageNamed:@"userplaceholde"];
+           // profileImageView.image = [UIImage imageNamed:@"userplaceholde"];
+            
+            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [indicator startAnimating];
+            [profileImageView addSubview:indicator];
             
             if(dependent.profileimage)
             {
-                [profileImageView sd_setImageWithURL:[NSURL URLWithString:dependent.profileimage] placeholderImage:[UIImage imageNamed:@"userplaceholde.png"]];
-                dependentButtonView.clipsToBounds = true;
-                
+                dispatch_async(dispatch_get_global_queue(0,0), ^{
+                    NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:dependent.profileimage]];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        profileImageView.image = [UIImage imageWithData: data];
+                        [indicator stopAnimating];
+                        [indicator removeFromSuperview];
+
+                    });
+                });
             }
             
             dependentButtonView.tag = i;
-            [dependentButtonView setImage:profileImageView.image forState:UIControlStateNormal];
             [dependentButtonView addTarget:self action:@selector(dependentButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            
+            [_scrollView addSubview:profileImageView];
             [_scrollView addSubview:dependentButtonView];
             [_scrollView addSubview:dependentNameLabel];
             

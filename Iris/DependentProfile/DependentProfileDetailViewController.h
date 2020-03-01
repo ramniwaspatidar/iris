@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "User+CoreDataProperties.h"
+#import "HIPRootViewController.h"
+#import "PolicyDetails+CoreDataProperties.h"
 
 @interface DependentProfileDetailViewController : UIViewController
 {
@@ -46,7 +48,7 @@
     __weak IBOutlet UILabel *nationality;
     __weak IBOutlet UILabel *switchToLbl;
     
-    
+       NSUInteger capturedMode;
     
     
     
@@ -55,7 +57,10 @@
 }
 @property(nonatomic,assign)BOOL showMenuIcon;
 @property(nonatomic,weak) IBOutlet UIButton *backButton;
+@property(nonatomic,strong) UIImagePickerController *imagePicker;
 
 @property(nonatomic,strong)Dependent *dependentUser;
+@property(nonatomic,strong)User *userPolicyDetails;
+
 
 @end

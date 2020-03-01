@@ -835,6 +835,16 @@
 
 "Clinic Name/Doctor Name" = "أسم الطبيب/ أسم العيادة";
 
+"Doctor Language" = "لغة الطبيب ";
+
+"Doctor Gender" = "طبيب الجنس";
+
+"Filter English" = "الإنجليزية";
+
+"Hindi" = "الهندية";
+
+"English" = "English";
+
 "Specialization" = "التخصص";
 
 "Proximity" = "بالقرب من";

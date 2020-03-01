@@ -336,6 +336,10 @@
 
 "English" = "عَرَبِيّ";
 
+"Filter English" = "English";
+
+"Hindi" = "Hindi";
+
 "OTP" = "OTP";
 
 "Please enter" = "Please enter";
@@ -827,6 +831,10 @@
 "Sign Out" = "Sign Out";
 
 "Clinic Name/Doctor Name" = "Clinic Name/Doctor Name";
+
+"Doctor Language" = "Doctor Language";
+
+"Doctor Gender" = "Doctor Gender";
 
 "Specialization" = "Specialization";
 

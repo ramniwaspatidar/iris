@@ -164,13 +164,17 @@ struct menu {
     _menuOptions = [[NSMutableArray alloc]initWithArray:[dictMenu valueForKey:@"Menu"]];
     
     if (self.isShowingDependentProfile){
+        
+        _isDepenndentMenu = true;
+
         NSPredicate *predicate =
         [NSPredicate predicateWithFormat:@"IsMenuforDependent == %d",1];
         NSArray *userArray =(NSArray*) [_menuOptions filteredArrayUsingPredicate:predicate];
         [_menuOptions removeAllObjects];
         _menuOptions = [[NSMutableArray alloc]initWithArray:userArray];
-        [_mainTableView reloadData];
     }
+    [_mainTableView reloadData];
+
     
  /*   if(!self.isShowingDependentProfile){
 //        _menuOptions = [[NSMutableArray alloc] initWithObjects:@"My History",@"Reimbursment",@"Policy Details",@"Provider Network", @"BMI Calculator", @"Blood Sugar Tracker",@"Blood Pressure Tracker",@"Lipid Tracker",@"Medicine Alert",@"Promotions", @"About Us",@"SignOut", nil];
@@ -323,8 +327,17 @@ struct menu {
     cell._titleLbl.textColor = (self.isShowingDependentProfile)?kBlueColor:[UIColor whiteColor];
     
     NSString *menuTitle = [[_menuOptions objectAtIndex:indexPath.row] valueForKey:@"Menuname"];
+    
+    NSString *arabicText = [[_menuOptions objectAtIndex:indexPath.row] valueForKey:@"ArabicText"];
+    
+    if ([arabicText isEqualToString:@"English"]){
+        cell._titleLbl.text = [Localization languageSelectedStringForKey:@"English"];
+    }
+    else {
+        cell._titleLbl.text = [Localization languageSelectedStringForKey:menuTitle];
+    }
+
     NSString *menuImageUrl = [[_menuOptions objectAtIndex:indexPath.row] valueForKey:@"IconURL"];
-    cell._titleLbl.text = [Localization languageSelectedStringForKey:menuTitle];
     
     [cell._iconImgView sd_setImageWithURL:[NSURL URLWithString:menuImageUrl] placeholderImage:[UIImage imageNamed:@"no_image.png"] options:SDWebImageHighPriority];
     
@@ -357,13 +370,134 @@ struct menu {
     _selectedIndex = indexPath;
     [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
     
-    if(indexPath.row == [_menuOptions count]-1)
-    {
+    
+     NSString *menuTitle = [[_menuOptions objectAtIndex:indexPath.row] valueForKey:@"Menuname"];
+    
+    if ([menuTitle isEqualToString:@"Policy Details"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        PolicyViewController *policyViewController = [storyBoard instantiateViewControllerWithIdentifier:kPolicyViewStoryboardName];
+        [self displayContentController:policyViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"View E-Card"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ViewYourECardViewController *viewYourECardViewController = [storyBoard instantiateViewControllerWithIdentifier:kViewYourECardViewStoryboardName];
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        [appDelegate setShouldRotate:YES]; // or NO to disable rotation
+        
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+        
+        [self displayContentController:viewYourECardViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Claim History"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MyHistoryViewController *historyViewController = [storyBoard instantiateViewControllerWithIdentifier:kMyHistoryStoryBoardName];
+        [self displayContentController:historyViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Reimbursement"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ReimbursmentViewController *reimbursementViewController = [storyBoard instantiateViewControllerWithIdentifier:kReimbursementStoryBoardName];
+        [self displayContentController:reimbursementViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Provider Network"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ProviderNetworkViewController *providerNetworkViewController = [storyBoard instantiateViewControllerWithIdentifier:kProviderNetworkViewStoryboardName];
+        [self displayContentController:providerNetworkViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"BMI Calculator"]){
+        
+        if(_isDepenndentMenu){
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            PromotionViewController *promotionViewController = [storyBoard instantiateViewControllerWithIdentifier:kPromotionStoryboardName];
+            [self displayContentController:promotionViewController];
+            
+        }else{
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            BMICalculatorViewController *bmiViewController = [storyBoard instantiateViewControllerWithIdentifier:kBMICalculatorStoryboardName];
+            [self displayContentController:bmiViewController];
+        }
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Blood Sugar Tracker"]){
+        
+        if(_isDepenndentMenu){
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            AboutUsViewController *aboutUsViewController = [storyBoard instantiateViewControllerWithIdentifier:kAboutUsStoryBoardIdentifier];
+            [self displayContentController:aboutUsViewController];
+            
+        }else{
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            BloodPressureTrackerViewController *bpTrackerViewController = [storyBoard instantiateViewControllerWithIdentifier:kBloodSugarTrackerStoryboardName];
+            [self displayContentController:bpTrackerViewController];
+        }
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Blood Pressure Tracker"]){
+        
+        if(_isDepenndentMenu){
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            WebViewsViewController *webViewViewController = [storyBoard instantiateViewControllerWithIdentifier:kWebViewsViewController];
+            [self displayContentController:webViewViewController];
+        }
+        else{
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            BloodPressureTrackerViewController *bpTrackerViewController = [storyBoard instantiateViewControllerWithIdentifier:kBloodPressureTrackerStoryboardName];
+            [self displayContentController:bpTrackerViewController];
+        }
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Lipid Tracker"]){
+        
+        if(_isDepenndentMenu){
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate logout];
+        }else{
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LipidViewController *lipidViewController = [storyBoard instantiateViewControllerWithIdentifier:kLipidTrackerStoryboardName];
+            [self displayContentController:lipidViewController];
+        }
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Medicine Alert"]){
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MedicineAlertViewController *medicineViewController = [storyBoard instantiateViewControllerWithIdentifier:kMedicineAlertStoryboardName];
+        [self displayContentController:medicineViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Club IRIS"]){
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ClubIRISViewController *clubIRISViewController = [storyBoard instantiateViewControllerWithIdentifier:@"ClubIRISViewController"];
+        [self displayContentController:clubIRISViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Zest Portal"]){
+        
+    }
+    else  if ([menuTitle isEqualToString:@"About Us"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        AboutUsViewController *aboutUsViewController = [storyBoard instantiateViewControllerWithIdentifier:kAboutUsStoryBoardIdentifier];
+        [self displayContentController:aboutUsViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Feedback"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        WebViewsViewController *webViewViewController = [storyBoard instantiateViewControllerWithIdentifier:kWebViewsViewController];
+        [self displayContentController:webViewViewController];
+        
+    }
+    else  if ([menuTitle isEqualToString:@"Sign Out"]){
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [appDelegate logout];
+        
     }
-    if(indexPath.row == [_menuOptions count]-2)
-    {
+    else {
         
         
         //Handle your yes please button action here
@@ -396,194 +530,10 @@ struct menu {
         
         [appDelegate performSelector:@selector(autoLogin) withObject:nil afterDelay:0.0];//12
         
-        
-        
-//      //  [self isCur]
-//        UIAlertController * alert = [UIAlertController
-//                                     alertControllerWithTitle:@"Language Change"
-//                                     message:@"The app will restart to change the language. Do you want to proceed?"
-//                                     preferredStyle:UIAlertControllerStyleAlert];
-//
-//        //Add Buttons
-//
-//        UIAlertAction* yesButton = [UIAlertAction
-//                                    actionWithTitle:@"Yes"
-//                                    style:UIAlertActionStyleDefault
-//                                    handler:^(UIAlertAction * action) {
-//
-//
-//
-//                                        //Handle your yes please button action here
-//                                        if ([MainSideMenuViewController isCurrentLanguageEnglish]){
-//                                            [[NSUserDefaults standardUserDefaults] setObject:@[@"ar"] forKey:@"AppleLanguages"];
-//                                            NSLocalizedStringFromTableInBundle(@"Localizable", nil, [MainSideMenuViewController currentLanguageBundle], @"comment");
-//                                           //exit(0);
-////
-////                                            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-////
-////
-////                                            [appDelegate performSelector:@selector(showsplashScreenWithDelay:) withObject:nil afterDelay:1.0];//12
-//                                            NSLog(@"Arabic");
-//
-//                                            [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
-//                                        }
-//                                        else{
-//                                            [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
-//
-//                                            [[NSUserDefaults standardUserDefaults] setObject:@[@"en"] forKey:@"AppleLanguages"];
-//                                            NSLocalizedStringFromTableInBundle(@"Localizable", nil, [MainSideMenuViewController currentLanguageBundle], @"comment");
-////                                            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-////
-////
-////                                            [appDelegate performSelector:@selector(showsplashScreenWithDelay:) withObject:nil afterDelay:1.0];//12
-////                                            NSLog(@"English");
-//                                          // exit(0);
-//                                        }
-//                                        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//
-//                                        [appDelegate performSelector:@selector(autoLogin) withObject:nil afterDelay:0.0];//12
-//
-//
-//
-//
-//                                    }];
-//
-//        UIAlertAction* noButton = [UIAlertAction
-//                                   actionWithTitle:@"Cancel"
-//                                   style:UIAlertActionStyleDefault
-//                                   handler:^(UIAlertAction * action) {
-//                                       //Handle no, thanks button
-//                                   }];
-//
-//        //Add your buttons to alert controller
-//
-//        [alert addAction:yesButton];
-//        [alert addAction:noButton];
-//
-//        [self presentViewController:alert animated:YES completion:nil];
-       
-        
     }
-   else if(indexPath.row == 0)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        PolicyViewController *policyViewController = [storyBoard instantiateViewControllerWithIdentifier:kPolicyViewStoryboardName];
-        [self displayContentController:policyViewController];
-    }else if(indexPath.row == 1)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ViewYourECardViewController *viewYourECardViewController = [storyBoard instantiateViewControllerWithIdentifier:kViewYourECardViewStoryboardName];
-        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-        [appDelegate setShouldRotate:YES]; // or NO to disable rotation
-        
-        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
-        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-
-        [self displayContentController:viewYourECardViewController];
-    }
-    else if(indexPath.row == 2)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        MyHistoryViewController *historyViewController = [storyBoard instantiateViewControllerWithIdentifier:kMyHistoryStoryBoardName];
-        [self displayContentController:historyViewController];
-    }
-    else if(indexPath.row == 3)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ReimbursmentViewController *reimbursementViewController = [storyBoard instantiateViewControllerWithIdentifier:kReimbursementStoryBoardName];
-        [self displayContentController:reimbursementViewController];
-    }
-    else if(indexPath.row == 4)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ProviderNetworkViewController *providerNetworkViewController = [storyBoard instantiateViewControllerWithIdentifier:kProviderNetworkViewStoryboardName];
-        [self displayContentController:providerNetworkViewController];
-    }
-    else if(indexPath.row == 5)
-    {
-        if(_isDepenndentMenu){
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            PromotionViewController *promotionViewController = [storyBoard instantiateViewControllerWithIdentifier:kPromotionStoryboardName];
-            [self displayContentController:promotionViewController];
-            
-        }else{
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            BMICalculatorViewController *bmiViewController = [storyBoard instantiateViewControllerWithIdentifier:kBMICalculatorStoryboardName];
-            [self displayContentController:bmiViewController];
-        }
-        
-    }
-    else if(indexPath.row == 6)
-    {
-        if(_isDepenndentMenu){
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            AboutUsViewController *aboutUsViewController = [storyBoard instantiateViewControllerWithIdentifier:kAboutUsStoryBoardIdentifier];
-            [self displayContentController:aboutUsViewController];
-           
-        }else{
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            BloodPressureTrackerViewController *bpTrackerViewController = [storyBoard instantiateViewControllerWithIdentifier:kBloodSugarTrackerStoryboardName];
-            [self displayContentController:bpTrackerViewController];
-        }
-    }
-    else if(indexPath.row == 7)
-    {
-        if(_isDepenndentMenu){
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            WebViewsViewController *webViewViewController = [storyBoard instantiateViewControllerWithIdentifier:kWebViewsViewController];
-            [self displayContentController:webViewViewController];
-        }
-        else{
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            BloodPressureTrackerViewController *bpTrackerViewController = [storyBoard instantiateViewControllerWithIdentifier:kBloodPressureTrackerStoryboardName];
-            [self displayContentController:bpTrackerViewController];
-        }
-    }
-    else if(indexPath.row == 8)
-    {
-        if(_isDepenndentMenu){
-            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            [appDelegate logout];
-        }else{
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            LipidViewController *lipidViewController = [storyBoard instantiateViewControllerWithIdentifier:kLipidTrackerStoryboardName];
-            [self displayContentController:lipidViewController];
-        }
-        
-    }
-    else if(indexPath.row == 9)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        MedicineAlertViewController *medicineViewController = [storyBoard instantiateViewControllerWithIdentifier:kMedicineAlertStoryboardName];
-        [self displayContentController:medicineViewController];
-    }
-   else if(indexPath.row == 10)
-    {
-//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        PromotionViewController *promotionViewController = [storyBoard instantiateViewControllerWithIdentifier:kPromotionStoryboardName];
-//        [self displayContentController:promotionViewController];
-        
-                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                PdfWebViewController *promotionViewController = [storyBoard instantiateViewControllerWithIdentifier:@"PdfWebViewController"];
-                [self displayContentController:promotionViewController];
-        
-//            PdfWebViewController *myViewController = [storyboard instantiateViewControllerWithIdentifier:@"PdfWebViewController"];
-//            UINavigationController *navigationController = [[UINavigationController alloc] init];
-//            [self.navigationController pushViewController:myViewController animated:YES];
-    }
-    else if(indexPath.row == 11)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        AboutUsViewController *aboutUsViewController = [storyBoard instantiateViewControllerWithIdentifier:kAboutUsStoryBoardIdentifier];
-        [self displayContentController:aboutUsViewController];
-    }
-    else if(indexPath.row == 12)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        WebViewsViewController *webViewViewController = [storyBoard instantiateViewControllerWithIdentifier:kWebViewsViewController];
-        [self displayContentController:webViewViewController];
-    }
-    //[_mainTableView reloadData];
+    
+    
+    
 }
 
 - (void) displayContentController: (UIViewController*) content;

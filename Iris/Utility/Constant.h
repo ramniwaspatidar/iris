@@ -90,6 +90,8 @@
 
 #define kForgotPasswordOTPViewIdentifier @"ForgotPasswordOTPViewIdentifier"
 
+#define kdownloadEcardSegue @"downloadEcardSegue"
+
 #define kDependentProfileDetailIdentifier @"DependentProfileDetailIdentifier"
 //#define kAPIBaseURL @"http://ezyclaim.com/MobileAPIBeta/EzyclaimService.svc/"
 #define kAPIBaseURL @"http://demoiris.ezyclaim.com:8080/Mobileapp/EzyclaimService.svc/"

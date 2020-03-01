@@ -60,10 +60,15 @@
         
         //   [revealController setFrontViewController:frontNavigationController];
     }
-    _placeholderArray = [[NSMutableArray alloc] initWithObjects:[Localization languageSelectedStringForKey:@"Clinic Name/Doctor Name"],[Localization languageSelectedStringForKey:@"Specialization"],[Localization languageSelectedStringForKey:@"Proximity"], nil];
-    _inputDataArray = [[NSMutableArray alloc] initWithObjects:@"",@"",@"", nil];
+    _placeholderArray = [[NSMutableArray alloc] initWithObjects:[Localization languageSelectedStringForKey:@"Clinic Name/Doctor Name"],[Localization languageSelectedStringForKey:@"Doctor Language"],[Localization languageSelectedStringForKey:@"Doctor Gender"],[Localization languageSelectedStringForKey:@"Specialization"],[Localization languageSelectedStringForKey:@"Proximity"], nil];
+    
+    _inputDataArray = [[NSMutableArray alloc] initWithObjects:@"",@"",@"",@"",@"", nil];
     [self initializeProximityData];
     //_proximityArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];
+    
+    _genderArray = [[NSMutableArray alloc] initWithObjects:[Localization languageSelectedStringForKey:@"Male"],[Localization languageSelectedStringForKey:@"Female"], nil];
+    _languageArray = [[NSMutableArray alloc] initWithObjects:[Localization languageSelectedStringForKey:@"Filter English"],[Localization languageSelectedStringForKey:@"Hindi"], nil];
+
     _doctorNameArray = [[NSMutableArray alloc] init];
     _doctorSearchArray = [[NSMutableArray alloc] init];
     _facilityArray = [[NSMutableArray alloc] init];
@@ -222,19 +227,31 @@
     }
     else
     {
-        if(indexPath.row == 1 || indexPath.row == 2)
+        if(indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4)
         {
             [self.view endEditing:YES];
-           if(indexPath.row == 1)
+           
+            if(indexPath.row == 1)
            {
-                currentPicker = @"speciality";
-               _pickerTitleLabel.text = [Localization languageSelectedStringForKey:@"Specialization"];
+               currentPicker = @"language";
+               _pickerTitleLabel.text = [Localization languageSelectedStringForKey:@"Doctor Language"];
            }
            else if(indexPath.row == 2)
+           {
+               currentPicker = @"gender";
+               _pickerTitleLabel.text = [Localization languageSelectedStringForKey:@"Doctor Gender"];
+           }
+           else if(indexPath.row == 3)
+            {
+                currentPicker = @"speciality";
+                _pickerTitleLabel.text = [Localization languageSelectedStringForKey:@"Specialization"];
+            }
+           else if(indexPath.row == 4)
            {
                currentPicker = @"proximity";
                _pickerTitleLabel.text = [Localization languageSelectedStringForKey:@"Choose Proximity(Km)"];
            }
+           
             
             if(currentPicker)
             {
@@ -290,14 +307,26 @@
             else
                 [searchDictionary setValue:[_inputDataArray objectAtIndex:0] forKey:@"doctor"];
         }
+       
+        
+        
         if(![[Utility trimString:[_inputDataArray objectAtIndex:1]] isEqualToString:@""])
         {
-            [searchDictionary setValue:[_inputDataArray objectAtIndex:1] forKey:@"specialty"];
+            [searchDictionary setValue:[_inputDataArray objectAtIndex:1] forKey:@"language"];
         }
         
         if(![[Utility trimString:[_inputDataArray objectAtIndex:2]] isEqualToString:@""])
         {
-            [searchDictionary setValue:[_inputDataArray objectAtIndex:2] forKey:@"proximity"];
+            [searchDictionary setValue:[_inputDataArray objectAtIndex:2] forKey:@"gender"];
+        }
+        
+        if(![[Utility trimString:[_inputDataArray objectAtIndex:3]] isEqualToString:@""])
+        {
+            [searchDictionary setValue:[_inputDataArray objectAtIndex:3] forKey:@"specialty"];
+        }
+        if(![[Utility trimString:[_inputDataArray objectAtIndex:4]] isEqualToString:@""])
+        {
+            [searchDictionary setValue:[_inputDataArray objectAtIndex:4] forKey:@"proximity"];
         }
         
         SearchViewController *searchViewController = self.customDelegate;
@@ -315,16 +344,31 @@
        // [_inputDataArray replaceObjectAtIndex:<#(NSUInteger)#> withObject:<#(nonnull id)#>];
        // indexPath = [NSIndexPath indexPathForRow:5 inSection:0];
     }
+    
+    
+    else if([currentPicker isEqualToString:@"language"])
+    {
+        [_inputDataArray replaceObjectAtIndex:1 withObject:[_languageArray objectAtIndex:selectedRangeRow]];
+        indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+        
+    }
+    else if([currentPicker isEqualToString:@"gender"])
+    {
+        [_inputDataArray replaceObjectAtIndex:2 withObject:[_genderArray objectAtIndex:selectedRangeRow]];
+        indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+        
+    }
+    
     else if([currentPicker isEqualToString:@"speciality"])
     {
-        [_inputDataArray replaceObjectAtIndex:1 withObject:[_specialityArray objectAtIndex:selectedRangeRow]];
-        indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+        [_inputDataArray replaceObjectAtIndex:3 withObject:[_specialityArray objectAtIndex:selectedRangeRow]];
+        indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
         
     }
     else if([currentPicker isEqualToString:@"proximity"])
     {
-        [_inputDataArray replaceObjectAtIndex:2 withObject:[_proximityArray objectAtIndex:selectedRangeRow]];
-        indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+        [_inputDataArray replaceObjectAtIndex:4 withObject:[_proximityArray objectAtIndex:selectedRangeRow]];
+        indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
         
     }
     [_mainTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
@@ -565,6 +609,10 @@
         return _specialityArray.count;
     else if([currentPicker isEqualToString:@"proximity"])
         return _proximityArray.count;
+    else if([currentPicker isEqualToString:@"language"])
+        return _languageArray.count;
+    else if([currentPicker isEqualToString:@"gender"])
+        return _genderArray.count;
     
     return 0;
 }
@@ -577,6 +625,10 @@
         return _specialityArray[row];
     else if([currentPicker isEqualToString:@"proximity"])
         return _proximityArray[row];
+    else if([currentPicker isEqualToString:@"language"])
+        return _languageArray[row];
+    else if([currentPicker isEqualToString:@"gender"])
+        return _genderArray[row];
     return @"";
 }
 

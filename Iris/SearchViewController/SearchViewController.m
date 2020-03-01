@@ -1042,6 +1042,11 @@ didFailAutocompleteWithError:(NSError *)error {
         {
             [dictionary setValue:[filteredDictionary valueForKey:@"gender"] forKey:@"doctorgender"];
         }
+        
+        if([filteredDictionary valueForKey:@"language"])
+        {
+            [dictionary setValue:[filteredDictionary valueForKey:@"language"] forKey:@"Language"];
+        }
     }
     
     

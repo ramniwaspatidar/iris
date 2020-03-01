@@ -13,6 +13,7 @@
 #import "Utility.h"
 #import "Localization.h"
 #import "MainSideMenuViewController.h"
+
 @interface PdfWebViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *viewOfWebView;
 @property (weak, nonatomic) IBOutlet UIButton *backbtn;

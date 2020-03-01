@@ -39,12 +39,6 @@
     __weak IBOutlet UILabel *switchLbl;
     
     
-    
-    
-    
-    
-    
-    
 }
 @property(nonatomic,strong)NSDictionary *inputDictionary;
 @property(nonatomic,strong)User *currentUser;
