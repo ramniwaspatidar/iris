@@ -4,3 +4,4 @@
 
 #import "Localization.h"
 #import "RevealViewController.h"
+#import "MainSideMenuViewController.h"

@@ -2095,6 +2095,7 @@
                         <viewLayoutGuide key="safeArea" id="d0U-AH-gjh"/>
                     </view>
                     <connections>
+                        <outlet property="revealMenu" destination="Y0I-KY-5Zk" id="a3L-OJ-grj"/>
                         <outlet property="titleLabel" destination="5Cw-21-j5X" id="LpH-1l-s0R"/>
                     </connections>
                 </viewController>
