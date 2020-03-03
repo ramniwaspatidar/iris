@@ -8015,7 +8015,7 @@
                                         <rect key="frame" x="235" y="40" width="140" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-Pw-Soj">
-                                                <rect key="frame" x="54.333333333333321" y="8.6666666666666714" width="77.666666666666686" height="19"/>
+                                                <rect key="frame" x="74.333333333333314" y="8.6666666666666714" width="57.666666666666657" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="HSI-yr-aRT"/>
                                                 </constraints>
@@ -8024,7 +8024,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last One Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-yX-lhm">
-                                                <rect key="frame" x="54.333333333333321" y="37" width="77.666666666666686" height="18"/>
+                                                <rect key="frame" x="74.333333333333314" y="37" width="57.666666666666657" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="Dj1-xy-HKp"/>
                                                 </constraints>
@@ -8033,7 +8033,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Three Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c8-eX-rTZ">
-                                                <rect key="frame" x="54.333333333333321" y="65" width="83.666666666666686" height="18"/>
+                                                <rect key="frame" x="74.333333333333314" y="65" width="63.666666666666657" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="GUF-R8-G1d"/>
                                                 </constraints>
@@ -8042,7 +8042,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Six Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-gb-90E">
-                                                <rect key="frame" x="54.333333333333321" y="93" width="83.666666666666686" height="18"/>
+                                                <rect key="frame" x="74.333333333333314" y="93" width="63.666666666666657" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="l56-w2-lCT"/>
                                                 </constraints>
@@ -8051,7 +8051,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAh-zF-7mn">
-                                                <rect key="frame" x="5" y="4" width="40" height="28"/>
+                                                <rect key="frame" x="5" y="4" width="60" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="NMw-Vh-fIU"/>
                                                 </constraints>
@@ -8063,7 +8063,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-ju-Gpr">
-                                                <rect key="frame" x="5" y="32" width="40" height="28"/>
+                                                <rect key="frame" x="5" y="32" width="60" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="cBd-CG-yFV"/>
                                                 </constraints>
@@ -8075,7 +8075,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bx-6a-1Iq">
-                                                <rect key="frame" x="5" y="60" width="40" height="28"/>
+                                                <rect key="frame" x="5" y="60" width="60" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="oQ0-5H-AXM"/>
                                                 </constraints>
@@ -8087,7 +8087,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfe-i1-GQn">
-                                                <rect key="frame" x="5" y="88" width="40" height="28"/>
+                                                <rect key="frame" x="5" y="88" width="60" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="mZd-5j-bUL"/>
                                                 </constraints>
@@ -14119,13 +14119,13 @@ The app is loaded with resourceful features to help you track your medical histo
                                 <rect key="frame" x="0.0" y="728" width="375" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0F-OF-BmX">
-                                        <rect key="frame" x="16" y="9" width="105" height="32"/>
+                                        <rect key="frame" x="16" y="9" width="130" height="32"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="previousarrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="xu7-Ms-LPD">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9x-Pi-idc">
-                                                <rect key="frame" x="50" y="0.0" width="55" height="32"/>
+                                                <rect key="frame" x="75" y="0.0" width="55" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="bWE-e9-WJu"/>
@@ -14142,7 +14142,7 @@ The app is loaded with resourceful features to help you track your medical histo
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-IM-X8f">
-                                        <rect key="frame" x="264" y="9" width="95" height="32"/>
+                                        <rect key="frame" x="239" y="9" width="120" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktf-B5-IrV">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="32"/>
@@ -14160,7 +14160,7 @@ The app is loaded with resourceful features to help you track your medical histo
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextarrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Og3-TA-hQ3">
-                                                <rect key="frame" x="45" y="0.0" width="50" height="32"/>
+                                                <rect key="frame" x="45" y="0.0" width="75" height="32"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -15471,43 +15471,43 @@ The app is loaded with resourceful features to help you track your medical histo
                                 <rect key="frame" x="16" y="348" width="343" height="116"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3OU-xR-RXf">
-                                        <rect key="frame" x="8" y="10" width="327" height="88"/>
+                                        <rect key="frame" x="8" y="10" width="327" height="128"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="c38-F9-XbE">
-                                                <rect key="frame" x="0.0" y="0.0" width="318.66666666666669" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="60"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hka-HL-dHi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="40"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hka-HL-dHi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="60"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-SG-0Bh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-SG-0Bh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="60"/>
                                                                 <state key="normal" image="uncheck.png"/>
                                                                 <state key="selected" image="check.png"/>
                                                                 <connections>
                                                                     <action selector="filterOptionButtonCLicked:" destination="pB6-k2-3hg" eventType="touchUpInside" id="Dit-qu-zHk"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-ah-Jsv">
-                                                                <rect key="frame" x="48" y="0.0" width="35.666666666666657" height="40"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Clinic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-ah-Jsv">
+                                                                <rect key="frame" x="36.333333333333343" y="0.0" width="35.666666666666657" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="P7R-mR-vCK">
-                                                        <rect key="frame" x="154.66666666666666" y="0.0" width="163.99999999999997" height="40"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="P7R-mR-vCK">
+                                                        <rect key="frame" x="143" y="0.0" width="184" height="60"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-Tq-G1V">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-Tq-G1V">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                 <state key="normal" image="uncheck.png"/>
                                                                 <state key="selected" image="check.png"/>
                                                                 <connections>
                                                                     <action selector="filterOptionButtonCLicked:" destination="pB6-k2-3hg" eventType="touchUpInside" id="kER-1z-gCE"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diagnostic Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bl6-8L-asd">
-                                                                <rect key="frame" x="48" y="0.0" width="116" height="40"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Diagnostic Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bl6-8L-asd">
+                                                                <rect key="frame" x="68" y="0.0" width="116" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -15517,13 +15517,13 @@ The app is loaded with resourceful features to help you track your medical histo
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="v04-5m-eti">
-                                                <rect key="frame" x="0.0" y="48" width="267" height="40"/>
+                                                <rect key="frame" x="0.0" y="68" width="307" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lzF-L1-5O3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="60"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-bA-Rzf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                 <state key="normal" image="uncheck.png"/>
                                                                 <state key="selected" image="check.png"/>
                                                                 <connections>
@@ -15531,7 +15531,7 @@ The app is loaded with resourceful features to help you track your medical histo
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqE-YC-FvR">
-                                                                <rect key="frame" x="48" y="0.0" width="53.333333333333343" height="40"/>
+                                                                <rect key="frame" x="68" y="0.0" width="53.333333333333343" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -15539,10 +15539,10 @@ The app is loaded with resourceful features to help you track your medical histo
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wmW-CA-RWQ">
-                                                        <rect key="frame" x="154.33333333333334" y="0.0" width="112.66666666666666" height="40"/>
+                                                        <rect key="frame" x="174.33333333333337" y="0.0" width="132.66666666666663" height="60"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znq-wO-Tbc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                 <state key="normal" image="uncheck.png"/>
                                                                 <state key="selected" image="check.png"/>
                                                                 <connections>
@@ -15550,7 +15550,7 @@ The app is loaded with resourceful features to help you track your medical histo
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pharmacy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09W-n6-HRz">
-                                                                <rect key="frame" x="48.000000000000007" y="0.0" width="64.666666666666686" height="40"/>
+                                                                <rect key="frame" x="67.999999999999972" y="0.0" width="64.666666666666657" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

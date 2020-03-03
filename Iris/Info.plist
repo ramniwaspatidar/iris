@@ -72,6 +72,10 @@
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We use the gallery images for sharing</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Splash</string>
 	<key>UIRequiredDeviceCapabilities</key>

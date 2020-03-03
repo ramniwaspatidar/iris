@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import <UserNotifications/UserNotifications.h>
+#import <OneSignal/OneSignal.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

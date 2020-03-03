@@ -85,7 +85,17 @@
     }
 
     
-    
+    [OneSignal initWithLaunchOptions:launchOptions
+     appId:@"2e0311b2-9069-4442-8a60-773c37cbc8a0"
+     handleNotificationAction:nil
+     settings:@{kOSSettingsKeyAutoPrompt: @false}];
+    OneSignal.inFocusDisplayType = OSNotificationDisplayTypeNotification;
+
+    // Recommend moving the below line to prompt for push after informing the user about
+    // how your app will use them.
+    [OneSignal promptForPushNotificationsWithUserResponse:^(BOOL accepted) {
+      NSLog(@"User accepted notifications: %d", accepted);
+    }];
 
     //    //add the image to the forefront...
     /*/UIImageView *launcherImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 250, 200)];

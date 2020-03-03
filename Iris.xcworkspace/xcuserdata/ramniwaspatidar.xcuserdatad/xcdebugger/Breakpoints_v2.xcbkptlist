@@ -21,36 +21,34 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F644505D-52FA-4EC4-BCCE-DE96CEEEA2D8 - f210843611ba215f"
+                  uuid = "F644505D-52FA-4EC4-BCCE-DE96CEEEA2D8 - 96152c8930b3a4c8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__48-[LoginViewController callLoginAPI:andPassword:]_block_invoke_2"
                   moduleName = "Iris"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramniwaspatidar/iris/Iris/LoginViewController/LoginViewController.m"
-                  timestampString = "604763838.13033"
+                  urlString = "file:///Users/ramniwaspatidar/IRISNEW/Iris/LoginViewController/LoginViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "532"
                   endingLineNumber = "532"
-                  offsetFromSymbolStart = "15574">
+                  offsetFromSymbolStart = "14888">
                </Location>
                <Location
-                  uuid = "F644505D-52FA-4EC4-BCCE-DE96CEEEA2D8 - f210843611ba214d"
+                  uuid = "F644505D-52FA-4EC4-BCCE-DE96CEEEA2D8 - 96152c8930b3a4da"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__48-[LoginViewController callLoginAPI:andPassword:]_block_invoke_4"
                   moduleName = "Iris"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramniwaspatidar/iris/Iris/LoginViewController/LoginViewController.m"
-                  timestampString = "604763838.133299"
+                  urlString = "file:///Users/ramniwaspatidar/IRISNEW/Iris/LoginViewController/LoginViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "534"
                   endingLineNumber = "534"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -72,31 +70,29 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1454E6EB-764A-4F9C-A62C-FAC5384D8694 - b97fa0f9fa2b1ac"
+                  uuid = "1454E6EB-764A-4F9C-A62C-FAC5384D8694 - 6f9252b0beab343b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__48-[LoginViewController callLoginAPI:andPassword:]_block_invoke"
                   moduleName = "Iris"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramniwaspatidar/iris/Iris/LoginViewController/LoginViewController.m"
-                  timestampString = "604763838.1420979"
+                  urlString = "file:///Users/ramniwaspatidar/IRISNEW/Iris/LoginViewController/LoginViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "540"
                   endingLineNumber = "540"
-                  offsetFromSymbolStart = "309">
+                  offsetFromSymbolStart = "308">
                </Location>
                <Location
-                  uuid = "1454E6EB-764A-4F9C-A62C-FAC5384D8694 - ad2a28530a23d6c7"
+                  uuid = "1454E6EB-764A-4F9C-A62C-FAC5384D8694 - c92f80ec2b2a531e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__48-[LoginViewController callLoginAPI:andPassword:]_block_invoke.476"
+                  symbolName = "__48-[LoginViewController callLoginAPI:andPassword:]_block_invoke.474"
                   moduleName = "Iris"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramniwaspatidar/iris/Iris/LoginViewController/LoginViewController.m"
-                  timestampString = "604763838.145609"
+                  urlString = "file:///Users/ramniwaspatidar/IRISNEW/Iris/LoginViewController/LoginViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "542"
@@ -494,6 +490,70 @@
             startingLineNumber = "374"
             endingLineNumber = "374"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AC7906C-3C65-4674-8A1E-241D75417A0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/AppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "-userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DD45D5C-E4D1-4B0B-86D5-15B6CB9CACB0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/AppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
+            landmarkName = "-updateAlertNotification"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDCFDBFD-0B0C-4EED-ACA9-BF9002AB112C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/AppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
+            landmarkName = "-userNotificationCenter:willPresentNotification:withCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC4BCA32-EBE4-45E4-ACDD-D1EAC990CB66"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/AppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
+            landmarkName = "-application:didReceiveLocalNotification:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
