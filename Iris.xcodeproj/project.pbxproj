@@ -662,9 +662,13 @@
 		90EA9DE9229959B7008F108C /* LanguageChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA9DE6229959B7008F108C /* LanguageChangeViewController.xib */; };
 		90EA9DEC22995A88008F108C /* Localization.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EA9DEA22995A88008F108C /* Localization.h */; };
 		90EA9DED22995A88008F108C /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA9DEB22995A88008F108C /* Localization.m */; };
-		A80881C0240BECAE00BE4E27 /* ClubIRISViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80881BF240BECAE00BE4E27 /* ClubIRISViewController.swift */; };
 		A80B4E792408B8CB00EC866F /* EcardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B4E782408B8CB00EC866F /* EcardModel.swift */; };
 		A819891F240ADBD10018A409 /* ECardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819891E240ADBD10018A409 /* ECardViewController.swift */; };
+		A8275782240DF76600D5C6C8 /* ClubIRISViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A8275780240DF76600D5C6C8 /* ClubIRISViewController.h */; };
+		A8275783240DF76600D5C6C8 /* ClubIRISViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8275781240DF76600D5C6C8 /* ClubIRISViewController.m */; };
+		A8275787240DFC4600D5C6C8 /* ClbIRISCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */; };
+		A8275788240DFC4600D5C6C8 /* ClbIRISCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */; };
+		A8275789240DFC4600D5C6C8 /* ClbIRISCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */; };
 		E9E5D8BBF04A981098EAE5EA /* libPods-Iris.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A488228A3656B719ACC900F7 /* libPods-Iris.a */; };
 		EC8B595B220C4CB100388E2A /* PdfWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8B5959220C4CB100388E2A /* PdfWebViewController.h */; };
 		EC8B595C220C4CB100388E2A /* PdfWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8B595A220C4CB100388E2A /* PdfWebViewController.m */; };
@@ -1364,10 +1368,14 @@
 		90EA9DEE22995B0B008F108C /* LocalizationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
 		A488228A3656B719ACC900F7 /* libPods-Iris.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iris.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8042D06240B69760096D544 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A80881BF240BECAE00BE4E27 /* ClubIRISViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubIRISViewController.swift; sourceTree = "<group>"; };
 		A80B4E772408B8CB00EC866F /* Iris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iris-Bridging-Header.h"; sourceTree = "<group>"; };
 		A80B4E782408B8CB00EC866F /* EcardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcardModel.swift; sourceTree = "<group>"; };
 		A819891E240ADBD10018A409 /* ECardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECardViewController.swift; sourceTree = "<group>"; };
+		A8275780240DF76600D5C6C8 /* ClubIRISViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubIRISViewController.h; sourceTree = "<group>"; };
+		A8275781240DF76600D5C6C8 /* ClubIRISViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubIRISViewController.m; sourceTree = "<group>"; };
+		A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClbIRISCell.h; sourceTree = "<group>"; };
+		A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClbIRISCell.m; sourceTree = "<group>"; };
+		A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClbIRISCell.xib; sourceTree = "<group>"; };
 		AAC3E1410FAA6D1D30E404FF /* Pods-Iris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Iris/Pods-Iris.debug.xcconfig"; sourceTree = "<group>"; };
 		AB359F1D0D04C7C45EC009E5 /* Pods-IrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IrisTests/Pods-IrisTests.release.xcconfig"; sourceTree = "<group>"; };
 		CAEA69CC128D234CE177909F /* Pods-Iris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iris.release.xcconfig"; path = "Pods/Target Support Files/Pods-Iris/Pods-Iris.release.xcconfig"; sourceTree = "<group>"; };
@@ -2595,7 +2603,11 @@
 		A80881BE240BEC8400BE4E27 /* ClubIRIS */ = {
 			isa = PBXGroup;
 			children = (
-				A80881BF240BECAE00BE4E27 /* ClubIRISViewController.swift */,
+				A8275780240DF76600D5C6C8 /* ClubIRISViewController.h */,
+				A8275781240DF76600D5C6C8 /* ClubIRISViewController.m */,
+				A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */,
+				A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */,
+				A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */,
 			);
 			path = ClubIRIS;
 			sourceTree = "<group>";
@@ -2644,6 +2656,7 @@
 				09FAE2D51FD9B2ED00EC2C12 /* DbManager.h in Headers */,
 				09FEE4BF2005EBE900794456 /* BMIChartViewController.h in Headers */,
 				090EDB7F1FE6DF6B0024115C /* Location.h in Headers */,
+				A8275782240DF76600D5C6C8 /* ClubIRISViewController.h in Headers */,
 				09FAA4871FFF9E4700EBF53C /* ProfileDetailViewController.h in Headers */,
 				097544351FCEF40700230B27 /* DGActivityIndicatorTripleRingsAnimation.h in Headers */,
 				097544191FCEF40700230B27 /* DGActivityIndicatorCookieTerminatorAnimation.h in Headers */,
@@ -2682,6 +2695,7 @@
 				09FAA4831FFF7A7A00EBF53C /* ProfileViewController.h in Headers */,
 				097544291FCEF40700230B27 /* DGActivityIndicatorRotatingSandglassAnimation.h in Headers */,
 				097543F91FCEF40700230B27 /* DGActivityIndicatorBallClipRotateAnimation.h in Headers */,
+				A8275787240DFC4600D5C6C8 /* ClbIRISCell.h in Headers */,
 				09F62ABF1FFBC2F6000A8E95 /* MedicineAlertViewController.h in Headers */,
 				09F84B941FD1691E003D1CEC /* DashboardViewController.h in Headers */,
 				09F4ED63200687FF001C681E /* AddReimbusmentTableViewCell.h in Headers */,
@@ -3100,6 +3114,7 @@
 				093446321FD69EBA003B562F /* reminder.png in Resources */,
 				09F874191FDA618400E3E42D /* medicinealert@2x.png in Resources */,
 				093446651FD69F38003B562F /* infobox.png in Resources */,
+				A8275789240DFC4600D5C6C8 /* ClbIRISCell.xib in Resources */,
 				004894FE201F49BE00A9F088 /* aboutus_dep.png in Resources */,
 				004894F2201F49BE00A9F088 /* history_dep@3x.png in Resources */,
 				09FAA47D1FFF786800EBF53C /* ic_share_white.png in Resources */,
@@ -3391,6 +3406,7 @@
 				090EDB6E1FE6B72E0024115C /* ReimbursmentViewController.m in Sources */,
 				09F1124A1FE830FC009D8094 /* ResultViewController.m in Sources */,
 				00729252202DB43E002E78B6 /* UIImageView+CustomImageView.m in Sources */,
+				A8275788240DFC4600D5C6C8 /* ClbIRISCell.m in Sources */,
 				09DEB02D1FE98D9000808DBB /* PolicyViewController.m in Sources */,
 				093446711FD6A978003B562F /* SearchTableViewCell.m in Sources */,
 				093446821FD6D9FC003B562F /* FilterTableViewCell.m in Sources */,
@@ -3455,7 +3471,6 @@
 				09FB5FB71FDE57CE00A1334F /* FSCalendarDelegationFactory.m in Sources */,
 				09F84B951FD1691E003D1CEC /* DashboardViewController.m in Sources */,
 				09F7674E1FE7F97C009CB1B5 /* SearchResultsControllerTableViewController.m in Sources */,
-				A80881C0240BECAE00BE4E27 /* ClubIRISViewController.swift in Sources */,
 				09FB5FAE1FDE57CE00A1334F /* FSCalendarWeekdayView.m in Sources */,
 				09FB5FC41FDE57CE00A1334F /* FSCalendarCell.m in Sources */,
 				09F59FFD200CF99C0023C755 /* BloodPressureChartViewController.m in Sources */,
@@ -3504,6 +3519,7 @@
 				09F767421FE79C64009CB1B5 /* CalloutView.m in Sources */,
 				0975440A1FCEF40700230B27 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				09FB5FAC1FDE57CE00A1334F /* FSCalendarStickyHeader.m in Sources */,
+				A8275783240DF76600D5C6C8 /* ClubIRISViewController.m in Sources */,
 				0975440E1FCEF40700230B27 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				09FB5FCE1FDE57F300A1334F /* FSCalendarScopeExampleViewController.m in Sources */,
 				09FB5FB61FDE57CE00A1334F /* FSCalendarScopeHandle.m in Sources */,

@@ -42,7 +42,7 @@
 #import "Dependent+CoreDataProperties.h"
 #import "PdfWebViewController.h"
 #import "ViewYourECardViewController.h"
-
+#import "ClubIRISViewController.h"
 #define kBlueColor [UIColor colorWithRed:0.0/255.0 green:113.0/255.0 blue:183.0/255.0 alpha:1.0]
 #define kLightGrayColor [UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0]
 
