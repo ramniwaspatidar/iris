@@ -33,7 +33,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "532"
                   endingLineNumber = "532"
-                  offsetFromSymbolStart = "14888">
+                  offsetFromSymbolStart = "15485">
                </Location>
                <Location
                   uuid = "F644505D-52FA-4EC4-BCCE-DE96CEEEA2D8 - 96152c8930b3a4da"
@@ -48,7 +48,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "534"
                   endingLineNumber = "534"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "15">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -82,7 +82,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "540"
                   endingLineNumber = "540"
-                  offsetFromSymbolStart = "308">
+                  offsetFromSymbolStart = "309">
                </Location>
                <Location
                   uuid = "1454E6EB-764A-4F9C-A62C-FAC5384D8694 - c92f80ec2b2a531e"
@@ -479,23 +479,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "434EF260-1C91-4326-8935-7DA13DF45DAA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Iris/MainSlideMenuViewController/MainSideMenuViewController.m"
-            timestampString = "604763837.481477"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5AC7906C-3C65-4674-8A1E-241D75417A0D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -554,6 +537,54 @@
             startingLineNumber = "477"
             endingLineNumber = "477"
             landmarkName = "-application:didReceiveLocalNotification:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1ECFADB-4B68-4D40-B49C-4F8AD8FF98C1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/ClubIRIS/ClbIRISCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-getClubData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E289F4E6-E4B2-4A03-9E20-AB5C0F3FCA6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/ClubIRIS/ClubIRISViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCF9EF9D-125C-4B38-92FF-AF34F23149CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iris/ClubIRIS/ClbIRISCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

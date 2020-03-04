@@ -10,6 +10,11 @@
 #import "MainSideMenuViewController.h"
 #import "RevealViewController.h"
 #import "Localization.h"
+#import "UIImage+animatedGIF.h"
+#import "Constant.h"
+#import "ConnectionManager.h"
+#import "Utility.h"
+
 
 @interface ClubIRISViewController ()
 
@@ -19,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getClubList];
+    [self showHeaderLogo];
+    [self initialSetupView];
 }
 
 -(void)initialSetupView
@@ -42,6 +50,44 @@
     }
 }
 
+-(void)showHeaderLogo{
+    NSString *assetLocalPath = [[NSBundle mainBundle] pathForResource:@"logo_aniamtion" ofType:@"gif"];
+    NSURL *assetURL = [[NSURL alloc] initFileURLWithPath:assetLocalPath];
+    headerImageView.image = [UIImage animatedImageWithAnimatedGIFURL:assetURL];
+    
+    allTextField.placeholder = [Localization languageSelectedStringForKey:@"All"];
+    countryTextFiled.placeholder = [Localization languageSelectedStringForKey:@"Select Country"];
+    searchTextField.placeholder = [Localization languageSelectedStringForKey:@"Search here"];
+    
+    
+    bgView1.layer.masksToBounds = true;
+    bgView1.layer.cornerRadius = 5;
+    bgView1.layer.borderWidth = 1;
+    bgView1.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    bgView1.layer.shadowColor = [[UIColor blackColor] CGColor];
+    bgView1.layer.shadowOffset = CGSizeMake(0.0, 0.3);
+    bgView1.layer.shadowOpacity = 0.5;
+    bgView1.layer.shadowRadius = 1.0;
+    
+    bgView2.layer.masksToBounds = false;
+    bgView2.layer.cornerRadius = 5;
+    bgView2.layer.borderWidth = 1;
+    bgView2.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    bgView2.layer.shadowColor = [[UIColor blackColor] CGColor];
+    bgView2.layer.shadowOffset = CGSizeMake(0.0, 0.3);
+    bgView2.layer.shadowOpacity = 0.5;
+    bgView2.layer.shadowRadius = 1.0;
+    
+    bgView3.layer.masksToBounds = false;
+    bgView3.layer.cornerRadius = 5;
+    bgView3.layer.borderWidth = 1;
+    bgView3.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    bgView3.layer.shadowColor = [[UIColor blackColor] CGColor];
+    bgView3.layer.shadowOffset = CGSizeMake(0.0, 0.3);
+    bgView3.layer.shadowOpacity = 0.5;
+    bgView3.layer.shadowRadius = 1.0;
+    
+}
 
 -(void)addGestureonView
 {
@@ -60,7 +106,7 @@
 #pragma mark Table View methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-        return 2;
+        return [clubArray count];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -71,7 +117,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    return 250;
 }
 
 #pragma mark - Table view data source
@@ -83,14 +129,14 @@
     ClbIRISCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil)
     {
-        // Load the top-level objects from the custom cell XIB.
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ClbIRISCell" owner:self options:nil];
-        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-        cell = [topLevelObjects objectAtIndex:0];
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ClbIRISCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
     }
         cell.backgroundColor = [UIColor redColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
         cell.selectionStyle =  UITableViewCellSelectionStyleNone;
+       [cell getClubData:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"voucherimageslist"]];
+    
         return cell;
 }
 
@@ -307,4 +353,65 @@
 }
 
 
+- (IBAction)allButtonAction:(id)sender {
+}
+
+- (IBAction)countryButton:(id)sender {
+}
+
+
+-(void)getClubList{
+    
+   NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
+   
+   
+   NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setValue:[userInfoDic valueForKey:@"memberid"] forKey:@"memberid"];
+    [dictionary setValue:@"" forKey:@"Category"];
+    [dictionary setValue:@"" forKey:@"Country"];
+    [dictionary setValue:@"" forKey:@"BuyOneAndGetOneFree"];
+    [dictionary setValue:@"" forKey:@"PromoCode"];
+    [dictionary setValue:@"" forKey:@"HotDeal"];
+    [dictionary setValue:@"" forKey:@"NewlyAdded"];
+
+
+   
+   NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetAllClubIrisVoucherList"];
+   NSError *jsonError;
+   NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&jsonError];
+   NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+   
+    
+    [[ConnectionManager sharedInstance] sendPOSTRequestForURLWithRawJsonAndHeader:url withHeader:[userInfoDic valueForKey:@"token"] json:jsonString timeoutInterval:kTimeoutDuration showHUD:YES showSystemError:NO completion:^(NSDictionary *responseDictionary, NSError *error)
+     {
+         if (!error)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 NSString *serverMsg = [NSString stringWithFormat:@"%@",[responseDictionary valueForKey:kServerMessage]];
+                 if([[serverMsg lowercaseString] isEqualToString:@"success"])
+                 {
+//                     [self callShowProfileAPI];
+                     
+                     self->clubArray = [[NSMutableArray alloc]initWithArray:[responseDictionary valueForKey:@"listofvouchers"]];
+                     [self->_mainTableView reloadData];
+
+                 }
+                
+                 else
+                 {
+                     [Utility showAlertViewControllerIn:self title:nil message:serverMsg block:^(int index) {
+                     }];
+                 }
+                 
+             });
+         }
+         else
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+             });
+         }
+     }];
+}
 @end

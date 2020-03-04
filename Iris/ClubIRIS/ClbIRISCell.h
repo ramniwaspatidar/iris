@@ -10,8 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ClbIRISCell : UITableViewCell
 
+
+@interface ClbIRISCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>{
+    
+    __weak IBOutlet UICollectionView *collectionView;
+    __weak IBOutlet UIPageControl *pageControl;
+    
+    NSMutableArray *arrayClubList;
+}
+-(void)getClubData:(NSArray *)arrayData;
+
+@property (weak, nonatomic) IBOutlet UIButton *previousButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+- (IBAction)previousButtonAction:(id)sender;
+- (IBAction)nextButtonAction:(id)sender;
 @end
 
 NS_ASSUME_NONNULL_END

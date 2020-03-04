@@ -672,6 +672,9 @@
 		A8275787240DFC4600D5C6C8 /* ClbIRISCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */; };
 		A8275788240DFC4600D5C6C8 /* ClbIRISCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */; };
 		A8275789240DFC4600D5C6C8 /* ClbIRISCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */; };
+		A89D660E2410082D009146D4 /* ClubCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A89D660B2410082D009146D4 /* ClubCollectionCell.h */; };
+		A89D660F2410082D009146D4 /* ClubCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D660C2410082D009146D4 /* ClubCollectionCell.m */; };
+		A89D66102410082D009146D4 /* ClubCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89D660D2410082D009146D4 /* ClubCollectionCell.xib */; };
 		E9E5D8BBF04A981098EAE5EA /* libPods-Iris.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A488228A3656B719ACC900F7 /* libPods-Iris.a */; };
 		EC8B595B220C4CB100388E2A /* PdfWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8B5959220C4CB100388E2A /* PdfWebViewController.h */; };
 		EC8B595C220C4CB100388E2A /* PdfWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8B595A220C4CB100388E2A /* PdfWebViewController.m */; };
@@ -1406,6 +1409,9 @@
 		A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClbIRISCell.h; sourceTree = "<group>"; };
 		A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClbIRISCell.m; sourceTree = "<group>"; };
 		A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClbIRISCell.xib; sourceTree = "<group>"; };
+		A89D660B2410082D009146D4 /* ClubCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubCollectionCell.h; sourceTree = "<group>"; };
+		A89D660C2410082D009146D4 /* ClubCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubCollectionCell.m; sourceTree = "<group>"; };
+		A89D660D2410082D009146D4 /* ClubCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubCollectionCell.xib; sourceTree = "<group>"; };
 		AAC3E1410FAA6D1D30E404FF /* Pods-Iris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Iris/Pods-Iris.debug.xcconfig"; sourceTree = "<group>"; };
 		AB359F1D0D04C7C45EC009E5 /* Pods-IrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IrisTests/Pods-IrisTests.release.xcconfig"; sourceTree = "<group>"; };
 		B2716EEEA3F5955FE63729AD /* Pods-Iris-iris_notification_service.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iris-iris_notification_service.release.xcconfig"; path = "Pods/Target Support Files/Pods-Iris-iris_notification_service/Pods-Iris-iris_notification_service.release.xcconfig"; sourceTree = "<group>"; };
@@ -2649,6 +2655,9 @@
 			children = (
 				A8275780240DF76600D5C6C8 /* ClubIRISViewController.h */,
 				A8275781240DF76600D5C6C8 /* ClubIRISViewController.m */,
+				A89D660B2410082D009146D4 /* ClubCollectionCell.h */,
+				A89D660C2410082D009146D4 /* ClubCollectionCell.m */,
+				A89D660D2410082D009146D4 /* ClubCollectionCell.xib */,
 				A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */,
 				A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */,
 				A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */,
@@ -2846,6 +2855,7 @@
 				09F59FF8200CC8810023C755 /* LipidChartViewController.h in Headers */,
 				09FA4CA41FF0C12A000CDE0C /* BloodSugarStatesCollectionViewCell.h in Headers */,
 				097544231FCEF40700230B27 /* DGActivityIndicatorLineScalePulseOutAnimation.h in Headers */,
+				A89D660E2410082D009146D4 /* ClubCollectionCell.h in Headers */,
 				09F46B161FDD1E7C005FC55F /* DoctorSearchCell.h in Headers */,
 				097544071FCEF40700230B27 /* DGActivityIndicatorBallRotateAnimation.h in Headers */,
 				09DEB0351FE990C600808DBB /* PolicyTableViewCell.h in Headers */,
@@ -3135,6 +3145,7 @@
 				090A1CB0200DD42500D1A688 /* previousarrow@3x.png in Resources */,
 				09F874361FDA621400E3E42D /* Icon-App-20x20@2x.png in Resources */,
 				09A0FF921FD18702006A80A2 /* notification.png in Resources */,
+				A89D66102410082D009146D4 /* ClubCollectionCell.xib in Resources */,
 				0934464F1FD69F10003B562F /* uncheck.png in Resources */,
 				090C71C120209EB7003405B9 /* feedback@2x.png in Resources */,
 				09F3F10C1FCC3CD2009A316B /* loginlogo@2x.png in Resources */,
@@ -3597,6 +3608,7 @@
 				09FA18CB1FD7EC170025E2AB /* HIPRootViewController.m in Sources */,
 				09560A661FCD9FFF00669B85 /* ConnectionManager.m in Sources */,
 				09FB5FB31FDE57CE00A1334F /* FSCalendarCollectionView.m in Sources */,
+				A89D660F2410082D009146D4 /* ClubCollectionCell.m in Sources */,
 				0975442A1FCEF40700230B27 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				0991060F2011CCFE00B67E65 /* BMI+CoreDataProperties.m in Sources */,
 				0975441C1FCEF40700230B27 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
