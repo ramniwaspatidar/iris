@@ -15,18 +15,59 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-     [collectionView registerNib:[UINib nibWithNibName:@"ClubCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"ClubCollectionCell"];
+    [collectionView registerNib:[UINib nibWithNibName:@"ClubCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"ClubCollectionCell"];
+    
+    bgView.layer.masksToBounds = true;
+    bgView.layer.cornerRadius = 5;
+    bgView.layer.borderWidth = 1;
+    bgView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    bgView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    bgView.layer.shadowOffset = CGSizeMake(0.0, 0.3);
+    bgView.layer.shadowOpacity = 0.5;
+    bgView.layer.shadowRadius = 1.0;
+}
+
+- (IBAction)previousButtonAction:(id)sender {
+    for (UICollectionViewCell *cell in [collectionView visibleCells]) {
+        NSIndexPath *indexPath = [collectionView indexPathForCell:cell];
+     if (indexPath.row > 0){
+         
+         NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section];
+         [collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:0 animated:true];
+         pageControl.currentPage = indexPath.row - 1;
+
+     }
+    }
+}
+
+- (IBAction)nextButtonAction:(id)sender {
+    
+    for (UICollectionViewCell *cell in [collectionView visibleCells]) {
+        NSIndexPath *indexPath = [collectionView indexPathForCell:cell];
+        if (indexPath.row < arrayClubList.count){
+            
+            NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
+            [collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:0 animated:true];
+            pageControl.currentPage = indexPath.row + 1;
+            
+            if (indexPath.row + 1 == arrayClubList.count){
+                pageControl.currentPage = 0;
+            }
+        }
+        
+    }
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
--(void)getClubData:(NSArray *)arrayData{
+-(void)getClubData:(NSArray *)arrayData title:(NSString *)title{
     
-    NSLog(@"%@",arrayData);
+    _titleLabel.text = title;
     arrayClubList = [[NSMutableArray alloc]initWithArray:arrayData];
     [collectionView reloadData];
     
@@ -51,7 +92,7 @@
     
     NSString *immageString = [[arrayClubList objectAtIndex:indexPath.row] valueForKey:@"URL"];
     
-     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:immageString] placeholderImage:[UIImage imageNamed:@"userplaceholde.png"]];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:immageString] placeholderImage:[UIImage imageNamed:@"userplaceholde.png"]];
     
     
     
@@ -61,7 +102,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return  CGSizeMake(collectionView.frame.size.width,153)
-;
+    ;
 }
 
 // Layout: Set Edges

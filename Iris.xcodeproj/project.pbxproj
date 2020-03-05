@@ -665,6 +665,8 @@
 		90EA9DED22995A88008F108C /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EA9DEB22995A88008F108C /* Localization.m */; };
 		A80B4E792408B8CB00EC866F /* EcardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B4E782408B8CB00EC866F /* EcardModel.swift */; };
 		A819891F240ADBD10018A409 /* ECardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819891E240ADBD10018A409 /* ECardViewController.swift */; };
+		A82248BF241092C400656D34 /* IRISClubDetailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A82248BD241092C400656D34 /* IRISClubDetailViewController.h */; };
+		A82248C0241092C400656D34 /* IRISClubDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82248BE241092C400656D34 /* IRISClubDetailViewController.m */; };
 		A8251DF5240EA8E7004920A6 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = A8251DF4240EA8E7004920A6 /* NotificationService.m */; };
 		A8251DF9240EA8E7004920A6 /* iris_notification_service.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A8251DF1240EA8E7004920A6 /* iris_notification_service.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A8275782240DF76600D5C6C8 /* ClubIRISViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A8275780240DF76600D5C6C8 /* ClubIRISViewController.h */; };
@@ -1399,6 +1401,8 @@
 		A80B4E772408B8CB00EC866F /* Iris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Iris-Bridging-Header.h"; sourceTree = "<group>"; };
 		A80B4E782408B8CB00EC866F /* EcardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcardModel.swift; sourceTree = "<group>"; };
 		A819891E240ADBD10018A409 /* ECardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECardViewController.swift; sourceTree = "<group>"; };
+		A82248BD241092C400656D34 /* IRISClubDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRISClubDetailViewController.h; sourceTree = "<group>"; };
+		A82248BE241092C400656D34 /* IRISClubDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRISClubDetailViewController.m; sourceTree = "<group>"; };
 		A8251DE5240EA77D004920A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8251DF1240EA8E7004920A6 /* iris_notification_service.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iris_notification_service.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8251DF3240EA8E7004920A6 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -2661,6 +2665,8 @@
 				A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */,
 				A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */,
 				A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */,
+				A82248BD241092C400656D34 /* IRISClubDetailViewController.h */,
+				A82248BE241092C400656D34 /* IRISClubDetailViewController.m */,
 			);
 			path = ClubIRIS;
 			sourceTree = "<group>";
@@ -2810,6 +2816,7 @@
 				097544111FCEF40700230B27 /* DGActivityIndicatorBallSpinFadeLoader.h in Headers */,
 				099F2371203194B5002C9E20 /* DependentProfileDetailViewController.h in Headers */,
 				09F71AE11FEE242300278BC3 /* BloodSugarTrackerTableViewCell.h in Headers */,
+				A82248BF241092C400656D34 /* IRISClubDetailViewController.h in Headers */,
 				09001E1F1FE131B500E6F742 /* UIImage+animatedGIF.h in Headers */,
 				09F59FF5200CC42B0023C755 /* FSMutipleLineChart.h in Headers */,
 				90EA9DEC22995A88008F108C /* Localization.h in Headers */,
@@ -3619,6 +3626,7 @@
 				0975443B1FCEF40700230B27 /* DGActivityIndicatorView.m in Sources */,
 				09F3F0A11FCC368D009A316B /* main.m in Sources */,
 				09F84BAE1FD16FBE003D1CEC /* MainSideMenuViewController.m in Sources */,
+				A82248C0241092C400656D34 /* IRISClubDetailViewController.m in Sources */,
 				097DDB7F201198910095A939 /* ForgotPasswordViewController.m in Sources */,
 				0975440C1FCEF40700230B27 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				09FAA8B02008BF980001ABE0 /* DependentViewController.m in Sources */,

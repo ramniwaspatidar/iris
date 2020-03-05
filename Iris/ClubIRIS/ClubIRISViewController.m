@@ -69,7 +69,7 @@
     bgView1.layer.shadowOpacity = 0.5;
     bgView1.layer.shadowRadius = 1.0;
     
-    bgView2.layer.masksToBounds = false;
+    bgView2.layer.masksToBounds = true;
     bgView2.layer.cornerRadius = 5;
     bgView2.layer.borderWidth = 1;
     bgView2.layer.borderColor = [[UIColor lightGrayColor] CGColor];
@@ -78,7 +78,7 @@
     bgView2.layer.shadowOpacity = 0.5;
     bgView2.layer.shadowRadius = 1.0;
     
-    bgView3.layer.masksToBounds = false;
+    bgView3.layer.masksToBounds = true;
     bgView3.layer.cornerRadius = 5;
     bgView3.layer.borderWidth = 1;
     bgView3.layer.borderColor = [[UIColor lightGrayColor] CGColor];
@@ -132,10 +132,10 @@
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ClbIRISCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     }
-        cell.backgroundColor = [UIColor redColor];
+        cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
         cell.selectionStyle =  UITableViewCellSelectionStyleNone;
-       [cell getClubData:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"voucherimageslist"]];
+       [cell getClubData:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"voucherimageslist"] title:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"title"]];
     
         return cell;
 }

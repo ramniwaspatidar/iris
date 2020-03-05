@@ -16,11 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
     
     __weak IBOutlet UICollectionView *collectionView;
     __weak IBOutlet UIPageControl *pageControl;
+    __weak IBOutlet UIView *bgView;
+    
     
     NSMutableArray *arrayClubList;
 }
--(void)getClubData:(NSArray *)arrayData;
-
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+-(void)getClubData:(NSArray *)arrayData title:(NSString *)title;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 - (IBAction)previousButtonAction:(id)sender;

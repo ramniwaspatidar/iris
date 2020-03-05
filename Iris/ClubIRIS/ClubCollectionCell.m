@@ -15,9 +15,5 @@
     // Initialization code
 }
 
-- (IBAction)previousButtonAction:(id)sender {
-}
 
-- (IBAction)nextButtonAction:(id)sender {
-}
 @end
