@@ -612,6 +612,7 @@ typedef enum _cameraMode
 
     if(!switchToDependentButton.selected)
     {
+        
         switchToDependentButton.selected = YES;
         [userInfoDic setValue:self.dependentUser.memberid forKey:@"dependentmemberid"];
         [[NSUserDefaults standardUserDefaults] setValue:[Utility archiveData:userInfoDic] forKey:@"login"];
