@@ -28,9 +28,16 @@ NS_ASSUME_NONNULL_BEGIN
     __weak IBOutlet UILabel *voucherHeader;
     
     NSMutableArray *clubArray;
+    NSMutableArray *storeClubArray;
+
     NSMutableArray *filterArray;
     NSMutableArray *filterSelectedArray;
     NSMutableArray *_countryInfoArray;
+    NSMutableArray *_categoryArray;
+    
+    NSString *selectedCategoryId;
+    NSString *selectedCountryId;
+
 
     
     __weak IBOutlet UIPickerView *_pickerView;

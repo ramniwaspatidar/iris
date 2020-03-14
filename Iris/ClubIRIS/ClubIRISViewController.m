@@ -34,12 +34,20 @@
     promocode = @"";
     flatDiscount = @"";
     latestVoucher = @"";
+    selectedCategoryId = @"";
+    selectedCountryId = @"";
     
-  
+    
     _countryInfoArray = [[NSMutableArray alloc]init];
+    storeClubArray = [[NSMutableArray alloc]init];
+    
+    
+    _categoryArray = [[NSMutableArray alloc]init];
+    
     [self getClubList];
     [self showHeaderLogo];
     [self initialSetupView];
+    [self callingCategoryList];
 }
 
 -(void)initialSetupView
@@ -257,8 +265,21 @@
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    [self getClubList];
-
+    
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", textField.text];
+    NSArray *array = [[clubArray filteredArrayUsingPredicate:resultPredicate] mutableCopy] ;
+    
+    if ([textField.text isEqualToString:@""]){
+        clubArray = storeClubArray;
+    }
+    else {
+        [clubArray removeAllObjects];
+        clubArray = [NSMutableArray arrayWithArray:array];
+    }
+    
+    [_mainTableView reloadData];
+    //    [self getClubList];
+    
     
 }
 
@@ -377,11 +398,22 @@
 - (IBAction)allButtonAction:(id)sender {
     
     
-//    DPPickerManager * manager = [[DPPickerManager alloc]init];
-//    
-//    [manager showPickerWithTitle:@"Select Category" selected:@"1" strings:@[@"1",@"2",@"3"] completion:^(NSString * _Nullable value, NSInteger index, BOOL cancel) {
-//        
-//    }];
+    NSArray *arrayCountry = [_categoryArray valueForKey:@"categoryname"];
+    DPPickerManager * manager = [[DPPickerManager alloc]init];
+    
+    [manager showPickerWithTitle:@"Select Category" selected:selectedCategoryId strings:arrayCountry completion:^(NSString * _Nullable value, NSInteger index, BOOL cancel) {
+        
+        if (index >0) {
+            self->selectedCategoryId = [[self->_categoryArray objectAtIndex:index] valueForKey:@"categoryid"];
+            self->allTextField.text = value;
+        }
+        else{
+            self->selectedCategoryId = @"";
+            self->allTextField.text = @"All";
+        }
+        
+        [self getClubList];
+    }];
     
     
 }
@@ -391,9 +423,14 @@
     NSArray *arrayCountry = [_countryInfoArray valueForKey:@"countryname"];
     DPPickerManager * manager = [[DPPickerManager alloc]init];
     
-    [manager showPickerWithTitle:@"Select Country" selected:@"1" strings:arrayCountry completion:^(NSString * _Nullable value, NSInteger index, BOOL cancel) {
-        self->countryTextFiled.text = value;
+    [manager showPickerWithTitle:@"Select Country" selected:selectedCountryId strings:arrayCountry completion:^(NSString * _Nullable value, NSInteger index, BOOL cancel) {
         
+        if (index >0) {
+            self->selectedCountryId = [[self->_countryInfoArray objectAtIndex:index] valueForKey:@"countryID"];
+            self->countryTextFiled.text = value;
+        }
+        
+        [self getClubList];
     }];
     
 }
@@ -414,14 +451,13 @@
     
     
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    [dictionary setValue:[userInfoDic valueForKey:@"memberid"] forKey:@"memberid"];
-    [dictionary setValue:@"" forKey:@"Category"];
-    [dictionary setValue:countryTextFiled.text forKey:@"Country"];
-    [dictionary setValue:discount forKey:@"BuyOneAndGetOneFree"];
-    [dictionary setValue:promocode forKey:@"PromoCode"];
-    [dictionary setValue:flatDiscount forKey:@"HotDeal"];
-    [dictionary setValue:latestVoucher forKey:@"NewlyAdded"];
-    
+    [dictionary setValue:[userInfoDic valueForKey:@"memberid"] forKey:@"memberid"];// 0258
+    [dictionary setValue:selectedCategoryId forKey:@"categoryid"];
+    [dictionary setValue:selectedCountryId forKey:@"countryid"];
+    //    [dictionary setValue:discount forKey:@"buyOneAndGetOneFree"];
+    //    [dictionary setValue:promocode forKey:@"promoCode"];
+    //    [dictionary setValue:flatDiscount forKey:@"hotDeal"];
+    //    [dictionary setValue:latestVoucher forKey:@"newlyAdded"];
     
     
     NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetAllClubIrisVoucherList"];
@@ -442,9 +478,10 @@
                     //                     [self callShowProfileAPI];
                     
                     self->clubArray = [[NSMutableArray alloc]initWithArray:[responseDictionary valueForKey:@"listofvouchers"]];
+                    
+                    self->storeClubArray = [[NSMutableArray alloc]initWithArray:[responseDictionary valueForKey:@"listofvouchers"]];
                     [self->_mainTableView reloadData];
                     [self callGetCountryCurrencyAPI];
-
                     
                 }
                 
@@ -470,27 +507,54 @@
     NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
     NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetCountryCurrency"];
     
-    [[ConnectionManager sharedInstance] sendGETRequestForURL:url withHeader:[userInfoDic valueForKey:@"token"]  timeoutInterval:kTimeoutDuration showHUD:YES showSystemError:NO completion:^(NSDictionary *dictionary, NSError *error)
+    [[ConnectionManager sharedInstance] sendGETRequestForURL:url withHeader:[userInfoDic valueForKey:@"token"]  timeoutInterval:kTimeoutDuration showHUD:false showSystemError:NO completion:^(NSDictionary *dictionary, NSError *error)
      {
-         if (!error)
-         {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 
-                 NSString *serverMsg = [NSString stringWithFormat:@"%@",[dictionary valueForKey:kServerMessage]];
-                 if([[serverMsg lowercaseString] isEqualToString:@"success"])
-                 {
-                     [self->_countryInfoArray addObjectsFromArray:[dictionary valueForKey:@"Countrys"]];
-                 }
+        if (!error)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
-             });
-         }
-         else
-         {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 
-             });
-         }
-     }];
+                NSString *serverMsg = [NSString stringWithFormat:@"%@",[dictionary valueForKey:kServerMessage]];
+                if([[serverMsg lowercaseString] isEqualToString:@"success"])
+                {
+                    [self->_countryInfoArray addObjectsFromArray:[dictionary valueForKey:@"Countrys"]];
+                }
+                
+            });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+        }
+    }];
+}
+
+-(void)callingCategoryList
+{
+    NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetClubIrisCategory"];
+    
+    [[ConnectionManager sharedInstance] sendGETRequestForURL:url withHeader:[userInfoDic valueForKey:@"token"]  timeoutInterval:kTimeoutDuration showHUD:false showSystemError:NO completion:^(NSDictionary *dictionary, NSError *error)
+     {
+        if (!error)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSString *serverMsg = [NSString stringWithFormat:@"%@",[dictionary valueForKey:kServerMessage]];
+                if([[serverMsg lowercaseString] isEqualToString:@"success"])
+                {
+                    [self->_categoryArray addObjectsFromArray:[dictionary valueForKey:@"Category"]];
+                }
+            });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+        }
+    }];
 }
 
 @end

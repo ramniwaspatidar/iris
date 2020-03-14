@@ -12,11 +12,16 @@ import UIKit
 @objc protocol delegateDownloadFinished {
     func saveDownloadFile(_ url : URL)
 }
-class ECardViewController: UIViewController,downloadStatusDelegate {
+class ECardViewController: UIViewController,downloadStatusDelegate,URLSessionDelegate,URLSessionDownloadDelegate {
+    
+    var progressDelegate : downloadStatusDelegate?
+    var defaultSession: URLSession!
+    @objc var downloadTask: URLSessionDownloadTask!
     
     
-   @objc var pdfUrl : String = ""
-   @objc var downloadDelegate : delegateDownloadFinished?
+    
+    @objc var pdfUrl : String = ""
+    @objc var downloadDelegate : delegateDownloadFinished?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
@@ -34,23 +39,87 @@ class ECardViewController: UIViewController,downloadStatusDelegate {
     @IBOutlet weak var hideButton : UIButton!
     
     var ecard : EcardModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ecard = EcardModel()
-        ecard?.progressDelegate = self
-        ecard?.getPDFFile(pdfUrl)
+        getPDFFile(pdfUrl)
+        
+        //        ecard = EcardModel()
+        //        ecard?.progressDelegate = self
+        //        ecard?.getPDFFile(pdfUrl)
+        
+        nameLabel.text = ""
+        fromLabel.text = ""
+        sizeLabel.text = "0"
+        percentageLabel.text = "0"
+        progressView.progress = 0
         setView()
+    }
+    
+    @objc func getPDFFile(_ url : String){
+        
+        let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
+        defaultSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
+        downloadTask = defaultSession.downloadTask(with: URL(string: url)!)
+        downloadTask.resume()
+        
+    }
+    
+    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        if totalBytesExpectedToWrite > 0 {
+            getDownloadStatus(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite)
+        }
+    }
+    
+    
+    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,
+                           didFinishDownloadingTo location: URL) {
+        guard let httpResponse = downloadTask.response as? HTTPURLResponse,
+            (200...299).contains(httpResponse.statusCode) else {
+                print ("server error")
+                return
+        }
+        do {
+            let documentsURL = try
+                FileManager.default.url(for: .documentDirectory,
+                                        in: .userDomainMask,
+                                        appropriateFor: nil,
+                                        create: false)
+            let savedURL = documentsURL.appendingPathComponent(
+                "ecard.pdf")
+            saveFile(savedURL)
+            try FileManager.default.moveItem(at: location, to: savedURL)
+            
+        } catch {
+            print ("file error: \(error)")
+        }
+    }
+    
+    
+    
+    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        downloadTask = nil
+        if (error != nil) {
+            print("failed")
+            
+        }
+        else {
+            print("The task finished successfully")
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     func setView(){
         
-       progressText.text =  Localization.languageSelectedString(forKey: "Progress")
-       downloadTitle.text = Localization.languageSelectedString(forKey: "Download")
-       cancelButton.setTitle(Localization.languageSelectedString(forKey: "CANCEL"), for: .normal)
-       hideButton.setTitle(Localization.languageSelectedString(forKey: "HIDE"), for: .normal)
-
+        progressText.text =  Localization.languageSelectedString(forKey: "Progress")
+        downloadTitle.text = Localization.languageSelectedString(forKey: "Download")
+        cancelButton.setTitle(Localization.languageSelectedString(forKey: "CANCEL"), for: .normal)
+        hideButton.setTitle(Localization.languageSelectedString(forKey: "HIDE"), for: .normal)
+        
         
         bgView.layer.masksToBounds = false
         bgView.layer.cornerRadius = 10
@@ -63,13 +132,13 @@ class ECardViewController: UIViewController,downloadStatusDelegate {
     
     func getDownloadStatus(_ bytesWritten: Int64, _ totalBytesWritten: Int64, _ totalBytesExpectedToWrite: Int64) {
         let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
-
+        
         let percentage = (totalBytesWritten * 100) / totalBytesExpectedToWrite
         
         percentageLabel.text = "\(percentage) %%%"
         
         let urlString = pdfUrl.replacingOccurrences(of: "http://demoiris.ezyclaim.com:8080/MobileApp/MobileApp/eCardPdf/", with: "")
-       let str = urlString.replacingOccurrences(of: ".pdf", with: "")
+        let str = urlString.replacingOccurrences(of: ".pdf", with: "")
         
         nameLabel.text = "\(Localization.languageSelectedString(forKey: "Name : "))" + str
         fromLabel.text = "\(Localization.languageSelectedString(forKey: "From : "))" + pdfUrl
@@ -88,9 +157,9 @@ class ECardViewController: UIViewController,downloadStatusDelegate {
     }
     @IBAction func cancelButtonAction(_ sender: Any) {
         //EcardModel.btnStopPressed();
-//        ecard?.downloadTask.cancel()
+        //        ecard?.downloadTask.cancel()
         self.navigationController?.popViewController(animated: true)
-
+        
     }
     @IBAction func hideButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

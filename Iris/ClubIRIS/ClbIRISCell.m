@@ -116,7 +116,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
       IRISClubDetailViewController *detailView = [storyboard instantiateViewControllerWithIdentifier:@"IRISClubDetailViewController"];
-      detailView.dictDetail = dictDetail;
+      detailView.dictDetailInfo = dictDetail;
       [self.nav.navigationController pushViewController:detailView animated:true];
 }
 

@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Iris-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IRISClubDetailViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface IRISClubDetailViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,delegateDownloadFinished,UIDocumentInteractionControllerDelegate>{
     __weak IBOutlet UICollectionView *collectionView;
     NSMutableArray *arrayClubList;
 
-
+    __weak IBOutlet UIImageView *qrCodeImageView;
+    
     __weak IBOutlet UILabel *titleLabel;
     __weak IBOutlet UILabel *promotionLabel;
     __weak IBOutlet UILabel *discountLabel;
@@ -25,11 +27,16 @@ NS_ASSUME_NONNULL_BEGIN
     __weak IBOutlet UIButton *partnerButton;
     __weak IBOutlet UIButton *redeemptionButton;
     __weak IBOutlet UIButton *locationButton;
+    __weak IBOutlet UITableView *tblView;
+    __weak IBOutlet UILabel *codeLabel;
+    
+   NSDictionary  *dictDetail;
+
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (strong) NSDictionary  *dictDetail;
+@property (strong) NSDictionary  *dictDetailInfo;
 
 
 - (IBAction)backButtonAction:(id)sender;

@@ -50,6 +50,8 @@ protocol downloadStatusDelegate {
             progressDelegate?.getDownloadStatus(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite)
         }
     }
+    
+   
     public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL) {
         guard let httpResponse = downloadTask.response as? HTTPURLResponse,
