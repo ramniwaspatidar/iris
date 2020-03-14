@@ -30,6 +30,8 @@
 #import "MainSideMenuViewController.h"
 #import "PdfWebViewController.h"
 #import "Localization.h"
+#import "ClubIRISViewController.h"
+
 @interface LoginViewController ()
 
 @end
@@ -262,8 +264,13 @@
 }
 
 - (IBAction)loginButtonAction:(id)sender {
+    
+//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        ClubIRISViewController *clubIRISViewController = [storyBoard instantiateViewControllerWithIdentifier:@"ClubIRISViewController"];
+//
+//    [self.navigationController pushViewController:clubIRISViewController animated:true];
     NSString *message = [self validateForm];
-    if(!message)
+   if(!message)
     {
         [self callLoginAPI:_emailTextField.text andPassword:_passwordTextField.text];
     }
@@ -433,6 +440,12 @@
                              
                          }
                          NSArray *dependentArray = [[[dictionary valueForKey:@"policyholder"]objectAtIndex:i] valueForKey:@"dependents"];
+                         
+
+                         NSMutableDictionary *updatedECardInfoDictionary = [[NSMutableDictionary alloc] init];
+                       
+                         [updatedECardInfoDictionary setValue:dependentArray forKey:@"dependents"];
+                         [[NSUserDefaults standardUserDefaults] setValue:[Utility archiveData:updatedECardInfoDictionary] forKey:@"dependentsDictionary"];
                          
                          if(dependentArray.count > 0)
                          {

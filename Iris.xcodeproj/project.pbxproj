@@ -674,6 +674,13 @@
 		A8275787240DFC4600D5C6C8 /* ClbIRISCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */; };
 		A8275788240DFC4600D5C6C8 /* ClbIRISCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */; };
 		A8275789240DFC4600D5C6C8 /* ClbIRISCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */; };
+		A86ABA61241384CB00756508 /* DPPickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86ABA60241384C900756508 /* DPPickerManager.swift */; };
+		A86ABA652415514900756508 /* ClubFilterCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A86ABA622415514900756508 /* ClubFilterCell.h */; };
+		A86ABA662415514900756508 /* ClubFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86ABA632415514900756508 /* ClubFilterCell.m */; };
+		A86ABA672415514900756508 /* ClubFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86ABA642415514900756508 /* ClubFilterCell.xib */; };
+		A86ABA6B241AA29000756508 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = A86ABA68241AA28E00756508 /* download.png */; };
+		A86ABA6C241AA29000756508 /* download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A86ABA69241AA28F00756508 /* download@2x.png */; };
+		A86ABA6D241AA29000756508 /* download@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A86ABA6A241AA28F00756508 /* download@3x.png */; };
 		A89D660E2410082D009146D4 /* ClubCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A89D660B2410082D009146D4 /* ClubCollectionCell.h */; };
 		A89D660F2410082D009146D4 /* ClubCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D660C2410082D009146D4 /* ClubCollectionCell.m */; };
 		A89D66102410082D009146D4 /* ClubCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89D660D2410082D009146D4 /* ClubCollectionCell.xib */; };
@@ -1413,6 +1420,13 @@
 		A8275784240DFC4600D5C6C8 /* ClbIRISCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClbIRISCell.h; sourceTree = "<group>"; };
 		A8275785240DFC4600D5C6C8 /* ClbIRISCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClbIRISCell.m; sourceTree = "<group>"; };
 		A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClbIRISCell.xib; sourceTree = "<group>"; };
+		A86ABA60241384C900756508 /* DPPickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DPPickerManager.swift; path = "../../../Downloads/DPPickerManager-master/DPPickerManager/Class/DPPickerManager.swift"; sourceTree = "<group>"; };
+		A86ABA622415514900756508 /* ClubFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubFilterCell.h; sourceTree = "<group>"; };
+		A86ABA632415514900756508 /* ClubFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubFilterCell.m; sourceTree = "<group>"; };
+		A86ABA642415514900756508 /* ClubFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubFilterCell.xib; sourceTree = "<group>"; };
+		A86ABA68241AA28E00756508 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = download.png; path = ../../../../Downloads/download.png; sourceTree = "<group>"; };
+		A86ABA69241AA28F00756508 /* download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "download@2x.png"; path = "../../../../Downloads/download@2x.png"; sourceTree = "<group>"; };
+		A86ABA6A241AA28F00756508 /* download@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "download@3x.png"; path = "../../../../Downloads/download@3x.png"; sourceTree = "<group>"; };
 		A89D660B2410082D009146D4 /* ClubCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubCollectionCell.h; sourceTree = "<group>"; };
 		A89D660C2410082D009146D4 /* ClubCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubCollectionCell.m; sourceTree = "<group>"; };
 		A89D660D2410082D009146D4 /* ClubCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubCollectionCell.xib; sourceTree = "<group>"; };
@@ -2011,6 +2025,9 @@
 		09F3F0C41FCC3C26009A316B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A86ABA68241AA28E00756508 /* download.png */,
+				A86ABA69241AA28F00756508 /* download@2x.png */,
+				A86ABA6A241AA28F00756508 /* download@3x.png */,
 				09FAFA831FEBB4580056F254 /* linkdin@2x.png */,
 				09FAFA821FEBB4580056F254 /* linkdin@3x.png */,
 				09F3F1041FCC3CD1009A316B /* bg.png */,
@@ -2657,6 +2674,7 @@
 		A80881BE240BEC8400BE4E27 /* ClubIRIS */ = {
 			isa = PBXGroup;
 			children = (
+				A86ABA60241384C900756508 /* DPPickerManager.swift */,
 				A8275780240DF76600D5C6C8 /* ClubIRISViewController.h */,
 				A8275781240DF76600D5C6C8 /* ClubIRISViewController.m */,
 				A89D660B2410082D009146D4 /* ClubCollectionCell.h */,
@@ -2667,6 +2685,9 @@
 				A8275786240DFC4600D5C6C8 /* ClbIRISCell.xib */,
 				A82248BD241092C400656D34 /* IRISClubDetailViewController.h */,
 				A82248BE241092C400656D34 /* IRISClubDetailViewController.m */,
+				A86ABA622415514900756508 /* ClubFilterCell.h */,
+				A86ABA632415514900756508 /* ClubFilterCell.m */,
+				A86ABA642415514900756508 /* ClubFilterCell.xib */,
 			);
 			path = ClubIRIS;
 			sourceTree = "<group>";
@@ -2903,6 +2924,7 @@
 				09EF93521FFA2F730075C9B7 /* HBAStatesCollectionViewCell.h in Headers */,
 				09F7674D1FE7F97C009CB1B5 /* SearchResultsControllerTableViewController.h in Headers */,
 				090EDB781FE6CF1E0024115C /* MapViewController.h in Headers */,
+				A86ABA652415514900756508 /* ClubFilterCell.h in Headers */,
 				0975441B1FCEF40700230B27 /* DGActivityIndicatorDoubleBounceAnimation.h in Headers */,
 				09F720A11FED116D00E4771B /* BloodPressureTrackerViewController.h in Headers */,
 				098D26401FD97986009740C5 /* PolicyDetailTableViewCell.h in Headers */,
@@ -3078,6 +3100,7 @@
 				09F7CAAE1FE2A08F0027CAA5 /* calendar.png in Resources */,
 				905329F322969D3500D9170C /* AppointmentEventCell.xib in Resources */,
 				0934462C1FD69EBA003B562F /* list@2x.png in Resources */,
+				A86ABA6C241AA29000756508 /* download@2x.png in Resources */,
 				004894F7201F49BE00A9F088 /* history_dep.png in Resources */,
 				09A0FF951FD18702006A80A2 /* revealmenu.png in Resources */,
 				0982F06820209567006E9750 /* dependent@2x.png in Resources */,
@@ -3112,6 +3135,7 @@
 				09F8740C1FDA618400E3E42D /* policy@3x.png in Resources */,
 				09F8740F1FDA618400E3E42D /* calculator@3x.png in Resources */,
 				09F874171FDA618400E3E42D /* medicinealert@3x.png in Resources */,
+				A86ABA6D241AA29000756508 /* download@3x.png in Resources */,
 				004894EC201F49BE00A9F088 /* history_dep@2x.png in Resources */,
 				09F874471FDA621400E3E42D /* Icon-App-72x72@2x.png in Resources */,
 				905329F022969D2E00D9170C /* SearchTableViewCell.xib in Resources */,
@@ -3241,6 +3265,7 @@
 				54AF9F29221ADDAA00CF7C02 /* ecart@3x.png in Resources */,
 				09FAA8A92008B6FD0001ABE0 /* previousbutton@2x.png in Resources */,
 				09F8740E1FDA618400E3E42D /* aboutus@2x.png in Resources */,
+				A86ABA672415514900756508 /* ClubFilterCell.xib in Resources */,
 				09A4EB49202C62E1004F4CA0 /* checkbox@3x.png in Resources */,
 				90532A7522969EAE00D9170C /* PromotionTableViewCell.xib in Resources */,
 				90532A1122969DA000D9170C /* BloodSugarButtonTableViewCell.xib in Resources */,
@@ -3293,6 +3318,7 @@
 				004894F0201F49BE00A9F088 /* reimbursment_dep@3x.png in Resources */,
 				093446311FD69EBA003B562F /* map@3x.png in Resources */,
 				09F874031FDA618400E3E42D /* bloodpressure@3x.png in Resources */,
+				A86ABA6B241AA29000756508 /* download.png in Resources */,
 				09FACB481FF7920A009188D5 /* LipidStatesCollectionViewCell.xib in Resources */,
 				54AF9F28221ADDAA00CF7C02 /* ecart@2x.png in Resources */,
 				09A0FFA71FD18702006A80A2 /* search_h.png in Resources */,
@@ -3537,9 +3563,11 @@
 				09FAA4761FFF4EDF00EBF53C /* PromotionDetailViewController.m in Sources */,
 				09FB5FB41FDE57CE00A1334F /* FSCalendarCollectionViewLayout.m in Sources */,
 				09FAA4931FFFA9B200EBF53C /* ProfileImageTableViewCell.m in Sources */,
+				A86ABA662415514900756508 /* ClubFilterCell.m in Sources */,
 				09F002111FEC1B9300D68860 /* BMIDetailViewController.m in Sources */,
 				09CC8AB91FDA99DB00A4943D /* AppointmentReminderViewController.m in Sources */,
 				09FAA48D1FFF9FE400EBF53C /* ProfileDetailTableViewCell.m in Sources */,
+				A86ABA61241384CB00756508 /* DPPickerManager.swift in Sources */,
 				09FEE4CC20062E3F00794456 /* NSData+Base64.m in Sources */,
 				09FEE4C72005EC1600794456 /* FSLineChart.m in Sources */,
 				097543FA1FCEF40700230B27 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
@@ -4120,12 +4148,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development: Anil Nair (JUPLHT2TQ5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Anil Nair (JUPLHT2TQ5)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.3.2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N6ZCPUA3QT;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Iris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iris.healthservices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "45524ed2-3f70-4f45-a8ba-45bfb3ac1631";
@@ -4148,16 +4178,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: I R I S HEALTH SERVICES LLC (N6ZCPUA3QT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I R I S HEALTH SERVICES LLC (N6ZCPUA3QT)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.3.2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N6ZCPUA3QT;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Iris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iris.healthservices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "45524ed2-3f70-4f45-a8ba-45bfb3ac1631";
-				PROVISIONING_PROFILE_SPECIFIER = distribution_provisioning_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "IRIS App Store New";
 				SWIFT_OBJC_BRIDGING_HEADER = "Iris/Iris-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -4234,10 +4266,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Anil Nair (JUPLHT2TQ5)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.3.2;
 				DEVELOPMENT_TEAM = N6ZCPUA3QT;
 				INFOPLIST_FILE = iris_notification_service/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iris.healthservices.iris-notification-service";
@@ -4256,14 +4290,16 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I R I S HEALTH SERVICES LLC (N6ZCPUA3QT)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.3.2;
 				DEVELOPMENT_TEAM = N6ZCPUA3QT;
 				INFOPLIST_FILE = iris_notification_service/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iris.healthservices.iris-notification-service";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = onesignal_prod_provisioning;
+				PROVISIONING_PROFILE_SPECIFIER = appstore_onesignal_provisioning;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

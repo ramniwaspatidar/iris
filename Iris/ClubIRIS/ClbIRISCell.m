@@ -9,14 +9,20 @@
 #import "ClbIRISCell.h"
 #import "ClubCollectionCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "IRISClubDetailViewController.h"
 
 @implementation ClbIRISCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [collectionView registerNib:[UINib nibWithNibName:@"ClubCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"ClubCollectionCell"];
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    collectionView.userInteractionEnabled = true;
+
     
+    [collectionView registerNib:[UINib nibWithNibName:@"ClubCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"ClubCollectionCell"];
+  
     bgView.layer.masksToBounds = true;
     bgView.layer.cornerRadius = 5;
     bgView.layer.borderWidth = 1;
@@ -65,10 +71,11 @@
     // Configure the view for the selected state
 }
 
--(void)getClubData:(NSArray *)arrayData title:(NSString *)title{
+-(void)getClubData:(NSMutableDictionary *)dict title:(NSString *)title{
     
+    dictDetail = dict;
     _titleLabel.text = title;
-    arrayClubList = [[NSMutableArray alloc]initWithArray:arrayData];
+    arrayClubList = [[NSMutableArray alloc]initWithArray:[dict valueForKey:@"voucherimageslist"]];
     [collectionView reloadData];
     
 }
@@ -88,6 +95,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ClubCollectionCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"ClubCollectionCell" forIndexPath:indexPath];
+    
     cell.backgroundColor=[UIColor clearColor];
     
     NSString *immageString = [[arrayClubList objectAtIndex:indexPath.row] valueForKey:@"URL"];
@@ -104,6 +112,16 @@
     return  CGSizeMake(collectionView.frame.size.width,153)
     ;
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+      IRISClubDetailViewController *detailView = [storyboard instantiateViewControllerWithIdentifier:@"IRISClubDetailViewController"];
+      detailView.dictDetail = dictDetail;
+      [self.nav.navigationController pushViewController:detailView animated:true];
+}
+
+
+
 
 // Layout: Set Edges
 - (UIEdgeInsets)collectionView:

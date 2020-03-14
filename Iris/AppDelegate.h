@@ -20,6 +20,10 @@
 
 @property (assign, nonatomic) BOOL shouldRotate;
 @property (assign, nonatomic) BOOL isViewYourCard;
+@property (assign, nonatomic) NSString *emiratesID;
+@property (assign, nonatomic) NSString *memberId;
+
+
 
 
 -(void)showLoginScreenWithDelay:(id)sender;

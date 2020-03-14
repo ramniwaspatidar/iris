@@ -20,6 +20,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ConnectionManager.h"
 #import "DbManager.h"
+#import "AppDelegate.h"
 
 @interface DependentProfileDetailViewController()<coropImageDelegate>
 
@@ -168,6 +169,8 @@ typedef enum _cameraMode
             
         }
     
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+
         if(self.dependentUser.passport)
         {
             _passportNoLabel.text = self.dependentUser.passport;
@@ -203,10 +206,12 @@ typedef enum _cameraMode
         if(self.dependentUser.emiratesid)
         {
             _emritidLabel.text = self.dependentUser.emiratesid;
+            appDelegate.memberId = self.dependentUser.emiratesid;
         }
         if(self.dependentUser.memberid)
         {
             _memberidLabel.text = self.dependentUser.memberid;
+             appDelegate.memberId = self.dependentUser.memberid;
         }
         if(self.dependentUser.relation)
         {

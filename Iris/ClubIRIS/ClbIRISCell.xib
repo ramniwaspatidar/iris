@@ -50,7 +50,7 @@
                                     <action selector="nextButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Lz5-GE-9NB"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fFX-m8-8SH">
+                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fFX-m8-8SH">
                                 <rect key="frame" x="50" y="30" width="200" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ywp-j8-of8">
@@ -60,8 +60,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <connections>
-                                    <outlet property="dataSource" destination="KGk-i7-Jjw" id="X5z-Ck-vdb"/>
-                                    <outlet property="delegate" destination="KGk-i7-Jjw" id="0k7-am-NP7"/>
+                                    <outlet property="dataSource" destination="-1" id="FhT-Ur-hsX"/>
+                                    <outlet property="delegate" destination="-1" id="Eg5-iG-9of"/>
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qg-X3-3LN">

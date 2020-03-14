@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ClubIRISViewController : UIViewController{
+@interface ClubIRISViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>{
     
     __weak IBOutlet UIButton *menuButton;
     __weak IBOutlet UILabel *titleLabel;
@@ -28,16 +28,36 @@ NS_ASSUME_NONNULL_BEGIN
     __weak IBOutlet UILabel *voucherHeader;
     
     NSMutableArray *clubArray;
+    NSMutableArray *filterArray;
+    NSMutableArray *filterSelectedArray;
+    NSMutableArray *_countryInfoArray;
+
     
+    __weak IBOutlet UIPickerView *_pickerView;
+    NSString *currentPicker;
+    __weak IBOutlet UILabel *_pickerTitleLabel;
+
+    __weak IBOutlet NSLayoutConstraint *_pickerViewBottomCons;
+
+    __weak IBOutlet UITableView *filterTable;
+    
+
+
     NSIndexPath *activeCellIndexPath;
     BOOL keyboardShown;
     CGFloat keyboardOverlap;
     float keybaordHeight;
     
+    NSString *searchString;
+    NSString *promocode;
+    NSString *flatDiscount;
+    NSString *discount;
+    NSString *latestVoucher;
     
 }
 - (IBAction)allButtonAction:(id)sender;
 - (IBAction)countryButton:(id)sender;
+- (IBAction)filterButtonAction:(id)sender;
 
 @end
 

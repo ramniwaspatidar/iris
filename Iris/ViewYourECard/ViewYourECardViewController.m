@@ -17,6 +17,8 @@
 #import "Constant.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ConnectionManager.h"
+#import "DbManager.h"
+#import "AppDelegate.h"
 
 @interface ViewYourECardViewController () {
     
@@ -74,15 +76,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetupView];
-    
     _eCardInfoDetailDictionary = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"policyInfoDictionary"]];
-    NSLog(@"%@", _eCardInfoDetailDictionary);
-    [self updateECardInfo];
+    
+    NSDictionary * dict = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"dependentsDictionary"]];
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString *activeDependent = appDelegate.memberId;
+    
+    
+    NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
+    NSString *dependentmemberid = [userInfoDic valueForKey:@"dependentmemberid"];
+    
+    
+    for (NSDictionary *dependentUser in [dict valueForKey:@"dependents"]) {
+        if([dependentmemberid isEqualToString:[dependentUser valueForKey:@"memberid"]] && activeDependent && ![activeDependent isEqualToString:@""]) {
+            [self updateECardInfo:dependentUser];
+            return;
+        }
+        else
+        {
+            [self updateECardInfo:_eCardInfoDetailDictionary];
+        }
+    }
+    
+    
     
 }
 
-- (void)updateECardInfo {
-    NSArray *eCardInfoArray = [_eCardInfoDetailDictionary valueForKey:@"eCardInfo"];
+
+
+- (void)updateECardInfo:(NSDictionary *)dict {
+    NSArray *eCardInfoArray = [dict valueForKey:@"eCardInfo"];
     NSString *myString1 = @",1";
     NSString *myString2 = @",2";
     
@@ -368,41 +392,46 @@
     
     [[ConnectionManager sharedInstance] sendPOSTRequestForURLWithRawJsonAndHeader:url withHeader:[userInfoDic valueForKey:@"token"] json:jsonString timeoutInterval:kTimeoutDuration showHUD:YES showSystemError:NO completion:^(NSDictionary *responseDictionary, NSError *error)
      {
-         if (!error)
-         {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 
-                 NSString *serverMsg = [NSString stringWithFormat:@"%@",[responseDictionary valueForKey:kServerMessage]];
-                 if([[serverMsg lowercaseString] isEqualToString:@"success"])
-                 {
-                     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-                     NSString *documentsDirectory = [paths objectAtIndex:0];
-                     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ecard.pdf"];
-                     
-                     if ([self checkFileExistAtPath:path]){
-                         [self pdfSucessAlert:[NSString stringWithFormat:@"file:///%@",path]];
-                     }
-                     else{
-                     NSDictionary *dict = [responseDictionary valueForKey:@"pdfUrl"];
-                     NSString *pdfUrl = [dict valueForKey:@"pdfUrl"];
-                     [self performSegueWithIdentifier:kdownloadEcardSegue sender:pdfUrl];
-                 }
-                 }
-                 else
-                 {
-                     [Utility showAlertViewControllerIn:self title:nil message:serverMsg block:^(int index) {
-                     }];
-                 }
-                 
-             });
-         }
-         else
-         {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 
-             });
-         }
-     }];
+        if (!error)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSString *serverMsg = [NSString stringWithFormat:@"%@",[responseDictionary valueForKey:kServerMessage]];
+                if([[serverMsg lowercaseString] isEqualToString:@"success"])
+                {
+                    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                    NSString *documentsDirectory = [paths objectAtIndex:0];
+                    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ecard.pdf"];
+                    
+                    if ([self checkFileExistAtPath:path]){
+                        //                         [self pdfSucessAlert:[NSString stringWithFormat:@"file:///%@",path]];
+                    }
+                    
+                    NSDictionary *dict = [responseDictionary valueForKey:@"pdfUrl"];
+                    NSString *pdfUrl = [dict valueForKey:@"pdfUrl"];
+                    [self performSegueWithIdentifier:kdownloadEcardSegue sender:pdfUrl];
+                    
+                    //                     else{
+                    //                     NSDictionary *dict = [responseDictionary valueForKey:@"pdfUrl"];
+                    //                     NSString *pdfUrl = [dict valueForKey:@"pdfUrl"];
+                    //                     [self performSegueWithIdentifier:kdownloadEcardSegue sender:pdfUrl];
+                    //                 }
+                }
+                else
+                {
+                    [Utility showAlertViewControllerIn:self title:nil message:serverMsg block:^(int index) {
+                    }];
+                }
+                
+            });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+        }
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -420,11 +449,12 @@
 }
 
 - (BOOL)checkFileExistAtPath:(NSString *)path {
-   
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     if ([fileManager fileExistsAtPath: path])
     {
+        [fileManager removeItemAtPath:path error:NULL];
         return YES;
     }
     return NO;
@@ -438,11 +468,11 @@
     
     UIAlertAction *openFile = [UIAlertAction actionWithTitle:[Localization languageSelectedStringForKey:@"OPEN FILE"] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                                {
-                                   
-                                   UIDocumentInteractionController *documentInteractionController =[UIDocumentInteractionController interactionControllerWithURL:[NSURL URLWithString:path]];
-                                   documentInteractionController.delegate = self;
-                                   [documentInteractionController presentPreviewAnimated:YES];
-                               }];
+        
+        UIDocumentInteractionController *documentInteractionController =[UIDocumentInteractionController interactionControllerWithURL:[NSURL URLWithString:path]];
+        documentInteractionController.delegate = self;
+        [documentInteractionController presentPreviewAnimated:YES];
+    }];
     
     [alertController addAction:openFile];
     

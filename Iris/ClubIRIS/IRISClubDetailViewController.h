@@ -29,9 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (strong) NSDictionary  *dictDetail;
 
-@property(nonatomic,retain) NSMutableDictionary *detailDictionaty;
 
+- (IBAction)backButtonAction:(id)sender;
 - (IBAction)locationButtonAction:(id)sender;
 - (IBAction)previousButtonAction:(id)sender;
 - (IBAction)downloadButtonAction:(id)sender;

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-@interface ClbIRISCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>{
+@interface ClbIRISCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>{
     
     __weak IBOutlet UICollectionView *collectionView;
     __weak IBOutlet UIPageControl *pageControl;
@@ -20,11 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
     
     
     NSMutableArray *arrayClubList;
+    NSMutableDictionary *dictDetail;
 }
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 -(void)getClubData:(NSArray *)arrayData title:(NSString *)title;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property(nonatomic,retain) UIViewController *nav;
+
 - (IBAction)previousButtonAction:(id)sender;
 - (IBAction)nextButtonAction:(id)sender;
 @end

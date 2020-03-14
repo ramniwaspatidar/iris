@@ -60,7 +60,7 @@
 @property(nonatomic,strong) UIImagePickerController *imagePicker;
 
 @property(nonatomic,strong)Dependent *dependentUser;
-@property(nonatomic,strong)User *userPolicyDetails;
+//@property(nonatomic,strong)User *userPolicyDetails;
 
 
 @end

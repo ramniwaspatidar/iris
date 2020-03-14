@@ -2065,17 +2065,30 @@
                                         </constraints>
                                         <state key="normal" image="revealmenu.png"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi8-Zj-6iQ">
+                                        <rect key="frame" x="326" y="9" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="PVg-Gb-69P"/>
+                                            <constraint firstAttribute="width" constant="30" id="ylT-3x-PP8"/>
+                                        </constraints>
+                                        <state key="normal" image="filter_white.png"/>
+                                        <connections>
+                                            <action selector="filterButtonAction:" destination="Sw3-Rq-bC8" eventType="touchUpInside" id="RtA-rI-bom"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Y0I-KY-5Zk" firstAttribute="leading" secondItem="7RG-Iu-4vl" secondAttribute="leading" constant="8" id="6nS-LD-YLy"/>
                                     <constraint firstItem="5Cw-21-j5X" firstAttribute="top" secondItem="7RG-Iu-4vl" secondAttribute="top" constant="14" id="IOm-NA-LdC"/>
+                                    <constraint firstItem="Mi8-Zj-6iQ" firstAttribute="top" secondItem="7RG-Iu-4vl" secondAttribute="top" constant="9" id="JgR-z8-HSe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mi8-Zj-6iQ" secondAttribute="trailing" constant="19" id="Lj2-gI-EsS"/>
                                     <constraint firstItem="Y0I-KY-5Zk" firstAttribute="top" secondItem="7RG-Iu-4vl" secondAttribute="top" constant="9.6699999999999999" id="PBR-FY-raj"/>
                                     <constraint firstAttribute="height" constant="49" id="cQQ-Po-cNy"/>
                                     <constraint firstItem="5Cw-21-j5X" firstAttribute="leading" secondItem="Y0I-KY-5Zk" secondAttribute="trailing" constant="20" id="g6u-P7-7xT"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-QX-dad">
+                            <tableView clipsSubviews="YES" tag="102" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-QX-dad">
                                 <rect key="frame" x="0.0" y="93" width="375" height="719"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="8Hv-h7-f8P">
@@ -2178,7 +2191,7 @@
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLq-i3-8qV">
                                                             <rect key="frame" x="16" y="1" width="313" height="38"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="Sw3-Rq-bC8" id="4Vv-cs-XWh"/>
                                                             </connections>
@@ -2235,6 +2248,28 @@
                                     <outlet property="delegate" destination="Sw3-Rq-bC8" id="Uxc-mu-5A3"/>
                                 </connections>
                             </tableView>
+                            <tableView hidden="YES" clipsSubviews="YES" tag="101" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="AKk-r2-Ju5">
+                                <rect key="frame" x="208" y="81" width="150" height="190"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="gbe-br-5bK"/>
+                                    <constraint firstAttribute="height" constant="190" id="v6T-nW-qwX"/>
+                                </constraints>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ruB-3I-E3O">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="Apply"/>
+                                    <connections>
+                                        <action selector="applyButtonAction:" destination="Sw3-Rq-bC8" eventType="touchUpInside" id="9aw-Nz-WYL"/>
+                                    </connections>
+                                </button>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sw3-Rq-bC8" id="6l5-Wx-dRa"/>
+                                    <outlet property="delegate" destination="Sw3-Rq-bC8" id="oa1-iu-R5D"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.7803921568627451" green="0.81960784313725488" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -2245,6 +2280,8 @@
                             <constraint firstAttribute="bottom" secondItem="B4b-QX-dad" secondAttribute="bottom" id="idA-gb-cYt"/>
                             <constraint firstItem="7RG-Iu-4vl" firstAttribute="top" secondItem="d0U-AH-gjh" secondAttribute="top" id="o9x-Yt-BUg"/>
                             <constraint firstItem="B4b-QX-dad" firstAttribute="trailing" secondItem="d0U-AH-gjh" secondAttribute="trailing" id="rhA-MQ-l9d"/>
+                            <constraint firstItem="d0U-AH-gjh" firstAttribute="trailing" secondItem="AKk-r2-Ju5" secondAttribute="trailing" constant="17" id="xXP-kb-jXz"/>
+                            <constraint firstItem="AKk-r2-Ju5" firstAttribute="top" secondItem="d0U-AH-gjh" secondAttribute="top" constant="37" id="zE0-WG-Ynp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d0U-AH-gjh"/>
                     </view>
@@ -2255,6 +2292,7 @@
                         <outlet property="bgView2" destination="BmR-T4-l2m" id="6Hr-YK-O9I"/>
                         <outlet property="bgView3" destination="GeH-Oi-XbM" id="Uyo-sg-yeu"/>
                         <outlet property="countryTextFiled" destination="xM7-FU-LzO" id="CNw-nS-vUc"/>
+                        <outlet property="filterTable" destination="AKk-r2-Ju5" id="eQD-j0-X77"/>
                         <outlet property="headerImageView" destination="c3r-xY-ZmL" id="FQ7-iK-QEA"/>
                         <outlet property="menuButton" destination="Y0I-KY-5Zk" id="dcx-aK-0Zx"/>
                         <outlet property="searchTextField" destination="iLq-i3-8qV" id="vvM-j6-Hav"/>
@@ -3611,11 +3649,11 @@
                                         </constraints>
                                         <state key="normal" image="revealmenu.png"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification.png" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-Lp-9LD">
-                                        <rect key="frame" x="330" y="9" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download.png" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-Lp-9LD">
+                                        <rect key="frame" x="330" y="13" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="XmM-ft-Dr6"/>
-                                            <constraint firstAttribute="height" constant="30" id="mfg-4C-hBw"/>
+                                            <constraint firstAttribute="width" constant="24" id="XmM-ft-Dr6"/>
+                                            <constraint firstAttribute="height" constant="24" id="mfg-4C-hBw"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -3625,9 +3663,9 @@
                                     <constraint firstItem="p9o-Qj-mIL" firstAttribute="centerY" secondItem="sFX-I1-ja6" secondAttribute="centerY" id="Fsh-Ak-zrs"/>
                                     <constraint firstAttribute="height" constant="49" id="blB-EB-JQr"/>
                                     <constraint firstItem="D78-2f-wlU" firstAttribute="centerY" secondItem="p9o-Qj-mIL" secondAttribute="centerY" id="dmR-UC-ILQ"/>
-                                    <constraint firstItem="PKg-Lp-9LD" firstAttribute="top" secondItem="sFX-I1-ja6" secondAttribute="top" constant="9" id="fI8-mG-cSs"/>
+                                    <constraint firstItem="PKg-Lp-9LD" firstAttribute="top" secondItem="sFX-I1-ja6" secondAttribute="top" constant="13" id="fI8-mG-cSs"/>
                                     <constraint firstItem="p9o-Qj-mIL" firstAttribute="leading" secondItem="sFX-I1-ja6" secondAttribute="leading" constant="8" id="fJ9-Xt-3ei"/>
-                                    <constraint firstAttribute="trailing" secondItem="PKg-Lp-9LD" secondAttribute="trailing" constant="15" id="uFv-pW-TfW"/>
+                                    <constraint firstAttribute="trailing" secondItem="PKg-Lp-9LD" secondAttribute="trailing" constant="21" id="uFv-pW-TfW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUa-xM-rXv">
@@ -8175,7 +8213,7 @@
                                         <rect key="frame" x="235" y="40" width="140" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-Pw-Soj">
-                                                <rect key="frame" x="74.333333333333314" y="8.6666666666666714" width="57.666666666666657" height="19"/>
+                                                <rect key="frame" x="54.333333333333321" y="8.6666666666666714" width="77.666666666666686" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="HSI-yr-aRT"/>
                                                 </constraints>
@@ -8184,7 +8222,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last One Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-yX-lhm">
-                                                <rect key="frame" x="74.333333333333314" y="37" width="57.666666666666657" height="18"/>
+                                                <rect key="frame" x="54.333333333333321" y="37" width="77.666666666666686" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="Dj1-xy-HKp"/>
                                                 </constraints>
@@ -8193,7 +8231,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Three Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c8-eX-rTZ">
-                                                <rect key="frame" x="74.333333333333314" y="65" width="63.666666666666657" height="18"/>
+                                                <rect key="frame" x="54.333333333333321" y="65" width="83.666666666666686" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="GUF-R8-G1d"/>
                                                 </constraints>
@@ -8202,7 +8240,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Six Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-gb-90E">
-                                                <rect key="frame" x="74.333333333333314" y="93" width="63.666666666666657" height="18"/>
+                                                <rect key="frame" x="54.333333333333321" y="93" width="83.666666666666686" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="l56-w2-lCT"/>
                                                 </constraints>
@@ -8211,7 +8249,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAh-zF-7mn">
-                                                <rect key="frame" x="5" y="4" width="60" height="28"/>
+                                                <rect key="frame" x="5" y="4" width="40" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="NMw-Vh-fIU"/>
                                                 </constraints>
@@ -8223,7 +8261,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-ju-Gpr">
-                                                <rect key="frame" x="5" y="32" width="60" height="28"/>
+                                                <rect key="frame" x="5" y="32" width="40" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="cBd-CG-yFV"/>
                                                 </constraints>
@@ -8235,7 +8273,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bx-6a-1Iq">
-                                                <rect key="frame" x="5" y="60" width="60" height="28"/>
+                                                <rect key="frame" x="5" y="60" width="40" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="oQ0-5H-AXM"/>
                                                 </constraints>
@@ -8247,7 +8285,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfe-i1-GQn">
-                                                <rect key="frame" x="5" y="88" width="60" height="28"/>
+                                                <rect key="frame" x="5" y="88" width="40" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="mZd-5j-bUL"/>
                                                 </constraints>
@@ -15826,7 +15864,7 @@ The app is loaded with resourceful features to help you track your medical histo
         <!--Club Detail View Controller-->
         <scene sceneID="HgJ-UP-qy0">
             <objects>
-                <viewController storyboardIdentifier="IRISClubDetailViewController" id="XoW-Yy-s4d" customClass="IRISClubDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IRISClubDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XoW-Yy-s4d" customClass="IRISClubDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tnf-GZ-fXu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -15851,6 +15889,9 @@ The app is loaded with resourceful features to help you track your medical histo
                                             <constraint firstAttribute="width" constant="30" id="mx3-MA-rQi"/>
                                         </constraints>
                                         <state key="normal" image="back.png"/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="XoW-Yy-s4d" eventType="touchUpInside" id="e9t-8F-Gdc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -15864,9 +15905,9 @@ The app is loaded with resourceful features to help you track your medical histo
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Em5-v9-HY0">
                                 <rect key="frame" x="1" y="94" width="375" height="683"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="uHo-QT-1iq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="718"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sNG-Wf-ygl">
@@ -15899,11 +15940,11 @@ The app is loaded with resourceful features to help you track your medical histo
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFb-JJ-QX9">
                                             <rect key="frame" x="16" y="178" width="343" height="24"/>
-                                            <color key="backgroundColor" red="0.094117647060000004" green="0.90980392160000001" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="9PZ-FF-bJf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -15920,31 +15961,31 @@ The app is loaded with resourceful features to help you track your medical histo
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-pu-O3D">
                                             <rect key="frame" x="16" y="210" width="343" height="40"/>
-                                            <color key="backgroundColor" red="0.094117647060000004" green="0.90980392160000001" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="1Ff-Tj-PUE"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU3-C2-Z9H">
                                             <rect key="frame" x="16" y="290" width="343" height="24"/>
-                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="4vJ-KO-6eQ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-CB-9hM">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-CB-9hM">
                                             <rect key="frame" x="16" y="322" width="343" height="24"/>
-                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="eum-at-aWV"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -15957,12 +15998,13 @@ The app is loaded with resourceful features to help you track your medical histo
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETt-pQ-GgW">
-                                            <rect key="frame" x="107.66666666666669" y="502" width="160" height="40"/>
+                                            <rect key="frame" x="107.66666666666669" y="502" width="160" height="35"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="t4H-jN-cte"/>
+                                                <constraint firstAttribute="height" constant="35" id="t4H-jN-cte"/>
                                                 <constraint firstAttribute="width" constant="160" id="uya-JU-eUb"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <state key="normal" title="DOWNLOAD">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -15971,12 +16013,12 @@ The app is loaded with resourceful features to help you track your medical histo
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-DD-xPx">
-                                            <rect key="frame" x="16.000000000000007" y="572" width="107.66666666666669" height="40"/>
+                                            <rect key="frame" x="16.000000000000007" y="567" width="107.66666666666669" height="40"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="nJ3-cj-boj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="PARTNER DESCRIPTION">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -15985,12 +16027,12 @@ The app is loaded with resourceful features to help you track your medical histo
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="q1i-Jm-haL">
-                                            <rect key="frame" x="133.66666666666666" y="572" width="107.66666666666666" height="40"/>
+                                            <rect key="frame" x="133.66666666666666" y="567" width="107.66666666666666" height="40"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="9ke-SE-Vl2"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="REDEEMTION T&amp;C's">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -15999,12 +16041,12 @@ The app is loaded with resourceful features to help you track your medical histo
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MG-x3-gyt">
-                                            <rect key="frame" x="251.33333333333334" y="572" width="107.66666666666666" height="40"/>
+                                            <rect key="frame" x="251.33333333333334" y="567" width="107.66666666666666" height="40"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="MM8-Uf-Sly"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="LOCATIONS">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -16012,9 +16054,9 @@ The app is loaded with resourceful features to help you track your medical histo
                                                 <action selector="locationButtonAction:" destination="XoW-Yy-s4d" eventType="touchUpInside" id="b21-sO-ONj"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-2u-oam">
-                                            <rect key="frame" x="16" y="632" width="343" height="70"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-2u-oam">
+                                            <rect key="frame" x="16" y="627" width="343" height="200"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -16025,7 +16067,7 @@ The app is loaded with resourceful features to help you track your medical histo
                                         <constraint firstAttribute="trailing" secondItem="5MG-x3-gyt" secondAttribute="trailing" constant="16" id="1pv-YV-6Ks"/>
                                         <constraint firstItem="q1i-Jm-haL" firstAttribute="top" secondItem="ETt-pQ-GgW" secondAttribute="bottom" constant="30" id="4ze-YW-hlG"/>
                                         <constraint firstAttribute="trailing" secondItem="wlP-2u-oam" secondAttribute="trailing" constant="16" id="5cw-zp-gPT"/>
-                                        <constraint firstAttribute="bottom" secondItem="wlP-2u-oam" secondAttribute="bottom" constant="16" id="7V3-F0-gFC"/>
+                                        <constraint firstAttribute="bottom" secondItem="wlP-2u-oam" secondAttribute="bottom" constant="23" id="7V3-F0-gFC"/>
                                         <constraint firstAttribute="trailing" secondItem="ejV-4M-KjW" secondAttribute="trailing" constant="8" id="AAv-gg-dV8"/>
                                         <constraint firstItem="q1i-Jm-haL" firstAttribute="leading" secondItem="Idq-DD-xPx" secondAttribute="trailing" constant="10" id="Aby-6O-2UC"/>
                                         <constraint firstItem="ejV-4M-KjW" firstAttribute="top" secondItem="uHo-QT-1iq" secondAttribute="top" constant="63" id="CTB-w7-Vlo"/>
@@ -16059,10 +16101,6 @@ The app is loaded with resourceful features to help you track your medical histo
                                         <constraint firstItem="5MG-x3-gyt" firstAttribute="leading" secondItem="q1i-Jm-haL" secondAttribute="trailing" constant="10" id="znj-Ic-h78"/>
                                     </constraints>
                                 </view>
-                                <connections>
-                                    <outlet property="dataSource" destination="XoW-Yy-s4d" id="mXY-03-6aW"/>
-                                    <outlet property="delegate" destination="XoW-Yy-s4d" id="k3Q-4o-87h"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.81960784310000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -16078,13 +16116,11 @@ The app is loaded with resourceful features to help you track your medical histo
                         <viewLayoutGuide key="safeArea" id="gcv-ja-wec"/>
                     </view>
                     <connections>
-                        <outlet property="_mainTableView" destination="Em5-v9-HY0" id="8VK-3E-jtD"/>
                         <outlet property="collectionView" destination="sNG-Wf-ygl" id="G01-4M-l7t"/>
                         <outlet property="descriptionLabel" destination="wlP-2u-oam" id="8dT-ec-jMj"/>
                         <outlet property="discountLabel" destination="SU3-C2-Z9H" id="a6I-hq-r9W"/>
                         <outlet property="downloadButton" destination="ETt-pQ-GgW" id="kqy-PF-PRv"/>
                         <outlet property="locationButton" destination="5MG-x3-gyt" id="AHk-Zu-F3A"/>
-                        <outlet property="menuButton" destination="N6k-5P-m30" id="DPt-Ki-Vlh"/>
                         <outlet property="nextButton" destination="ejV-4M-KjW" id="1i0-s1-6Xd"/>
                         <outlet property="partnerButton" destination="Idq-DD-xPx" id="s4a-z1-umS"/>
                         <outlet property="previousButton" destination="XdO-kv-8rF" id="kNO-lk-zPb"/>
@@ -16109,6 +16145,7 @@ The app is loaded with resourceful features to help you track your medical histo
         <image name="check.png" width="20" height="20"/>
         <image name="checkbox.png" width="30" height="30"/>
         <image name="downarrow.png" width="20" height="20"/>
+        <image name="download.png" width="36" height="36"/>
         <image name="edit.png" width="30" height="30"/>
         <image name="fb.png" width="25" height="25"/>
         <image name="filter.png" width="30" height="30"/>
@@ -16135,7 +16172,7 @@ The app is loaded with resourceful features to help you track your medical histo
         <image name="website.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5My-vD-BBR"/>
+        <segue reference="bKT-n6-iGn"/>
         <segue reference="PZE-j3-zIm"/>
         <segue reference="0UT-kJ-NWF"/>
     </inferredMetricsTieBreakers>

@@ -154,7 +154,7 @@ struct menu {
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
+//    NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
     _isDepenndentMenu = false;
     
     

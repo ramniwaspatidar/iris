@@ -14,6 +14,8 @@
 #import "Constant.h"
 #import "ConnectionManager.h"
 #import "Utility.h"
+#import "Iris-Swift.h"
+#import "ClubFilterCell.h"
 
 
 @interface ClubIRISViewController ()
@@ -24,6 +26,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _mainTableView.delegate = self;
+    _mainTableView.dataSource = self;
+    
+    discount  = @"";
+    promocode = @"";
+    flatDiscount = @"";
+    latestVoucher = @"";
+    
+  
+    _countryInfoArray = [[NSMutableArray alloc]init];
     [self getClubList];
     [self showHeaderLogo];
     [self initialSetupView];
@@ -31,7 +44,7 @@
 
 -(void)initialSetupView
 {
-    [self addGestureonView];
+    // [self addGestureonView];
     RevealViewController *revealController = [self revealViewController];
     [revealController tapGestureRecognizer];
     
@@ -45,9 +58,13 @@
         [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
         
         titleLabel.text =  [Localization languageSelectedStringForKey:@"Club IRIS"];
-
+        
         [menuButton addTarget:revealController action:@selector(rightRevealToggle:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
+    filterSelectedArray  = [[NSMutableArray alloc]init];
+    filterArray = [[NSMutableArray alloc] initWithObjects:[Localization languageSelectedStringForKey:@"Latest Voucher"],[Localization languageSelectedStringForKey:@"Discount(%)"],[Localization languageSelectedStringForKey:@"Flat Discount"],[Localization languageSelectedStringForKey:@"Promocode"], nil];
+    
 }
 
 -(void)showHeaderLogo{
@@ -59,6 +76,14 @@
     countryTextFiled.placeholder = [Localization languageSelectedStringForKey:@"Select Country"];
     searchTextField.placeholder = [Localization languageSelectedStringForKey:@"Search here"];
     
+    filterTable.layer.masksToBounds = true;
+    filterTable.layer.cornerRadius = 5;
+    filterTable.layer.borderWidth = 1;
+    filterTable.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    filterTable.layer.shadowColor = [[UIColor blackColor] CGColor];
+    filterTable.layer.shadowOffset = CGSizeMake(0.0, 0.5);
+    filterTable.layer.shadowOpacity = 0.5;
+    filterTable.layer.shadowRadius = 2.0;
     
     bgView1.layer.masksToBounds = true;
     bgView1.layer.cornerRadius = 5;
@@ -106,7 +131,10 @@
 #pragma mark Table View methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-        return [clubArray count];
+    if (tableView == filterTable){
+        return filterArray.count;
+    }
+    return [clubArray count];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -117,6 +145,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView == filterTable){
+        return 35;
+    }
     return 250;
 }
 
@@ -124,7 +155,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
+    if (tableView.tag == 101){
+        
+        static NSString *cellIdentifier  =@"ClubFilterCell";
+        ClubFilterCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil)
+        {
+            NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ClubFilterCell" owner:self options:nil];
+            cell = [array objectAtIndex:0];
+        }
+        cell.txtLabel.text = [filterArray objectAtIndex:indexPath.row];
+        
+        if([filterSelectedArray containsObject:[filterArray objectAtIndex:indexPath.row]]){
+            cell.imgView.image = [UIImage imageNamed:@"check.png"];
+        }
+        else {
+            cell.imgView.image = [UIImage imageNamed:@"uncheck.png"];
+        }
+        
+        return cell;
+    }
     static NSString *cellIdentifier  =@"ClbIRISCell";
     ClbIRISCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil)
@@ -132,17 +183,41 @@
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ClbIRISCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     }
-        cell.backgroundColor = [UIColor clearColor];
-        cell.contentView.backgroundColor = [UIColor clearColor];
-        cell.selectionStyle =  UITableViewCellSelectionStyleNone;
-       [cell getClubData:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"voucherimageslist"] title:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"title"]];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle =  UITableViewCellSelectionStyleDefault;
+    cell.nav = self;
+    [cell getClubData:[clubArray objectAtIndex:indexPath.row]  title:[[clubArray objectAtIndex:indexPath.row] valueForKey:@"title"]];
     
-        return cell;
+    return cell;
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.view endEditing:YES];
+    
+    if (tableView.tag == 101){
+        
+        if (indexPath.row == 0){
+            latestVoucher = [filterArray objectAtIndex:indexPath.row];
+        }
+        else if (indexPath.row == 1){
+            flatDiscount = [filterArray objectAtIndex:indexPath.row];
+        }
+        else  if (indexPath.row == 2){
+            discount = [filterArray objectAtIndex:indexPath.row];
+        }
+        else  if (indexPath.row == 3){
+            promocode = [filterArray objectAtIndex:indexPath.row];
+        }
+        
+        if([filterSelectedArray containsObject:[filterArray objectAtIndex:indexPath.row]]){
+            [filterSelectedArray removeObject:[filterArray objectAtIndex:indexPath.row]];
+        }
+        else {
+            [filterSelectedArray addObject:[filterArray objectAtIndex:indexPath.row]];
+        }
+        [filterTable reloadData];
+    }
 }
 
 
@@ -159,86 +234,32 @@
 -(void)textFieldDidChange:(UITextField *)textField
 {
     
-//    ClbIRISCell *cell = (ClbIRISCell*)textField.superview.superview;
-//    NSIndexPath *indexPath = [_mainTableView indexPathForCell:cell];
-//    if(textField.text)
-//    {
-//        [_inputDataArray replaceObjectAtIndex:indexPath.row withObject:textField.text];
-//    }
+    //    ClbIRISCell *cell = (ClbIRISCell*)textField.superview.superview;
+    //    NSIndexPath *indexPath = [_mainTableView indexPathForCell:cell];
+    //    if(textField.text)
+    //    {
+    //        [_inputDataArray replaceObjectAtIndex:indexPath.row withObject:textField.text];
+    //    }
     
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-//    ProfileDetailTableViewCell *cell = (ProfileDetailTableViewCell*)textField.superview.superview;
-//    NSIndexPath *indexPath = [_mainTableView indexPathForCell:cell];
-//    //cell.titleLabel.hidden = YES;
-//    if(indexPath.row == 1)
-//    {
-//        [textField resignFirstResponder];
-//        return YES;
-//    }
-//
-//    activeCellIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
-//    [_mainTableView scrollToRowAtIndexPath:activeCellIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-//    [_mainTableView selectRowAtIndexPath:activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
-//
-//    cell = [_mainTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row+1 inSection:0]];
-//    if(cell)
-//    {
-//        activeCellIndexPath = indexPath;
-//        for(id view in cell.contentView.subviews)
-//            if([view isKindOfClass:[UITextField class]])
-//            {
-//                UITextField *textField1 = view;
-//                [textField1 becomeFirstResponder];
-//            }
-//    }
-//    else
-//    {
-//        [textField resignFirstResponder];
-//    }
-    
+    [textField resignFirstResponder];
     return YES;
 }
 
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (!string.length)
-        return YES;
+    searchString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     
-//    ProfileDetailTableViewCell *cell = (ProfileDetailTableViewCell*)textField.superview.superview;
-//    NSIndexPath *indexPath = [_mainTableView indexPathForCell:cell];
-//
-//    if(indexPath.row == 1)
-//    {
-//        NSUInteger newLength = [textField.text length] + [string length];
-//
-//        if(newLength > MAX_OTP_LENGTH){
-//            return NO;
-//        }
-//    }
-//    else if(indexPath.row == 0)
-//    {
-//        NSUInteger newLength = [textField.text length] + [string length];
-//
-//        if(newLength > MAX_LENGTH){
-//            return NO;
-//        }
-//
-//        NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-//        NSString *expression = @"^([a-zA-Z0-9]+)?(\\.([0-9]{1,2})?)?$";
-//        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression
-//                                                                               options:NSRegularExpressionCaseInsensitive
-//                                                                                 error:nil];
-//        NSUInteger numberOfMatches = [regex numberOfMatchesInString:newString
-//                                                            options:0
-//                                                              range:NSMakeRange(0, [newString length])];
-//        if (numberOfMatches == 0)
-//            return NO;
-//    }
     return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self getClubList];
+
+    
 }
 
 #pragma mark - move view when keyboard comes into play
@@ -294,8 +315,8 @@
         
         [UIView animateWithDuration:animationDuration delay:delay options:UIViewAnimationOptionBeginFromCurrentState animations:^
          {
-             tableView.frame = tableFrame;
-         }
+            tableView.frame = tableFrame;
+        }
                          completion:^(BOOL finished){ [self tableAnimationEnded:nil finished:nil contextInfo:nil]; }];
     }
 }
@@ -354,56 +375,113 @@
 
 
 - (IBAction)allButtonAction:(id)sender {
+    
+    
+//    DPPickerManager * manager = [[DPPickerManager alloc]init];
+//    
+//    [manager showPickerWithTitle:@"Select Category" selected:@"1" strings:@[@"1",@"2",@"3"] completion:^(NSString * _Nullable value, NSInteger index, BOOL cancel) {
+//        
+//    }];
+    
+    
 }
 
 - (IBAction)countryButton:(id)sender {
+    
+    NSArray *arrayCountry = [_countryInfoArray valueForKey:@"countryname"];
+    DPPickerManager * manager = [[DPPickerManager alloc]init];
+    
+    [manager showPickerWithTitle:@"Select Country" selected:@"1" strings:arrayCountry completion:^(NSString * _Nullable value, NSInteger index, BOOL cancel) {
+        self->countryTextFiled.text = value;
+        
+    }];
+    
+}
+
+- (IBAction)filterButtonAction:(id)sender {
+    filterTable.hidden = false;
+    [filterTable reloadData];
+}
+- (IBAction)applyButtonAction:(id)sender {
+    [filterTable setHidden:true];
+    [self getClubList];
 }
 
 
 -(void)getClubList{
     
-   NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
-   
-   
-   NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
+    
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
     [dictionary setValue:[userInfoDic valueForKey:@"memberid"] forKey:@"memberid"];
     [dictionary setValue:@"" forKey:@"Category"];
-    [dictionary setValue:@"" forKey:@"Country"];
-    [dictionary setValue:@"" forKey:@"BuyOneAndGetOneFree"];
-    [dictionary setValue:@"" forKey:@"PromoCode"];
-    [dictionary setValue:@"" forKey:@"HotDeal"];
-    [dictionary setValue:@"" forKey:@"NewlyAdded"];
-
-
-   
-   NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetAllClubIrisVoucherList"];
-   NSError *jsonError;
-   NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&jsonError];
-   NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-   
+    [dictionary setValue:countryTextFiled.text forKey:@"Country"];
+    [dictionary setValue:discount forKey:@"BuyOneAndGetOneFree"];
+    [dictionary setValue:promocode forKey:@"PromoCode"];
+    [dictionary setValue:flatDiscount forKey:@"HotDeal"];
+    [dictionary setValue:latestVoucher forKey:@"NewlyAdded"];
+    
+    
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetAllClubIrisVoucherList"];
+    NSError *jsonError;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&jsonError];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
     
     [[ConnectionManager sharedInstance] sendPOSTRequestForURLWithRawJsonAndHeader:url withHeader:[userInfoDic valueForKey:@"token"] json:jsonString timeoutInterval:kTimeoutDuration showHUD:YES showSystemError:NO completion:^(NSDictionary *responseDictionary, NSError *error)
+     {
+        if (!error)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSString *serverMsg = [NSString stringWithFormat:@"%@",[responseDictionary valueForKey:kServerMessage]];
+                if([[serverMsg lowercaseString] isEqualToString:@"success"])
+                {
+                    //                     [self callShowProfileAPI];
+                    
+                    self->clubArray = [[NSMutableArray alloc]initWithArray:[responseDictionary valueForKey:@"listofvouchers"]];
+                    [self->_mainTableView reloadData];
+                    [self callGetCountryCurrencyAPI];
+
+                    
+                }
+                
+                else
+                {
+                    [Utility showAlertViewControllerIn:self title:nil message:serverMsg block:^(int index) {
+                    }];
+                }
+                
+            });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+        }
+    }];
+}
+
+-(void)callGetCountryCurrencyAPI
+{
+    NSDictionary *userInfoDic = [Utility unarchiveData:[[NSUserDefaults standardUserDefaults] valueForKey:@"login"]];
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,@"GetCountryCurrency"];
+    
+    [[ConnectionManager sharedInstance] sendGETRequestForURL:url withHeader:[userInfoDic valueForKey:@"token"]  timeoutInterval:kTimeoutDuration showHUD:YES showSystemError:NO completion:^(NSDictionary *dictionary, NSError *error)
      {
          if (!error)
          {
              dispatch_async(dispatch_get_main_queue(), ^{
                  
-                 NSString *serverMsg = [NSString stringWithFormat:@"%@",[responseDictionary valueForKey:kServerMessage]];
+                 NSString *serverMsg = [NSString stringWithFormat:@"%@",[dictionary valueForKey:kServerMessage]];
                  if([[serverMsg lowercaseString] isEqualToString:@"success"])
                  {
-//                     [self callShowProfileAPI];
-                     
-                     self->clubArray = [[NSMutableArray alloc]initWithArray:[responseDictionary valueForKey:@"listofvouchers"]];
-                     [self->_mainTableView reloadData];
-
+                     [self->_countryInfoArray addObjectsFromArray:[dictionary valueForKey:@"Countrys"]];
                  }
                 
-                 else
-                 {
-                     [Utility showAlertViewControllerIn:self title:nil message:serverMsg block:^(int index) {
-                     }];
-                 }
-                 
              });
          }
          else
@@ -414,4 +492,5 @@
          }
      }];
 }
+
 @end
